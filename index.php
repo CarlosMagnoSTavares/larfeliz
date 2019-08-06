@@ -115,7 +115,7 @@
           <div class="card red orange darken-2">
             <div class="card-content white-text">
               <span class="card-title center-align"><b>Registro técnico</b></span>
-              <p class="center-align">Dados relacionados a visita domiciliar e audiências.</p>
+              <p class="center-align">Dados de visitas domiciliares e audiências.</p>
             </div>
             <div class="card-action center">
               <a href="#" class="btn-small waves-effect waves-light orange">Registrar</a>
@@ -169,9 +169,12 @@
         </div>
       </div>
     </div>
-    <div class="footer-copyright">
-      <div class="container">
-      Criado por <a class="orange-text text-lighten-3" target="_blank" href="http://www.programavoa.prosas.com.br/">Ambev Voar</a>
+    <div class="footer-copyright footer-copyright orange darken-3">
+      <div class="container right-align">
+      Criado por <a class="orange-text text-lighten-3" >Ambev</a>
+      <a target="_blank" href="http://www.programavoa.prosas.com.br/">
+        <img id="logo-container" src="css/voa-logo.png" class="brand-logo"></img>
+      </a>
       </div>
     </div>
   </footer>
