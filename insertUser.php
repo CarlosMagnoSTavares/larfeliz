@@ -2,7 +2,6 @@
 
 require_once('Crud.class.php');
 
-
 // Recebe dados do POST ↓
 if (!empty($_POST)) {
 	
