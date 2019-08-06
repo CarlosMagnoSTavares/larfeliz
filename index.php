@@ -4,7 +4,6 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
   <title>Lar feliz</title>
-
   <!-- CSS  -->
   <link href="css/icon.css" rel="stylesheet"> <!--  Força busca de icon online -->
   <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
@@ -27,20 +26,16 @@
   <div class="section no-pad-bot" id="index-banner">
     <div class="container">
       <br><br>
-      <!-- <h1 class="header center orange-text">Lar Feliz</h1> -->
       <div class="row center">
         <h5 class="header col s12 light">Bem-vindo educador <br><b> Carlos Tavares </b></h5>
       </div>
-      <!-- <div class="row center">
-        <a href="#" id="download-button" class="btn-small waves-effect waves-light orange">Get Started</a>
-      </div> -->
       <br><br>
-
     </div>
   </div>
   <div class="container">
 <!-- AQUI TERMINA O HEADER -->
-
+    
+    <!-- Primeira linha de blocos -->
     <div class="row">
         <div class="col s12 m3">
           <div class="card red orange darken-3">
@@ -87,7 +82,7 @@
           </div>
         </div>
     </div>
-
+    <!-- Segunda linha de blocos -->
     <div class="row">
         <div class="col s12 m3">
           <div class="card orange lighten-1">
@@ -135,11 +130,9 @@
         </div>
     </div>
 
-
 <!-- AQUI COMEÇA O FOOTER -->
   <br><br>
   </div>
-
   <footer class="page-footer orange">
     <div class="container">
       <div class="row">
@@ -150,8 +143,6 @@
             Jaguariúna | SP – Estrada Municipal JGR316, Sítio, Cep 13820-000 – Brasil
             Ilha Bela | SP – Rua Benedito Mariano Leite, 560 – Barra Velha, Cep 11630-000 – Brasil
           </p>
-
-
         </div>
         <div class="col l3 s12">
           <h5 class="white-text">Telefones</h5>
@@ -178,8 +169,6 @@
       </div>
     </div>
   </footer>
-
-
   <!--  Scripts-->
   <script src="js/jquery-2.1.1.min.js"></script>
   <script src="js/materialize.js"></script>
