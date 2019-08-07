@@ -11,6 +11,10 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
+SELECT CONCAT(column_name,':<input type="text" name="',column_name,'">') FROM information_schema.`COLUMNS` 
+WHERE table_schema = 'lar_feliz' 
+AND TABLE_NAME = 'dados_pessoais'
+ORDER BY TABLE_NAME, ordinal_position;
 
 -- Copiando estrutura do banco de dados para lar_feliz
 CREATE DATABASE IF NOT EXISTS `lar_feliz` /*!40100 DEFAULT CHARACTER SET utf8 COLLATE utf8_bin */;

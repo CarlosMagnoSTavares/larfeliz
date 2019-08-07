@@ -1,6 +1,6 @@
 <?php
 
-require_once('../config/Conn.class.php');
+require_once('config/Conn.class.php');
 
 class Crud extends Conn
 {
