@@ -35,7 +35,7 @@
           </div>
         </div>
         <div class="col s12 m3">
-          <div class="card z-depth-5 orange lighten-1">
+          <div class="card z-depth-5 orange darken-1">
             <div class="card-content white-text">
               <span class="card-title center-align"><b>Saúde</b></span>
               <p class="center-align">Dados médicos da criança.</p>
@@ -49,7 +49,7 @@
     <!-- Segunda linha de blocos -->
     <div class="row">
         <div class="col s12 m3">
-          <div class="card z-depth-5 orange lighten-1">
+          <div class="card z-depth-5 orange darken-1">
             <div class="card-content white-text">
               <span class="card-title center-align"><b>Atividades</b></span>
               <p class="center-align">Registro de atividades extracurriculares.</p>
