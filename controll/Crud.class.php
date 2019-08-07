@@ -12,9 +12,18 @@ class Crud extends Conn
 		$limit = !empty($limit)? " limit ". $limit : NULL;
 		$con = Conn::conectar();
 		$querySelect = 'SELECT * FROM '.addslashes($table).$where.$orderBy.$limit.' ;';
-		$querySelect = mysqli_query(Conn::conectar(),$querySelect);
+		$querySelect = mysqli_query($con,$querySelect);
 		mysqli_close($con);
  		return $querySelect;
+	}
+
+	function pagination($table,$limit)
+	{
+		$con = Conn::conectar();
+		$queryPagination = "SELECT CEILING(SUM(1)/$limit) AS PAG FROM $table";
+		$queryPagination = mysqli_query($con,$queryPagination);
+		mysqli_close($con);
+		return $queryPagination;
 	}
 
 	function insert($table=NULL,$columns=NULL,$values=NULL)
@@ -25,7 +34,7 @@ class Crud extends Conn
 		$values = "'".implode("','", $values)."'";
 		$con = Conn::conectar();
 		$queryInsert = "INSERT INTO $table ($columns) VALUES ($values) ;";
-		$queryInsert = mysqli_query(Conn::conectar(),$queryInsert);
+		$queryInsert = mysqli_query($con,$queryInsert);
 		mysqli_close($con);
 
 		if ($queryInsert) {
@@ -44,7 +53,7 @@ class Crud extends Conn
 		$con = Conn::conectar();
 		$queryUpdate = "UPDATE $table SET $setValues  $where;";
 		$texto =  $queryUpdate;
-		$queryUpdate = mysqli_query(Conn::conectar(),$queryUpdate);
+		$queryUpdate = mysqli_query($con,$queryUpdate);
 		mysqli_close($con);
 		
 		if ($queryUpdate) {
@@ -61,7 +70,7 @@ class Crud extends Conn
 
 		$con = Conn::conectar();
 		$queryDelete = "DELETE FROM $table $where;";
-		$queryDelete = mysqli_query(Conn::conectar(),$queryDelete);
+		$queryDelete = mysqli_query($con,$queryDelete);
 		mysqli_close($con);
 		
 		if ($queryDelete) {
