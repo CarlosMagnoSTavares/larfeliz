@@ -20,7 +20,7 @@ $limit = "$pag,$max";
 		      <tr>
 		          <th>Foto</th>
 		          <th>Nome</th>
-		          <th>Data acolhimento</th>
+		          <th class="center-align">Data acolhimento</th>
 		          <th>Editar</th>
 		          <th>Excluir</th>
 		      </tr>
@@ -33,15 +33,15 @@ $limit = "$pag,$max";
 				foreach ($list as $key => $value)
 				{ 
 					$nome = utf8_encode($value['nome']);
-					$caminhoFoto = $value['caminho_foto'];
-					$dataAcolhimento = $value['data_acolhimento'];
+					$caminhoFoto = !empty(trim($value['caminho_foto']))? $value['caminho_foto']:"include/sem-foto.gif";
+					$dataAcolhimento = !empty($value['data_acolhimento'])? $value['data_acolhimento'] : " --/--/--- ";
 					$idPessoal = $value['id_pessoal'];
 
 					echo'
 						<tr>
 							<td><img src="'.$caminhoFoto.'" alt="Foto de '.$nome.'" data-caption="'.$nome.'" class="circle materialboxed" width="35px" height="35px"></td>
-							<td>'.$nome.'</td>
-							<td>'.$dataAcolhimento.'</td>
+							<td class="">'.$nome.'</td>
+							<td class="center-align">'.$dataAcolhimento.'</td>
 							<td><a href="formDadosPessoais.php?acao=editar&id_pessoal='.$idPessoal.'" class="btn btn-small orange">Editar</a></td>
 							<td><a href="formDadosPessoais.php?acao=excluir&id_pessoal='.$idPessoal.'" class="btn btn-small red">Excluir</a></td>
 						</tr>
