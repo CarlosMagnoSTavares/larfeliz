@@ -1,4 +1,7 @@
-<?php include_once('include/header.php'); ?>
+<?php 
+include_once('include/header.php'); 
+echo "<pre>".@print_r($_POST)."</pre>"
+?>
 
 <form action="" method="POST">
 	<div class="">
@@ -46,7 +49,7 @@
 		</div>
 		<div class="row card">
 			<br><h5 class="center-align"> Anexos</h5><br>
-			<div class="col s12 m12">
+			<div class="col s12 m6">
 			    <div class="file-field">
 			      <div class="btn orange">
 			        <span>Foto</span>
@@ -57,7 +60,7 @@
 			      </div>
 			    </div>
 			</div>
-			<div class="col s12 m12">
+			<div class="col s12 m6">
 			    <div class="file-field">
 			      <div class="btn orange">
 			        <span>certidao</span>
