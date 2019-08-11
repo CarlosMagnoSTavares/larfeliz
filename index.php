@@ -1,28 +1,97 @@
-<?php 
-
-require_once('Crud.class.php');
-
-// LISTA USUARIOS ↓
-	$table = 'dados_pessoais';
-	$where = " id_pessoal > 0";
-	$orderBy =" id_pessoal desc ";
-	$limit = "999";
-
-	$crud = new Crud;
-	$list = $crud->select($table,$where,$orderBy,$limit);
-
-	foreach ($list as $key => $value) 
-		{
-			echo '<form method="POST" action="updateUser.php">'.
-					 ' <input hidden readonly="true"  type="text" name="id" value="'.$value['nome'].'">'.
-					 ' nome: <input type="text" name="nome" value="'.$value['nome'].'">'.
-					 ' sobrenome: <input type="text" name="sobrenome" value="'.$value['nome'].'">'.
-					 '<input type="submit" name="Atualiza" value="Atualiza">'.
-					 '<a href="deleteUser.php?id='.$value['nome'].'">Deleta</a>'.
-					 "<br>".
-				  '</form>';
-		}
-?>
-<br>
-<a href="insertUser.php">Inserir novo usuario</a>
+<?php include_once('include/header.php'); ?>
+    <!-- Primeira linha de blocos -->
+    <div class="row">
+        <div class="col s12 m3">
+          <div class="card z-depth-5 red orange darken-3">
+            <div class="card-content white-text">
+              <span class="card-title center-align"><b>Dados Pessoais</b></span>
+              <p class="center-align">Registrar criança.</p>
+            </div>
+            <div class="card-action center">
+              <a href="dadosPessoais.php" class="z-depth-5 btn-small waves-effect waves-light orange">Registrar</a>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m3">
+          <div class="card z-depth-5 red orange darken-2">
+            <div class="card-content white-text">
+              <span class="card-title center-align"><b>Filiação</b></span>
+              <p class="center-align">Cadastro da família.</p>
+            </div>
+            <div class="card-action center">
+              <a href="filiacao.php" class="z-depth-5 btn-small waves-effect waves-light orange">Registrar</a>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m3">
+          <div class="card z-depth-5 red orange darken-1">
+            <div class="card-content white-text">
+              <span class="card-title center-align"><b>Educação</b></span>
+              <p class="center-align">Registrar dados escolares.</p>
+            </div>
+            <div class="card-action center">
+              <a href="educacao.php" class="z-depth-5 btn-small waves-effect waves-light orange">Registrar</a>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m3">
+          <div class="card z-depth-5 orange darken-1">
+            <div class="card-content white-text">
+              <span class="card-title center-align"><b>Saúde</b></span>
+              <p class="center-align">Dados médicos da criança.</p>
+            </div>
+            <div class="card-action center">
+              <a href="saude.php" class="z-depth-5 btn-small waves-effect waves-light orange">Registrar</a>
+            </div>
+          </div>
+        </div>
+    </div>
+    <!-- Segunda linha de blocos -->
+    <div class="row">
+        <div class="col s12 m3">
+          <div class="card z-depth-5 orange darken-1">
+            <div class="card-content white-text">
+              <span class="card-title center-align"><b>Atividades</b></span>
+              <p class="center-align">Registro de atividades extracurriculares.</p>
+            </div>
+            <div class="card-action center">
+              <a href="atividades.php" class="z-depth-5 btn-small waves-effect waves-light orange">Registrar</a>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m3">
+          <div class="card z-depth-5 red orange darken-1">
+            <div class="card-content white-text">
+              <span class="card-title center-align"><b>Ocorrências</b></span>
+              <p class="center-align">Registro de ocorrências escolares ou policiais.</p>
+            </div>
+            <div class="card-action center">
+              <a href="ocorrencias.php" class="z-depth-5 btn-small waves-effect waves-light orange">Registrar</a>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m3">
+          <div class="card z-depth-5 red orange darken-2">
+            <div class="card-content white-text">
+              <span class="card-title center-align"><b>Registro técnico</b></span>
+              <p class="center-align">Dados de visitas domiciliares e audiências.</p>
+            </div>
+            <div class="card-action center">
+              <a href="registroTecnico.php" class="z-depth-5 btn-small waves-effect waves-light orange">Registrar</a>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m3">
+          <div class="card z-depth-5 red orange darken-3">
+            <div class="card-content white-text">
+              <span class="card-title center-align"><b>Admin</b></span>
+              <p class="center-align">Registrar funcinários e liberação de acessos.</p>
+            </div>
+            <div class="card-action center">
+              <a href="admin.php" class="z-depth-5 btn-small waves-effect waves-light orange">Registrar</a>
+            </div>
+          </div>
+        </div>
+    </div>
+<?php include_once('include/footer.php'); ?>
 
