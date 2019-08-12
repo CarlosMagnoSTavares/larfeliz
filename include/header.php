@@ -13,13 +13,15 @@
   <nav class="orange" role="navigation">
     <div class="nav-wrapper container">
         <a href="index.php">
-          <img id="logo-container" src="css/logo.png" class="brand-logo" width="100px" height="100px"></img>
+          <img id="logo-container" src="css/logo.png" class="brand-logo" width="100px" height="100px" ></img>
         </a>
       <ul class="right hide-on-med-and-down">
+        <li><a onClick="history.go(-1)" class="btn-small green">Voltar</a></li>
         <li><a href="#" class="btn-small red">Sair</a></li>
       </ul>
 
       <ul id="nav-mobile" class="sidenav">
+        <li><a onClick="history.go(-1)" class="btn-small green">Voltar</a></li>
         <li><a href="#" class="btn-small red">Sair</a></li>
       </ul>
       <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>

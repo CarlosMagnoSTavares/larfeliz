@@ -3,11 +3,11 @@
 require_once('Crud.class.php');
 
 // DELETE USUARIO ↓
-	$table = 'usuarios';
-	$where = ' id = '.$_GET['id'];
+	$table = $_POST['table'];
+	$where = ' id = '.$_POST['id'];
 
 	$crud = new Crud;
 	$delete = $crud->delete($table,$where);
 
-	header('Location:index.php?start=delete_'.$delete);
+	header('Location:../dadosPessoais.php?start=delete_'.$delete);
 ?>

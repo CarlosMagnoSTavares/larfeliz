@@ -4,6 +4,24 @@ require_once('Conn.class.php');
 
 class Crud extends Conn
 {
+	function saveFile($tipo,$anexo)
+	{
+		date_default_timezone_set("Brazil/East"); //Definindo timezone padrão
+		$ext = strtolower(substr($anexo['name'],-4)); //Pegando extensão do arquivo
+		$new_name = md5($tipo."_".date("Y.m.d-H.i.s")).$ext; //Definindo um novo nome para o arquivo
+		$dir = '../documentos/'; //Diretório para uploads
+
+		if (($ext <> '.php') && ($ext <> '.html') && ($ext <> '.js')&&($ext <> '.css')) 
+		{
+			$result = move_uploaded_file($anexo['tmp_name'], $dir.$new_name); //Fazer upload do arquivo
+			$result = $result ? $new_name:NULL;
+			return $result;
+		} 
+		else 
+		{
+			return NULL;
+		}
+	}
 
 	function select($table=NULL,$where=NULL,$orderBy=NULL,$limit=NULL) 
 	{
@@ -34,13 +52,13 @@ class Crud extends Conn
 		$values = "'".implode("','", $values)."'";
 		$con = Conn::conectar();
 		$queryInsert = "INSERT INTO $table ($columns) VALUES ($values) ;";
-		$queryInsert = mysqli_query($con,$queryInsert);
+		$resultInsert = mysqli_query($con,$queryInsert);
 		mysqli_close($con);
 
-		if ($queryInsert) {
+		if ($resultInsert) {
 			return 'Success';
 		} else {
-			return 'Fail';
+			return 'Fail'; //$queryInsert;
 		}
 	}
 
