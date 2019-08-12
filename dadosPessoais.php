@@ -48,7 +48,7 @@ $limit = "$pag,$max";
 
 					echo'
 						<tr>
-							<td><img src="'.$caminhoFoto.'" alt="Foto de '.$nome.'" data-caption="'.$nome.'" class="circle materialboxed" width="35px" height="35px"></td>
+							<td><img src="'.$caminhoFoto.'"  data-caption="'.$nome.'" class="circle materialboxed" width="35px" height="35px"></td>
 							<td class="">'.$nome.'</td>
 							<td class="center-align">'.$dataAcolhimento.'</td>
 							<td><a href="formDadosPessoais.php?acao=ver&id='.$idPessoal.'" class="btn btn-small green">Ver</a></td>
