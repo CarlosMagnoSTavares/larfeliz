@@ -3,7 +3,7 @@ include_once('include/header.php');
 echo "<pre>".@print_r($_POST)."</pre>"
 ?>
 
-<form action="" method="POST">
+<form action="controll/insertDadosPessoais.php" method="POST">
 	<div class="">
 		<div class="row">
 			<div class="col s12 m12">

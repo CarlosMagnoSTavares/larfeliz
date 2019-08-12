@@ -1,5 +1,4 @@
 <?php
-
 class Conn
 {
 	public function conectar()
