@@ -62,7 +62,7 @@ else
 		$salvar = "Inserir";
 }
 
-// Menu para deletar registros
+// form para deletar registros
 if (isset($_GET['acao'])) 
 {
 	$disable = ($_GET['acao']=='excluir' || $_GET['acao']=='ver')? 'disabled="true"':NULL; //Desabilita os botões quando estiver VENDO ou EXCLUINDO
@@ -74,7 +74,7 @@ if (isset($_GET['acao']))
 				<div class="col s12 m12 center-align" >
 					<input type="hidden" name="id" value="'.$id.'">
 					<input type="hidden" name="table" value="'.$table.'">
-					Você deseja excluir os dados abaixo?
+					<p>Você deseja excluir os dados abaixo?</p>
 					<input type="button" class="btn btn-small green" value="VOLTAR"  onClick="history.go(-1)">
 					<input type="submit" class="btn btn-small red" value="DELETAR REGISTRO"  >
 				</div>

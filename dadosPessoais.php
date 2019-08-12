@@ -4,8 +4,10 @@ require_once('controll/Crud.class.php');
 
 //Config de cada pagina
 $table = 'dados_pessoais';
+
+$orderColumn = isset($_GET['orderColumn']) && !empty($_GET['orderColumn'])? trim($_GET['orderColumn']): "id desc";
 $where = " id > 0";
-$orderBy =" id asc ";
+$orderBy = $orderColumn;
 $max = 25;
 
 //Não alterar
@@ -26,12 +28,12 @@ $limit = "$pag,$max";
 		 <table class="striped responsive-table">
 		    <thead>
 		      <tr>
-		          <th>Foto</th>
-		          <th>Nome</th>
-		          <th class="center-align">Data acolhimento</th>
-		          <th>Ver</th>
-		          <th>Editar</th>
-		          <th>Excluir</th>
+		          <th><a href="?orderColumn=update_at">Foto</a></th>
+		          <th><a href="?orderColumn=nome">Nome</a></th>
+		          <th class="center-align"><a href="?orderColumn=data_acolhimento">Data acolhimento</a></th>
+		          <th><a href="#">Ver</a></th>
+		          <th><a href="#">Editar</a></th>
+		          <th><a href="#">Excluir</a></th>
 		      </tr>
 		    </thead>
 			<tbody>
