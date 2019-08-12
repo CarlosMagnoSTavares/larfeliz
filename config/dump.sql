@@ -20,35 +20,41 @@ USE `lar_feliz`;
 -- Copiando estrutura para tabela lar_feliz.admin
 DROP TABLE IF EXISTS `admin`;
 CREATE TABLE IF NOT EXISTS `admin` (
-  `id_admin` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(255) COLLATE utf8_bin DEFAULT NULL,
   `email` varchar(255) COLLATE utf8_bin DEFAULT NULL,
   `senha` varchar(255) COLLATE utf8_bin DEFAULT NULL,
   `tipo_acesso` varchar(255) COLLATE utf8_bin DEFAULT NULL,
   `update_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id_admin`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
--- Exportação de dados foi desmarcado.
+-- Copiando dados para a tabela lar_feliz.admin: ~0 rows (aproximadamente)
+DELETE FROM `admin`;
+/*!40000 ALTER TABLE `admin` DISABLE KEYS */;
+/*!40000 ALTER TABLE `admin` ENABLE KEYS */;
 
 -- Copiando estrutura para tabela lar_feliz.atividade
 DROP TABLE IF EXISTS `atividade`;
 CREATE TABLE IF NOT EXISTS `atividade` (
-  `id_atividade` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `fk_id_pessoal` varchar(255) COLLATE utf8_bin DEFAULT NULL,
   `frequencia` varchar(255) COLLATE utf8_bin DEFAULT NULL,
   `dia` varchar(255) COLLATE utf8_bin DEFAULT NULL,
   `horario` varchar(10) COLLATE utf8_bin DEFAULT NULL,
   `local` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  PRIMARY KEY (`id_atividade`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
--- Exportação de dados foi desmarcado.
+-- Copiando dados para a tabela lar_feliz.atividade: ~0 rows (aproximadamente)
+DELETE FROM `atividade`;
+/*!40000 ALTER TABLE `atividade` DISABLE KEYS */;
+/*!40000 ALTER TABLE `atividade` ENABLE KEYS */;
 
 -- Copiando estrutura para tabela lar_feliz.dados_pessoais
 DROP TABLE IF EXISTS `dados_pessoais`;
 CREATE TABLE IF NOT EXISTS `dados_pessoais` (
-  `id_pessoal` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(555) COLLATE utf8_bin NOT NULL,
   `caminho_foto` varchar(555) COLLATE utf8_bin DEFAULT NULL,
   `endereco` varchar(500) COLLATE utf8_bin DEFAULT NULL,
@@ -67,15 +73,22 @@ CREATE TABLE IF NOT EXISTS `dados_pessoais` (
   `visitas_familiares_obs` varchar(500) COLLATE utf8_bin DEFAULT NULL,
   `data_desligamento` varchar(10) COLLATE utf8_bin DEFAULT NULL,
   `update_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id_pessoal`)
-) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
--- Exportação de dados foi desmarcado.
+-- Copiando dados para a tabela lar_feliz.dados_pessoais: ~0 rows (aproximadamente)
+DELETE FROM `dados_pessoais`;
+/*!40000 ALTER TABLE `dados_pessoais` DISABLE KEYS */;
+INSERT INTO `dados_pessoais` (`id`, `nome`, `caminho_foto`, `endereco`, `data_acolhimento`, `motivo_acolhimento`, `anexo_certidao`, `anexo_CPF`, `anexo_cartao_cidadao`, `anexo_carteira_vacinacao`, `anexo_guia_recolhimento`, `anexo_determinacao_acolhimento`, `anexo_historico_escolar`, `dados_bancarios`, `tipo_sanguineo`, `aspectos_gerais_obs`, `visitas_familiares_obs`, `data_desligamento`, `update_at`) VALUES
+  (6, 'Jorge da Silva', '', '', '2019-08-12', '', '', '', '', '', '', '', '', '', '', '  ', '  ', '', '2019-08-12 16:33:57'),
+  (7, 'Marcos Ferro', '', '', '2019-08-14', '', '', '', '', '', '', '', '', '', '', '  ', '  ', '', '2019-08-12 16:34:07'),
+  (8, 'Lucas Silvino', '53d57b22cf049dbbb83736152cbdde22.jpg', '', '2019-08-12', '', '', '', '', '', '', '', '', '', '', '  ', '  ', '', '2019-08-12 16:34:21');
+/*!40000 ALTER TABLE `dados_pessoais` ENABLE KEYS */;
 
 -- Copiando estrutura para tabela lar_feliz.educacao
 DROP TABLE IF EXISTS `educacao`;
 CREATE TABLE IF NOT EXISTS `educacao` (
-  `id_educacao` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `fk_id_pessoal` int(11) DEFAULT NULL,
   `ano` varchar(4) COLLATE utf8_bin DEFAULT NULL,
   `tipo_escolaridade` varchar(255) COLLATE utf8_bin DEFAULT NULL,
@@ -87,15 +100,18 @@ CREATE TABLE IF NOT EXISTS `educacao` (
   `anexo_rel_segun_semestre` varchar(255) COLLATE utf8_bin DEFAULT NULL,
   `atividade_compl` varchar(555) COLLATE utf8_bin DEFAULT NULL,
   `update_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id_educacao`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
--- Exportação de dados foi desmarcado.
+-- Copiando dados para a tabela lar_feliz.educacao: ~0 rows (aproximadamente)
+DELETE FROM `educacao`;
+/*!40000 ALTER TABLE `educacao` DISABLE KEYS */;
+/*!40000 ALTER TABLE `educacao` ENABLE KEYS */;
 
 -- Copiando estrutura para tabela lar_feliz.filiacao
 DROP TABLE IF EXISTS `filiacao`;
 CREATE TABLE IF NOT EXISTS `filiacao` (
-  `id_filiacao` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `fk_id_pessoal` int(11) DEFAULT NULL,
   `nivel_parentesco` varchar(255) COLLATE utf8_bin DEFAULT NULL,
   `nome_parente` varchar(500) COLLATE utf8_bin DEFAULT NULL,
@@ -104,15 +120,18 @@ CREATE TABLE IF NOT EXISTS `filiacao` (
   `atividade_profissional` varchar(255) COLLATE utf8_bin DEFAULT NULL,
   `dinamica_familiar_obs` varchar(555) COLLATE utf8_bin DEFAULT NULL,
   `update_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id_filiacao`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
--- Exportação de dados foi desmarcado.
+-- Copiando dados para a tabela lar_feliz.filiacao: ~0 rows (aproximadamente)
+DELETE FROM `filiacao`;
+/*!40000 ALTER TABLE `filiacao` DISABLE KEYS */;
+/*!40000 ALTER TABLE `filiacao` ENABLE KEYS */;
 
 -- Copiando estrutura para tabela lar_feliz.ocorrencia
 DROP TABLE IF EXISTS `ocorrencia`;
 CREATE TABLE IF NOT EXISTS `ocorrencia` (
-  `id_ocorrencia` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `fk_id_pessoal` int(11) DEFAULT NULL,
   `tipo` varchar(255) COLLATE utf8_bin DEFAULT NULL,
   `data` datetime DEFAULT NULL,
@@ -120,15 +139,18 @@ CREATE TABLE IF NOT EXISTS `ocorrencia` (
   `anexo_bo` varchar(255) COLLATE utf8_bin DEFAULT NULL,
   `descricao_obs` varchar(555) COLLATE utf8_bin DEFAULT NULL,
   `update_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id_ocorrencia`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
--- Exportação de dados foi desmarcado.
+-- Copiando dados para a tabela lar_feliz.ocorrencia: ~0 rows (aproximadamente)
+DELETE FROM `ocorrencia`;
+/*!40000 ALTER TABLE `ocorrencia` DISABLE KEYS */;
+/*!40000 ALTER TABLE `ocorrencia` ENABLE KEYS */;
 
 -- Copiando estrutura para tabela lar_feliz.registro_tecnico
 DROP TABLE IF EXISTS `registro_tecnico`;
 CREATE TABLE IF NOT EXISTS `registro_tecnico` (
-  `id_registro_tecnico` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `fk_id_filiacao_visita` int(11) DEFAULT NULL,
   `visita_domiciliar` varchar(255) COLLATE utf8_bin DEFAULT NULL,
   `informacoes_sobre_visita` varchar(255) COLLATE utf8_bin DEFAULT NULL,
@@ -136,15 +158,18 @@ CREATE TABLE IF NOT EXISTS `registro_tecnico` (
   `audiencia_declaracao_obs` varchar(555) COLLATE utf8_bin DEFAULT NULL,
   `data_visita_familiar` datetime DEFAULT NULL,
   `update_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id_registro_tecnico`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
--- Exportação de dados foi desmarcado.
+-- Copiando dados para a tabela lar_feliz.registro_tecnico: ~0 rows (aproximadamente)
+DELETE FROM `registro_tecnico`;
+/*!40000 ALTER TABLE `registro_tecnico` DISABLE KEYS */;
+/*!40000 ALTER TABLE `registro_tecnico` ENABLE KEYS */;
 
 -- Copiando estrutura para tabela lar_feliz.saude
 DROP TABLE IF EXISTS `saude`;
 CREATE TABLE IF NOT EXISTS `saude` (
-  `id_saude` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `fk_id_pessoal` int(11) DEFAULT NULL,
   `tipo_consulta` varchar(255) COLLATE utf8_bin DEFAULT NULL,
   `data_da_consulta` datetime DEFAULT NULL,
@@ -154,10 +179,13 @@ CREATE TABLE IF NOT EXISTS `saude` (
   `observacoes_medicas` varchar(255) COLLATE utf8_bin DEFAULT NULL,
   `anexo` varchar(255) COLLATE utf8_bin DEFAULT NULL,
   `update_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id_saude`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
--- Exportação de dados foi desmarcado.
+-- Copiando dados para a tabela lar_feliz.saude: ~0 rows (aproximadamente)
+DELETE FROM `saude`;
+/*!40000 ALTER TABLE `saude` DISABLE KEYS */;
+/*!40000 ALTER TABLE `saude` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
