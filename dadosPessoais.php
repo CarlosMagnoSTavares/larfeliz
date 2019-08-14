@@ -64,8 +64,7 @@ $limit = "$pag,$max";
 		</table>
 	</div>
 </div>
-<br><br><br>
-<br><br><br>
+
 <?php 
 include_once('include/pagination.php'); 
 include_once('include/footer.php'); 
