@@ -29,7 +29,7 @@ $colorCard8 = $adminColor.' darken-4';
               <p class="center-align">Registrar criança.</p>
             </div>
             <div class="card-action center">
-              <a href="dadosPessoais.php" class="z-depth-5 btn-small waves-effect waves-light <?php echo $dadosPessoaisColor; ?>">Registrar</a>
+              <a href="dadosPessoais.php" class="z-depth-5 btn-small waves-effect waves-light <?php echo $dadosPessoaisColor; ?>">Entrar</a>
             </div>
           </div>
         </div>
@@ -40,7 +40,7 @@ $colorCard8 = $adminColor.' darken-4';
               <p class="center-align">Cadastro da família.</p>
             </div>
             <div class="card-action center">
-              <a href="filiacao.php" class="z-depth-5 btn-small waves-effect waves-light <?php echo $filiacaoColor; ?>">Registrar</a>
+              <a href="filiacao.php" class="z-depth-5 btn-small waves-effect waves-light <?php echo $filiacaoColor; ?>">Entrar</a>
             </div>
           </div>
         </div>
@@ -51,7 +51,7 @@ $colorCard8 = $adminColor.' darken-4';
               <p class="center-align">Registrar dados escolares.</p>
             </div>
             <div class="card-action center">
-              <a href="educacao.php" class="z-depth-5 btn-small waves-effect waves-light <?php echo $educacaoColor; ?>">Registrar</a>
+              <a href="educacao.php" class="z-depth-5 btn-small waves-effect waves-light <?php echo $educacaoColor; ?>">Entrar</a>
             </div>
           </div>
         </div>
@@ -62,7 +62,7 @@ $colorCard8 = $adminColor.' darken-4';
               <p class="center-align">Dados médicos da criança.</p>
             </div>
             <div class="card-action center">
-              <a href="saude.php" class="z-depth-5 btn-small waves-effect waves-light <?php echo $saudeColor; ?>">Registrar</a>
+              <a href="saude.php" class="z-depth-5 btn-small waves-effect waves-light <?php echo $saudeColor; ?>">Entrar</a>
             </div>
           </div>
         </div>
@@ -76,7 +76,7 @@ $colorCard8 = $adminColor.' darken-4';
               <p class="center-align">Registro de atividades extracurriculares.</p>
             </div>
             <div class="card-action center">
-              <a href="atividades.php" class="z-depth-5 btn-small waves-effect waves-light <?php echo $atividadesColor; ?>">Registrar</a>
+              <a href="atividades.php" class="z-depth-5 btn-small waves-effect waves-light <?php echo $atividadesColor; ?>">Entrar</a>
             </div>
           </div>
         </div>
@@ -87,7 +87,7 @@ $colorCard8 = $adminColor.' darken-4';
               <p class="center-align">Registro de ocorrências escolares ou policiais.</p>
             </div>
             <div class="card-action center">
-              <a href="ocorrencias.php" class="z-depth-5 btn-small waves-effect waves-light <?php echo $ocorrenciasColor; ?>">Registrar</a>
+              <a href="ocorrencias.php" class="z-depth-5 btn-small waves-effect waves-light <?php echo $ocorrenciasColor; ?>">Entrar</a>
             </div>
           </div>
         </div>
@@ -98,7 +98,7 @@ $colorCard8 = $adminColor.' darken-4';
               <p class="center-align">Dados de visitas domiciliares e audiências.</p>
             </div>
             <div class="card-action center">
-              <a href="registroTecnico.php" class="z-depth-5 btn-small waves-effect waves-light <?php echo $registroTecnicoColor; ?>">Registrar</a>
+              <a href="registroTecnico.php" class="z-depth-5 btn-small waves-effect waves-light <?php echo $registroTecnicoColor; ?>">Entrar</a>
             </div>
           </div>
         </div>
@@ -109,7 +109,7 @@ $colorCard8 = $adminColor.' darken-4';
               <p class="center-align">Registrar funcinários e liberação de acessos.</p>
             </div>
             <div class="card-action center">
-              <a href="admin.php" class="z-depth-5 btn-small waves-effect waves-light <?php echo $adminColor; ?>">Registrar</a>
+              <a href="admin.php" class="z-depth-5 btn-small waves-effect waves-light <?php echo $adminColor; ?>">Entrar</a>
             </div>
           </div>
         </div>

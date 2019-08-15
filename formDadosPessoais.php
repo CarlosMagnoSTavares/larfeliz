@@ -4,6 +4,9 @@ include_once('include/header.php');
 //Default da pagina
 	$disable = "";// Default tudo habilitado
 	$btnColor = "orange"; // Default tudo laranja
+	$formPost ="insertDadosPessoais.php";
+	$telaRedirect="dadosPessoais.php";
+
 
 	// Default todos os campos sem valor
 	$nome = "";
@@ -46,24 +49,24 @@ if ($acao == 'editar' || $acao == 'excluir'|| $acao == 'ver' )
 
 			foreach ($list as $key => $value) 
 				{
-					$id = $value['id'];
-					$nome = $value['nome'];
-					$endereco = $value['endereco'];
-					$data_acolhimento = $value['data_acolhimento'];
-					$data_desligamento = $value['data_desligamento'];
-					$motivo_acolhimento = $value['motivo_acolhimento'];
-					$dados_bancarios = $value['dados_bancarios'];
-					$tipo_sanguineo = $value['tipo_sanguineo'];
-					$aspectos_gerais_obs = $value['aspectos_gerais_obs'];
-					$visitas_familiares_obs = $value['visitas_familiares_obs'];
-					$foto = $value['caminho_foto'];
-					$anexo_certidao = $value['anexo_certidao'];
-					$anexo_CPF = $value['anexo_CPF'];
-					$anexo_cartao_cidadao = $value['anexo_cartao_cidadao'];
-					$anexo_carteira_vacinacao = $value['anexo_carteira_vacinacao'];
-					$anexo_guia_recolhimento = $value['anexo_guia_recolhimento'];
-					$anexo_determinacao_acolhimento = $value['anexo_determinacao_acolhimento'];
-					$anexo_historico_escolar = $value['anexo_historico_escolar'];
+					$id = ($value['id']);
+					$nome = ($value['nome']);
+					$endereco = ($value['endereco']);
+					$data_acolhimento = ($value['data_acolhimento']);
+					$data_desligamento = ($value['data_desligamento']);
+					$motivo_acolhimento = ($value['motivo_acolhimento']);
+					$dados_bancarios = ($value['dados_bancarios']);
+					$tipo_sanguineo = ($value['tipo_sanguineo']);
+					$aspectos_gerais_obs = ($value['aspectos_gerais_obs']);
+					$visitas_familiares_obs = ($value['visitas_familiares_obs']);
+					$foto = ($value['caminho_foto']);
+					$anexo_certidao = ($value['anexo_certidao']);
+					$anexo_CPF = ($value['anexo_CPF']);
+					$anexo_cartao_cidadao = ($value['anexo_cartao_cidadao']);
+					$anexo_carteira_vacinacao = ($value['anexo_carteira_vacinacao']);
+					$anexo_guia_recolhimento = ($value['anexo_guia_recolhimento']);
+					$anexo_determinacao_acolhimento = ($value['anexo_determinacao_acolhimento']);
+					$anexo_historico_escolar = ($value['anexo_historico_escolar']);
 					$limpar = "Limpar";
 					$salvar = "editar";
 				}
@@ -81,6 +84,7 @@ if (isset($acao))
 			<div class="row" >
 				<div class="col s12 m12 center-align" >
 					<input type="hidden" name="id" value="'.$id.'">
+					<input type="hidden" name="telaRedirect" value="'.$telaRedirect.'">
 					<input type="hidden" name="table" value="'.$table.'">
 					<p>Você deseja excluir os dados abaixo?</p>
 					<input type="button" class="btn btn-small green" value="VOLTAR"  onClick="history.go(-1)">
@@ -93,8 +97,7 @@ if (isset($acao))
 }
 ?>
 
-
-<form action="controll/insertDadosPessoais.php" method="POST" enctype="multipart/form-data" >
+<form action="controll/<?php echo $formPost; ?>" method="POST" enctype="multipart/form-data" >
 	<div class="" >
 		<div class="row" >
 			<div class="col s12 m12" >

@@ -2,6 +2,8 @@
 include_once('include/header.php'); 
 require_once('controll/Crud.class.php');
 
+$formPost ="formDadosPessoais.php";
+
 //Config de cada pagina
 $table = 'dados_pessoais';
 
@@ -18,7 +20,7 @@ $limit = "$pag,$max";
 
 <div class="row">
 	<div class="col s12 m12 center-align">
-		<a class="btn green" href="formDadosPessoais.php"> + Novo registro</a>
+		<a class="btn green" href="<?php echo $formPost; ?>"> + Novo registro</a>
 	</div>
 </div>
 
@@ -53,9 +55,9 @@ $limit = "$pag,$max";
 							<td><img src="'.$caminhoFoto.'"  data-caption="'.$nome.'" class="circle materialboxed" width="35px" height="35px"></td>
 							<td class="">'.$nome.'</td>
 							<td class="center-align">'.$dataAcolhimento.'</td>
-							<td><a href="formDadosPessoais.php?acao=ver&id='.$idPessoal.'" class="btn btn-small green">Ver</a></td>
-							<td><a href="formDadosPessoais.php?acao=editar&id='.$idPessoal.'" class="btn btn-small orange">Editar</a></td>
-							<td><a href="formDadosPessoais.php?acao=excluir&id='.$idPessoal.'" class="btn btn-small red">Excluir</a></td>
+							<td><a href="'.$formPost.'?acao=ver&id='.$idPessoal.'" class="btn btn-small green">Ver</a></td>
+							<td><a href="'.$formPost.'?acao=editar&id='.$idPessoal.'" class="btn btn-small orange">Editar</a></td>
+							<td><a href="'.$formPost.'?acao=excluir&id='.$idPessoal.'" class="btn btn-small red">Excluir</a></td>
 						</tr>
 					';
 				}
