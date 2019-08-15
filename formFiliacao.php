@@ -40,7 +40,7 @@ $acao = isset($_GET['acao'])? $_GET['acao']:null;
 		"documentos/".$value['caminho_foto']:"include/sem-foto.gif";
 		$nome = ($value['nome']);
 		$id = ($value['id']);
-		$option .= '<option value="'.$fk_id_pessoal.'" '.$disable.' readonly="true" selected data-icon="'.$caminhoFoto.'">'.$nome.'</option>';
+		$option .= '<option data-icon="'.$caminhoFoto.'" value="'.$id.'">'.$nome.'</option>';
 		
 	}
 
@@ -73,7 +73,7 @@ if ($acao == 'editar' || $acao == 'excluir'|| $acao == 'ver' )
 					$dinamica_familiar_obs = ($value['dinamica_familiar_obs']);
 					$limpar = "Limpar";
 					$salvar = "editar";
-					$option .= '<option value="'.$fk_id_pessoal.'" '.$disable.' readonly="true" selected data-icon="'.$caminhoFoto.'">'.$nome.'</option>';
+					$option .= '<option data-icon="'.$caminhoFoto.'" value="'.$fk_id_pessoal.'" selected>'.$nome.'</option>';
 				}
 	} 	
 } 
@@ -107,7 +107,7 @@ if (isset($acao))
 	<div class="" >
 		<div class="row" >
 			<div class="col s12 m12" >
-				<select <?php echo ' value="'.$fk_id_pessoal.'" '.$disable; ?>  name="fk_id_pessoal" >
+				<select <?php echo  $disable; ?> name="fk_id_pessoal" >
 					<?php echo $option; ?>
 				</select>
 				<label>Nome da criança</label>

@@ -151,10 +151,10 @@ if (isset($acao))
 			    <div class="file-field" >
 			      <div class="btn <?php echo $btnColor; ?>" >
 			        <span>Foto</span>
-			        <input <?php echo  $disable; ?> name="foto" type="file" class="<?php echo $btnColor; ?>" accept="image/*"> <!--  VALUE="anexo.pdf" -->
+			        <input <?php echo  $disable; echo 'value="'.$foto.'"'; ?> name="foto" type="file" class="<?php echo $btnColor; ?>" accept="image/*"> <!--  VALUE="anexo.pdf" -->
 			      </div>
 			      <div class="file-path-wrapper" >
-			        <input class="file-path validate" type="text" >
+			        <input class="file-path validate" type="text" value="<?php echo $foto; ?>" >
 			      </div>
 			    </div>
 			 <a target="_blank" <?php echo 'href="documentos/'.$foto.'"';?>>  Download: <?php echo $foto; ?> </a>   
@@ -163,10 +163,10 @@ if (isset($acao))
 			    <div class="file-field" >
 			      <div class="btn <?php echo $btnColor; ?>" >
 			        <span>certidao</span>
-			        <input <?php echo  $disable; ?> name="anexo_certidao" type="file" class="<?php echo $btnColor; ?>" > <!--  VALUE="anexo.pdf" -->
+			        <input <?php echo  $disable; echo 'value="'.$anexo_certidao.'"'; ?> name="anexo_certidao" type="file" class="<?php echo $btnColor; ?>" > <!--  VALUE="anexo.pdf" -->
 			      </div>
 			      <div class="file-path-wrapper" >
-			        <input class="file-path validate" type="text" >
+			        <input class="file-path validate" type="text" value="<?php echo $anexo_certidao; ?>" >
 			      </div>
 			    </div>
 			 <a target="_blank" <?php echo 'href="documentos/'.$anexo_certidao.'"';?>>  Download: <?php echo $anexo_certidao; ?> </a>   
@@ -175,10 +175,10 @@ if (isset($acao))
 			    <div class="file-field" >
 			      <div class="btn <?php echo $btnColor; ?>" >
 			        <span>Cópia do CPF</span>
-			        <input <?php echo  $disable; ?> name="anexo_CPF" type="file" class="<?php echo $btnColor; ?>" > <!--  VALUE="anexo.pdf" -->
+			        <input <?php echo  $disable; echo 'value="'.$anexo_CPF.'"'; ?> name="anexo_CPF" type="file" class="<?php echo $btnColor; ?>" > <!--  VALUE="anexo.pdf" -->
 			      </div>
 			      <div class="file-path-wrapper" >
-			        <input class="file-path validate" type="text" >
+			        <input class="file-path validate" type="text" value="<?php echo $anexo_CPF; ?>" >
 			      </div>
 			    </div>
 			 <a target="_blank" <?php echo 'href="documentos/'.$anexo_CPF.'"';?>>  Download: <?php echo $anexo_CPF; ?> </a>   
@@ -187,10 +187,10 @@ if (isset($acao))
 			    <div class="file-field" >
 			      <div class="btn <?php echo $btnColor; ?>" >
 			        <span>cartao cidadao</span>
-			        <input <?php echo  $disable; ?> name="anexo_cartao_cidadao" type="file" class="<?php echo $btnColor; ?>" > <!--  VALUE="anexo.pdf" -->
+			        <input <?php echo  $disable; echo 'value="'.$anexo_cartao_cidadao.'"'; ?> name="anexo_cartao_cidadao" type="file" class="<?php echo $btnColor; ?>" > <!--  VALUE="anexo.pdf" -->
 			      </div>
 			      <div class="file-path-wrapper" >
-			        <input class="file-path validate" type="text" >
+			        <input class="file-path validate" type="text" value="<?php echo $anexo_cartao_cidadao; ?>" >
 			      </div>
 			    </div>
 			 <a target="_blank" <?php echo 'href="documentos/'.$anexo_cartao_cidadao.'"';?>>  Download: <?php echo $anexo_cartao_cidadao; ?> </a>   
@@ -199,10 +199,10 @@ if (isset($acao))
 			    <div class="file-field" >
 			      <div class="btn <?php echo $btnColor; ?>" >
 			        <span>carteira vacinacao</span>
-			        <input <?php echo  $disable; ?> name="anexo_carteira_vacinacao" type="file" class="<?php echo $btnColor; ?>" > <!--  VALUE="anexo.pdf" -->
+			        <input <?php echo  $disable; echo 'value="'.$anexo_carteira_vacinacao.'"'; ?> name="anexo_carteira_vacinacao" type="file" class="<?php echo $btnColor; ?>" > <!--  VALUE="anexo.pdf" -->
 			      </div>
 			      <div class="file-path-wrapper" >
-			        <input class="file-path validate" type="text" >
+			        <input class="file-path validate" type="text" value="<?php echo $anexo_carteira_vacinacao; ?>" >
 			      </div>
 			    </div>
 			 <a target="_blank" <?php echo 'href="documentos/'.$anexo_carteira_vacinacao.'"';?>>  Download: <?php echo $anexo_carteira_vacinacao; ?> </a>   
@@ -211,10 +211,10 @@ if (isset($acao))
 			    <div class="file-field" >
 			      <div class="btn <?php echo $btnColor; ?>" >
 			        <span>guia recolhimento</span>
-			        <input <?php echo  $disable; ?> name="anexo_guia_recolhimento" type="file" class="<?php echo $btnColor; ?>" > <!--  VALUE="anexo.pdf" -->
+			        <input <?php echo  $disable; echo 'value="'.$anexo_guia_recolhimento.'"'; ?> name="anexo_guia_recolhimento" type="file" class="<?php echo $btnColor; ?>" > <!--  VALUE="anexo.pdf" -->
 			      </div>
 			      <div class="file-path-wrapper" >
-			        <input class="file-path validate" type="text" >
+			        <input class="file-path validate" type="text" value="<?php echo $anexo_guia_recolhimento; ?>" >
 			      </div>
 			    </div>
 			 <a target="_blank" <?php echo 'href="documentos/'.$anexo_guia_recolhimento.'"';?>>  Download: <?php echo $anexo_guia_recolhimento; ?> </a>   
@@ -223,10 +223,10 @@ if (isset($acao))
 			    <div class="file-field" >
 			      <div class="btn <?php echo $btnColor; ?>" >
 			        <span>determinacao acolhimento</span>
-			        <input <?php echo  $disable; ?> name="anexo_determinacao_acolhimento" type="file" class="<?php echo $btnColor; ?>" > <!--  VALUE="anexo.pdf" -->
+			        <input <?php echo  $disable; echo 'value="'.$anexo_determinacao_acolhimento.'"'; ?> name="anexo_determinacao_acolhimento" type="file" class="<?php echo $btnColor; ?>" > <!--  VALUE="anexo.pdf" -->
 			      </div>
 			      <div class="file-path-wrapper" >
-			        <input class="file-path validate" type="text" >
+			        <input class="file-path validate" type="text" value="<?php echo $anexo_determinacao_acolhimento; ?>" >
 			      </div>
 			    </div>
 			 <a target="_blank" <?php echo 'href="documentos/'.$anexo_determinacao_acolhimento.'"';?>>  Download: <?php echo $anexo_determinacao_acolhimento; ?> </a>   
@@ -235,10 +235,10 @@ if (isset($acao))
 			    <div class="file-field" >
 			      <div class="btn <?php echo $btnColor; ?>" >
 			        <span>historico escolar</span>
-			        <input <?php echo  $disable; ?> name="anexo_historico_escolar" type="file" class="<?php echo $btnColor; ?>" > <!--  VALUE="anexo.pdf" -->
+			        <input <?php echo  $disable; echo 'value="'.$anexo_historico_escolar.'"'; ?> name="anexo_historico_escolar" type="file" class="<?php echo $btnColor; ?>" > <!--  VALUE="anexo.pdf" -->
 			      </div>
 			      <div class="file-path-wrapper" >
-			        <input class="file-path validate" type="text" >
+			        <input class="file-path validate" type="text" value="<?php echo $anexo_historico_escolar; ?>" >
 			      </div>
 			    </div>
 			 <a target="_blank" <?php echo 'href="documentos/'.$anexo_historico_escolar.'"';?>>  Download: <?php echo $anexo_historico_escolar; ?> </a>
