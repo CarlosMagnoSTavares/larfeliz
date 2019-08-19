@@ -136,10 +136,10 @@ if (isset($acao))
 			</div>
 			<div class="row" >
 				<div class="col s12 m6" >
-					Aspectos gerais obs:<textarea <?php echo  $disable; ?> type="text" name="aspectos_gerais_obs" class="materialize-textarea"  > <?php echo $aspectos_gerais_obs; ?> </textarea>
+					Aspectos gerais obs:<textarea <?php echo  $disable; ?> type="text" name="aspectos_gerais_obs" class="materialize-textarea"><?php echo $aspectos_gerais_obs; ?></textarea>
 				</div>
 				<div class="col s12 m6" >
-					Familiares obs:<textarea <?php echo  $disable; ?> type="text" name="visitas_familiares_obs" class="materialize-textarea" > <?php echo $visitas_familiares_obs; ?> </textarea>
+					Familiares obs:<textarea <?php echo  $disable; ?> type="text" name="visitas_familiares_obs" class="materialize-textarea"><?php echo $visitas_familiares_obs; ?></textarea>
 				</div>
 			</div>
 		</div>

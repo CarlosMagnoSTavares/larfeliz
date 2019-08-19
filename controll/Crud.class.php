@@ -15,6 +15,7 @@ class Crud extends Conn
 		{
 			$result = move_uploaded_file($anexo['tmp_name'], $dir.$new_name); //Fazer upload do arquivo
 			$result = $result ? $new_name:NULL;
+			
 			return $result;
 		} 
 		else 
@@ -30,6 +31,7 @@ class Crud extends Conn
 		$limit = !empty($limit)? " limit ". $limit : NULL;
 		$con = Conn::conectar();
 		$querySelect = 'SELECT * FROM '.addslashes($table).$where.$orderBy.$limit.' ;';
+			// Conn::log($querySelect);//GERA LOG DA AÇÂO
 		$querySelect = mysqli_query($con,$querySelect);
 		mysqli_close($con);
  		return $querySelect;
@@ -39,6 +41,7 @@ class Crud extends Conn
 	{
 		$con = Conn::conectar();
 		$queryPagination = "SELECT CEILING(SUM(1)/$limit) AS PAG FROM $table";
+			// Conn::log($queryPagination);//GERA LOG DA AÇÂO
 		$queryPagination = mysqli_query($con,$queryPagination);
 		mysqli_close($con);
 		return $queryPagination;
@@ -52,6 +55,7 @@ class Crud extends Conn
 		$values = "'".implode("','", $values)."'";
 		$con = Conn::conectar();
 		$queryInsert = "INSERT INTO $table ($columns) VALUES ($values) ;";
+			// Conn::log($queryInsert);//GERA LOG DA AÇÂO
 		$resultInsert = mysqli_query($con,$queryInsert);
 		mysqli_close($con);
 
@@ -69,7 +73,8 @@ class Crud extends Conn
 		$where = !empty($where)? " WHERE ". $where : NULL;
 
 		$con = Conn::conectar();
-		$queryUpdate = "UPDATE $table SET $setValues  $where;";
+		$queryUpdate = 'UPDATE '.$table.' SET '.$setValues.$where.';';
+			//Conn::log($queryUpdate);//GERA LOG DA AÇÂO
 		$texto =  $queryUpdate;
 		$queryUpdate = mysqli_query($con,$queryUpdate);
 		mysqli_close($con);
@@ -88,6 +93,7 @@ class Crud extends Conn
 
 		$con = Conn::conectar();
 		$queryDelete = "DELETE FROM $table $where;";
+			// Conn::log($queryDelete);//GERA LOG DA AÇÂO
 		$queryDelete = mysqli_query($con,$queryDelete);
 		mysqli_close($con);
 		

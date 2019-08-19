@@ -21,6 +21,24 @@ class Conn
 		
 
 	}
+
+	public function log($msg=NULL)
+	{
+		date_default_timezone_set('America/Sao_Paulo');
+		$dataLocal = date('d/m/Y H:i:s', time());
+		$msg = isset($msg) && !empty($msg)? "[".$dataLocal."] ".$msg."\n" : "";
+
+		if (!empty($msg))
+		{
+			// Abre ou cria o arquivo bloco1.txt
+			// "a" representa que o arquivo é aberto para ser escrito
+			$fp = fopen("log.txt", "a");
+			// Escreve a mensagem passada através da variável $msg
+			$escreve = fwrite($fp, $msg);
+			// Fecha o arquivo
+			fclose($fp);
+		}
+	}
 }
 
 ?>

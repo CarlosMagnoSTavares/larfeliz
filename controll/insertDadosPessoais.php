@@ -24,28 +24,28 @@ if (!empty($_POST)) {
 
 	//Guarda anexo vindo do POST na pasta e pega o caminho como resposta para salvar no banco↓
 	$foto = isset($_FILES['foto']) && $_FILES['foto']['size'] > 0 ? 
-			$crud->saveFile("foto", $_FILES['foto']): "zero";
+			$crud->saveFile("foto", $_FILES['foto']): "";
 
 	$anexo_certidao = isset($_FILES['anexo_certidao']) && $_FILES['anexo_certidao']['size'] > 0 ? 
-			$crud->saveFile("anexo_certidao", $_FILES['anexo_certidao']): "zero";
+			$crud->saveFile("anexo_certidao", $_FILES['anexo_certidao']): "";
 
 	$anexo_CPF = isset($_FILES['anexo_CPF']) && $_FILES['anexo_CPF']['size'] > 0 ? 
-			$crud->saveFile("anexo_CPF", $_FILES['anexo_CPF']): "zero";
+			$crud->saveFile("anexo_CPF", $_FILES['anexo_CPF']): "";
 
 	$anexo_cartao_cidadao = isset($_FILES['anexo_cartao_cidadao']) && $_FILES['anexo_cartao_cidadao']['size'] > 0 ? 
-			$crud->saveFile("anexo_cartao_cidadao", $_FILES['anexo_cartao_cidadao']): "zero";
+			$crud->saveFile("anexo_cartao_cidadao", $_FILES['anexo_cartao_cidadao']): "";
 
 	$anexo_carteira_vacinacao = isset($_FILES['anexo_carteira_vacinacao']) && $_FILES['anexo_carteira_vacinacao']['size'] > 0 ? 
-			$crud->saveFile("anexo_carteira_vacinacao", $_FILES['anexo_carteira_vacinacao']): "zero";
+			$crud->saveFile("anexo_carteira_vacinacao", $_FILES['anexo_carteira_vacinacao']): "";
 
 	$anexo_guia_recolhimento = isset($_FILES['anexo_guia_recolhimento']) && $_FILES['anexo_guia_recolhimento']['size'] > 0 ? 
-			$crud->saveFile("anexo_guia_recolhimento", $_FILES['anexo_guia_recolhimento']): "zero";
+			$crud->saveFile("anexo_guia_recolhimento", $_FILES['anexo_guia_recolhimento']): "";
 
 	$anexo_determinacao_acolhimento = isset($_FILES['anexo_determinacao_acolhimento']) && $_FILES['anexo_determinacao_acolhimento']['size'] > 0 ? 
-			$crud->saveFile("anexo_determinacao_acolhimento", $_FILES['anexo_determinacao_acolhimento']): "zero";
+			$crud->saveFile("anexo_determinacao_acolhimento", $_FILES['anexo_determinacao_acolhimento']): "";
 
 	$anexo_historico_escolar = isset($_FILES['anexo_historico_escolar']) && $_FILES['anexo_historico_escolar']['size'] > 0 ? 
-			$crud->saveFile("anexo_historico_escolar", $_FILES['anexo_historico_escolar']): "zero";
+			$crud->saveFile("anexo_historico_escolar", $_FILES['anexo_historico_escolar']): "";
 
 
 	//Garante a persistencia dos anexos na edição (Caso não informe o anexo ele mantem o antigo)
@@ -54,14 +54,14 @@ if (!empty($_POST)) {
 		$anexos = $crud->select($table,$where,NULL,NULL);
 		foreach ($anexos as $key => $anexo) 
 		{
-			$foto = ($foto=="zero")? $anexo['caminho_foto'] : $foto ;
-			$anexo_certidao = ($anexo_certidao=="zero")? $anexo['anexo_certidao'] : $anexo_certidao ;
-			$anexo_CPF = ($anexo_CPF=="zero")? $anexo['anexo_CPF'] : $anexo_CPF ;
-			$anexo_cartao_cidadao = ($anexo_cartao_cidadao=="zero")? $anexo['anexo_cartao_cidadao'] : $anexo_cartao_cidadao ;
-			$anexo_carteira_vacinacao = ($anexo_carteira_vacinacao=="zero")? $anexo['anexo_carteira_vacinacao'] : $anexo_carteira_vacinacao ;
-			$anexo_guia_recolhimento = ($anexo_guia_recolhimento=="zero")? $anexo['anexo_guia_recolhimento'] : $anexo_guia_recolhimento ;
-			$anexo_determinacao_acolhimento = ($anexo_determinacao_acolhimento=="zero")? $anexo['anexo_determinacao_acolhimento'] : $anexo_determinacao_acolhimento ;
-			$anexo_historico_escolar = ($anexo_historico_escolar=="zero")? $anexo['anexo_historico_escolar'] : $anexo_historico_escolar ;
+			$foto = ($foto=="")? $anexo['caminho_foto'] : $foto ;
+			$anexo_certidao = ($anexo_certidao=="")? $anexo['anexo_certidao'] : $anexo_certidao ;
+			$anexo_CPF = ($anexo_CPF=="")? $anexo['anexo_CPF'] : $anexo_CPF ;
+			$anexo_cartao_cidadao = ($anexo_cartao_cidadao=="")? $anexo['anexo_cartao_cidadao'] : $anexo_cartao_cidadao ;
+			$anexo_carteira_vacinacao = ($anexo_carteira_vacinacao=="")? $anexo['anexo_carteira_vacinacao'] : $anexo_carteira_vacinacao ;
+			$anexo_guia_recolhimento = ($anexo_guia_recolhimento=="")? $anexo['anexo_guia_recolhimento'] : $anexo_guia_recolhimento ;
+			$anexo_determinacao_acolhimento = ($anexo_determinacao_acolhimento=="")? $anexo['anexo_determinacao_acolhimento'] : $anexo_determinacao_acolhimento ;
+			$anexo_historico_escolar = ($anexo_historico_escolar=="")? $anexo['anexo_historico_escolar'] : $anexo_historico_escolar ;
 		}
 	}
 
@@ -107,7 +107,7 @@ if (!empty($_POST)) {
 		'anexo_determinacao_acolhimento',
 		'anexo_historico_escolar'
 	);
-	
+
 
 	$count = count($columns);
 	$separador = "";
