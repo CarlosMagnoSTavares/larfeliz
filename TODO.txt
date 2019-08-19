@@ -19,7 +19,3 @@ Módulos: (9)
 Telas: HISTORICO DE ACOLHIDOS (APENDICE SEM LIGAÇÃO)
 
 
-
-
-AO EDITAR PERDE ANEXO (FUDEO)
-	http://localhost/larfeliz/formDadosPessoais.php?acao=editar&id=15
