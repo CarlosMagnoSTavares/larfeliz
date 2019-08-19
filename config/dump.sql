@@ -1,3 +1,5 @@
+CREATE view vw_filiacao as 
+SELECT d.nome, d.caminho_foto, f.* FROM filiacao f INNER JOIN dados_pessoais d ON d.id = f.fk_id_pessoal;
 -- --------------------------------------------------------
 -- Servidor:                     localhost
 -- Versão do servidor:           5.7.24 - MySQL Community Server (GPL)
