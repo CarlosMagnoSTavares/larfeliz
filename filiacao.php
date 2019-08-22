@@ -6,12 +6,11 @@ require_once('controll/Crud.class.php');
 $table = 'vw_filiacao';
 $formPost ="formFiliacao.php";
 
+//Não alterar "order e paginação" (TODAS AS TABELAS PRECISAM DE UMA COLUNA ID PRIMARY KEY)
 $orderColumn = isset($_GET['orderColumn']) && !empty($_GET['orderColumn'])? trim($_GET['orderColumn']): "id desc";
 $where = " id >= 0";
 $orderBy = $orderColumn;
 $max = 25;
-
-//Não alterar
 $pag = (isset($_GET['startPag']) && !empty($_GET['startPag']) && is_numeric($_GET['startPag']))? ($_GET['startPag']*$max): "0";
 $limit = "$pag,$max";
 //Fim
@@ -34,10 +33,11 @@ $limit = "$pag,$max";
 		          <th><a href="?orderColumn=nivel_parentesco">Parentesco</a></th>
 		          <th><a href="?orderColumn=nome_parente">Nome do Parente</a></th>
 
-
+		          <!-- Padrão nao alterar -->
 		          <th><a href="?orderColumn=nome_parente">Ver</a></th>
 		          <th><a href="?orderColumn=nome_parente">Editar</a></th>
 		          <th><a href="?orderColumn=nome_parente">Excluir</a></th>
+		          <!-- Padrão nao alterar fim -->
 		      </tr>
 		    </thead>
 			<tbody>
@@ -60,10 +60,11 @@ $limit = "$pag,$max";
 						<td class="center-align">'.$nivel_parentesco.'</td>
 						<td class="">'.$nome_parente.'</td>
 
-
-						<td><a href="'.$formPost.'?acao=ver&id='.$idFiliacao.'" class="btn btn-small green">Ver</a></td>
-						<td><a href="'.$formPost.'?acao=editar&id='.$idFiliacao.'" class="btn btn-small orange">Editar</a></td>
-						<td><a href="'.$formPost.'?acao=excluir&id='.$idFiliacao.'" class="btn btn-small red">Excluir</a></td>
+						<!-- Padrão nao alterar -->
+							<td><a href="'.$formPost.'?acao=ver&id='.$idFiliacao.'" class="btn btn-small green">Ver</a></td>
+							<td><a href="'.$formPost.'?acao=editar&id='.$idFiliacao.'" class="btn btn-small orange">Editar</a></td>
+							<td><a href="'.$formPost.'?acao=excluir&id='.$idFiliacao.'" class="btn btn-small red">Excluir</a></td>
+						<!-- Padrão nao alterar fim-->
 					</tr>
 					';
 				}

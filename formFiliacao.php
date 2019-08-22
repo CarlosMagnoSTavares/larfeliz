@@ -44,7 +44,7 @@ $acao = isset($_GET['acao'])? $_GET['acao']:null;
 		
 	}
 
-//EDITAR
+//EDITAR carrega dados no form
 if ($acao == 'editar' || $acao == 'excluir'|| $acao == 'ver' ) 
 {
 	if (isset($_GET['id']) && is_numeric($_GET['id']) ) 
@@ -78,7 +78,7 @@ if ($acao == 'editar' || $acao == 'excluir'|| $acao == 'ver' )
 	} 	
 } 
 
-//EXCLUIR
+//EXCLUIR mostra botão permitindo exclusão
 if (isset($acao)) 
 {
 	$disable = ($acao=='excluir' || $acao=='ver')? 'disabled="true"':NULL; //Desabilita os botões 

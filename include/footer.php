@@ -1,13 +1,18 @@
 <!-- AQUI COMEÇA O FOOTER -->
+
+<br><br><br>
+<div align="center" class="center-align">
+  <!-- <img id="logo-container" src="css/voa-logo.png" class="brand-logo" width="200" height="75"></img> -->
+</div>
 <br><br><br>
 <br><br><br>
-<br><br><br>
-<br><br><br>
+
+
   </div>
   <footer class="page-footer orange">
     <div class="container">
       <div class="row">
-        <div class="col l6 s12">
+        <div class="col l3 s12">
           <h5 class="white-text">Lar Feliz</h5>
           <p class="grey-text text-lighten-4">
             Endereço:
@@ -29,13 +34,19 @@
             <li><a class="white-text" href="#!">contato@larfeliz.com.br</a></li>
           </ul>
         </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Criado por</h5>
+          <ul>
+            <li><img id="logo-container" src="css/voa-logo.png" class="brand-logo" width="160" height="66"></img></li>
+          </ul>
+        </div>
       </div>
     </div>
     <div class="footer-copyright footer-copyright orange darken-3">
       <div class="container right-align">
-      Criado por <a class="orange-text text-lighten-3" >Ambev</a>
-      <a target="_blank" href="http://www.programavoa.prosas.com.br/">
-        <img id="logo-container" src="css/voa-logo.png" class="brand-logo"></img>
+      Criado por <a class="orange-text text-lighten-3" >Ambev VOAR</a>
+      <a target="_blank" href="#">
+        
       </a>
       </div>
     </div>
