@@ -29,10 +29,7 @@ CREATE TABLE IF NOT EXISTS `admin` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
--- Copiando dados para a tabela lar_feliz.admin: ~0 rows (aproximadamente)
-/*!40000 ALTER TABLE `admin` DISABLE KEYS */;
-/*!40000 ALTER TABLE `admin` ENABLE KEYS */;
-
+-- Exportação de dados foi desmarcado.
 -- Copiando estrutura para tabela lar_feliz.atividade
 CREATE TABLE IF NOT EXISTS `atividade` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -44,10 +41,7 @@ CREATE TABLE IF NOT EXISTS `atividade` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
--- Copiando dados para a tabela lar_feliz.atividade: ~0 rows (aproximadamente)
-/*!40000 ALTER TABLE `atividade` DISABLE KEYS */;
-/*!40000 ALTER TABLE `atividade` ENABLE KEYS */;
-
+-- Exportação de dados foi desmarcado.
 -- Copiando estrutura para tabela lar_feliz.dados_pessoais
 CREATE TABLE IF NOT EXISTS `dados_pessoais` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -72,12 +66,7 @@ CREATE TABLE IF NOT EXISTS `dados_pessoais` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
--- Copiando dados para a tabela lar_feliz.dados_pessoais: ~2 rows (aproximadamente)
-/*!40000 ALTER TABLE `dados_pessoais` DISABLE KEYS */;
-REPLACE INTO `dados_pessoais` (`id`, `nome`, `caminho_foto`, `endereco`, `data_acolhimento`, `motivo_acolhimento`, `anexo_certidao`, `anexo_CPF`, `anexo_cartao_cidadao`, `anexo_carteira_vacinacao`, `anexo_guia_recolhimento`, `anexo_determinacao_acolhimento`, `anexo_historico_escolar`, `dados_bancarios`, `tipo_sanguineo`, `aspectos_gerais_obs`, `visitas_familiares_obs`, `data_desligamento`, `update_at`) VALUES
-  (14, 'Teste joÃ£o', '', '', '2019-08-14', '', '', '', '', '', '', '', '', '', '', '  ', '  ', '', '2019-08-14 23:04:36');
-/*!40000 ALTER TABLE `dados_pessoais` ENABLE KEYS */;
-
+-- Exportação de dados foi desmarcado.
 -- Copiando estrutura para tabela lar_feliz.educacao
 CREATE TABLE IF NOT EXISTS `educacao` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -95,10 +84,7 @@ CREATE TABLE IF NOT EXISTS `educacao` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
--- Copiando dados para a tabela lar_feliz.educacao: ~0 rows (aproximadamente)
-/*!40000 ALTER TABLE `educacao` DISABLE KEYS */;
-/*!40000 ALTER TABLE `educacao` ENABLE KEYS */;
-
+-- Exportação de dados foi desmarcado.
 -- Copiando estrutura para tabela lar_feliz.filiacao
 CREATE TABLE IF NOT EXISTS `filiacao` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -113,13 +99,7 @@ CREATE TABLE IF NOT EXISTS `filiacao` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
--- Copiando dados para a tabela lar_feliz.filiacao: ~2 rows (aproximadamente)
-/*!40000 ALTER TABLE `filiacao` DISABLE KEYS */;
-REPLACE INTO `filiacao` (`id`, `fk_id_pessoal`, `nivel_parentesco`, `nome_parente`, `Endereco`, `telefone`, `atividade_profissional`, `dinamica_familiar_obs`, `update_at`) VALUES
-  (3, 15, 'Pai', 'JÃ£o marcos', 'RUa', '132131', 'Teste', ' Normazinho ', '2019-08-14 23:02:30'),
-  (4, 14, 'Pai do jÃ£o pai', 'Jao pai', 'end', 'tel', 'ativ', ' dinami  ', '2019-08-14 23:02:12');
-/*!40000 ALTER TABLE `filiacao` ENABLE KEYS */;
-
+-- Exportação de dados foi desmarcado.
 -- Copiando estrutura para tabela lar_feliz.ocorrencia
 CREATE TABLE IF NOT EXISTS `ocorrencia` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -133,10 +113,7 @@ CREATE TABLE IF NOT EXISTS `ocorrencia` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
--- Copiando dados para a tabela lar_feliz.ocorrencia: ~0 rows (aproximadamente)
-/*!40000 ALTER TABLE `ocorrencia` DISABLE KEYS */;
-/*!40000 ALTER TABLE `ocorrencia` ENABLE KEYS */;
-
+-- Exportação de dados foi desmarcado.
 -- Copiando estrutura para tabela lar_feliz.registro_tecnico
 CREATE TABLE IF NOT EXISTS `registro_tecnico` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -150,10 +127,7 @@ CREATE TABLE IF NOT EXISTS `registro_tecnico` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
--- Copiando dados para a tabela lar_feliz.registro_tecnico: ~0 rows (aproximadamente)
-/*!40000 ALTER TABLE `registro_tecnico` DISABLE KEYS */;
-/*!40000 ALTER TABLE `registro_tecnico` ENABLE KEYS */;
-
+-- Exportação de dados foi desmarcado.
 -- Copiando estrutura para tabela lar_feliz.saude
 CREATE TABLE IF NOT EXISTS `saude` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -169,10 +143,7 @@ CREATE TABLE IF NOT EXISTS `saude` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
--- Copiando dados para a tabela lar_feliz.saude: ~0 rows (aproximadamente)
-/*!40000 ALTER TABLE `saude` DISABLE KEYS */;
-/*!40000 ALTER TABLE `saude` ENABLE KEYS */;
-
+-- Exportação de dados foi desmarcado.
 -- Copiando estrutura para view lar_feliz.vw_filiacao
 -- Criando tabela temporária para evitar erros de dependência de VIEW
 CREATE TABLE `vw_filiacao` (
