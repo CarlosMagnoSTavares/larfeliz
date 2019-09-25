@@ -1,3 +1,7 @@
+<?php 
+$titulo = isset($titulo)? "<b>".$titulo."</b>": "Bem-vindo educador <br><b> Nome do Educador </b>";
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -33,10 +37,11 @@
     <div class="container">
       <br><br>
       <div class="row center">
-        <h5 class="header col s12 light">Bem-vindo educador <br><b> Carlos Tavares </b></h5>
+        <h5 class="header col s12 light"><?php echo $titulo; ?></h5>
       </div>
       <br><br>
     </div>
   </div>
   <div class="container">
 <!-- AQUI TERMINA O HEADER -->
+

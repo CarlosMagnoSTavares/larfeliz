@@ -109,12 +109,4 @@ saude
   CREATE TABLE
   nome
 
-caminho_foto
-  id
-  fk_id_pessoal
-  nivel_parentesco
-  nome_parente
-  Endereco
-  telefone
-  atividade_profissional
-  dinamica_familiar_obs
+

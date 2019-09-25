@@ -1,0 +1,170 @@
+/* 2019-09-25 18:55:32 [] */ /* Escrevendo o arquivo de log de sessão agora: C:\laragon\www\larfeliz\logDB\logDB.txt\000001.log */
+/* 2019-09-25 19:00:46 [Laragon] */ /* Conectando em localhost via MySQL (TCP/IP), usuário root, usando a senha: No... */
+/* 2019-09-25 19:00:46 [Laragon] */ SELECT CONNECTION_ID();
+/* 2019-09-25 19:00:46 [Laragon] */ /* Conectado. Thread-ID: 18 */
+/* 2019-09-25 19:00:46 [Laragon] */ /* CharacterSet: utf8mb4 */
+/* 2019-09-25 19:00:46 [Laragon] */ SHOW STATUS;
+/* 2019-09-25 19:00:46 [Laragon] */ SHOW VARIABLES;
+/* 2019-09-25 19:00:46 [Laragon] */ SHOW DATABASES;
+/* 2019-09-25 19:00:46 [Laragon] */ SHOW OPEN TABLES FROM lar_feliz WHERE `in_use`!=0;
+/* 2019-09-25 19:00:46 [Laragon] */ USE `lar_feliz`;
+/* 2019-09-25 19:00:46 [] */ /* Entrando na sessão "Laragon" */
+/* 2019-09-25 19:00:46 [Laragon] */ SELECT `DEFAULT_COLLATION_NAME` FROM `information_schema`.`SCHEMATA` WHERE `SCHEMA_NAME`='lar_feliz';
+/* 2019-09-25 19:00:46 [Laragon] */ SHOW TABLE STATUS FROM `lar_feliz`;
+/* 2019-09-25 19:00:47 [Laragon] */ SHOW FUNCTION STATUS WHERE `Db`='lar_feliz';
+/* 2019-09-25 19:00:47 [Laragon] */ SHOW PROCEDURE STATUS WHERE `Db`='lar_feliz';
+/* 2019-09-25 19:00:47 [Laragon] */ SHOW TRIGGERS FROM `lar_feliz`;
+/* 2019-09-25 19:00:47 [Laragon] */ SELECT `DEFAULT_COLLATION_NAME` FROM `information_schema`.`SCHEMATA` WHERE `SCHEMA_NAME`='information_schema';
+/* 2019-09-25 19:00:47 [Laragon] */ SHOW TABLE STATUS FROM `information_schema`;
+/* 2019-09-25 19:00:47 [Laragon] */ SHOW FUNCTION STATUS WHERE `Db`='information_schema';
+/* 2019-09-25 19:00:47 [Laragon] */ SHOW PROCEDURE STATUS WHERE `Db`='information_schema';
+/* 2019-09-25 19:00:47 [Laragon] */ SHOW TRIGGERS FROM `information_schema`;
+/* 2019-09-25 19:00:47 [Laragon] */ SHOW EVENTS FROM `information_schema`;
+/* 2019-09-25 19:00:47 [Laragon] */ SELECT *, EVENT_SCHEMA AS `Db`, EVENT_NAME AS `Name` FROM information_schema.`EVENTS` WHERE `EVENT_SCHEMA`='lar_feliz';
+/* 2019-09-25 19:00:53 [Laragon] */ SHOW CREATE TABLE `lar_feliz`.`educacao`;
+/* 2019-09-25 19:00:53 [Laragon] */ SHOW COLLATION;
+/* 2019-09-25 19:00:53 [Laragon] */ SHOW ENGINES;
+/* 2019-09-25 19:18:05 [Laragon] */ SELECT * FROM educacao;
+/* 2019-09-25 19:18:05 [] */ /* Registros afetados: 0  Registros encontrados: 0  Avisos: 0  Duração de 1 consulta: 0,000 sec. */
+/* 2019-09-25 19:18:16 [Laragon] */ SHOW CREATE TABLE `lar_feliz`.`dados_pessoais`;
+/* 2019-09-25 19:18:19 [Laragon] */ SHOW CREATE TABLE `lar_feliz`.`educacao`;
+/* 2019-09-25 19:18:35 [Laragon] */ SELECT  * FROM educacao e INNER JOIN dados_pessoais d ON d.id = e.fk_id_pessoal;
+/* 2019-09-25 19:18:35 [] */ /* Registros afetados: 0  Registros encontrados: 0  Avisos: 0  Duração de 1 consulta: 0,000 sec. */
+/* 2019-09-25 19:18:51 [Laragon] */ SELECT d.nome,d.caminho_foto, e.* FROM educacao e INNER JOIN dados_pessoais d ON d.id = e.fk_id_pessoal;
+/* 2019-09-25 19:18:51 [] */ /* Registros afetados: 0  Registros encontrados: 0  Avisos: 0  Duração de 1 consulta: 0,000 sec. */
+/* 2019-09-25 19:18:52 [Laragon] */ SELECT d.nome,d.caminho_foto, e.* FROM educacao e INNER JOIN dados_pessoais d ON d.id = e.fk_id_pessoal;
+/* 2019-09-25 19:18:52 [] */ /* Registros afetados: 0  Registros encontrados: 0  Avisos: 0  Duração de 1 consulta: 0,000 sec. */
+/* 2019-09-25 19:19:02 [Laragon] */ CREATE VIEW vw_educacao AS 
+SELECT d.nome,d.caminho_foto, e.* FROM educacao e INNER JOIN dados_pessoais d ON d.id = e.fk_id_pessoal;
+/* 2019-09-25 19:19:02 [] */ /* Registros afetados: 0  Registros encontrados: 0  Avisos: 0  Duração de 1 consulta: 0,047 sec. */
+/* 2019-09-25 19:19:15 [Laragon] */ SELECT * FROM vw_educacao;
+/* 2019-09-25 19:19:15 [] */ /* Registros afetados: 0  Registros encontrados: 0  Avisos: 0  Duração de 1 consulta: 0,000 sec. */
+/* 2019-09-25 19:19:42 [Laragon] */ SELECT * FROM dados_pessoais;
+/* 2019-09-25 19:19:42 [] */ /* Registros afetados: 0  Registros encontrados: 2  Avisos: 0  Duração de 1 consulta: 0,000 sec. */
+/* 2019-09-25 19:19:50 [Laragon] */ SELECT * FROM dados_pessoais
+
+SELECT * FROM educacao;
+/* 2019-09-25 19:19:50 [Laragon] */ /* Erro SQL (1064): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'SELECT * FROM educacao' at line 3 */
+/* 2019-09-25 19:19:51 [] */ /* Registros afetados: 0  Registros encontrados: 0  Avisos: 0  Duração de 0 of 1 consulta: 0,000 sec. */
+/* 2019-09-25 19:19:53 [Laragon] */ SELECT * FROM educacao;
+/* 2019-09-25 19:19:53 [] */ /* Registros afetados: 0  Registros encontrados: 0  Avisos: 0  Duração de 1 consulta: 0,000 sec. */
+/* 2019-09-25 19:19:57 [Laragon] */ SHOW CREATE TABLE `lar_feliz`.`educacao`;
+/* 2019-09-25 19:20:56 [Laragon] */ INSERT INTO `lar_feliz`.`educacao` (`fk_id_pessoal`, `ano`, `tipo_escolaridade`, `escola`, `nome_pessoa_contato`, `numero_tel`, `numero_cel`, `atividade_compl`) VALUES ('15', '2019', 'Superior', 'Escola SP', 'Carlos', '35451206', '19997752619', 'Sem atividades');
+/* 2019-09-25 19:20:57 [Laragon] */ SELECT LAST_INSERT_ID();
+/* 2019-09-25 19:20:57 [Laragon] */ SELECT `id`, `fk_id_pessoal`, `ano`, `tipo_escolaridade`, `escola`, `nome_pessoa_contato`, `numero_tel`, `numero_cel`, `anexo_rel_prim_semestre`, `anexo_rel_segun_semestre`, `atividade_compl`, `update_at` FROM `lar_feliz`.`educacao` WHERE  `id`=1;
+/* 2019-09-25 19:57:56 [Laragon] */ SELECT * FROM atividades;
+/* 2019-09-25 19:57:56 [Laragon] */ /* Erro SQL (1146): Table 'lar_feliz.atividades' doesn't exist */
+/* 2019-09-25 19:57:57 [] */ /* Registros afetados: 0  Registros encontrados: 0  Avisos: 0  Duração de 0 of 1 consulta: 0,000 sec. */
+/* 2019-09-25 19:57:58 [Laragon] */ SELECT * FROM atividade;
+/* 2019-09-25 19:57:58 [] */ /* Registros afetados: 0  Registros encontrados: 0  Avisos: 0  Duração de 1 consulta: 0,000 sec. */
+/* 2019-09-25 19:58:13 [Laragon] */ SHOW CREATE TABLE `lar_feliz`.`atividade`;
+/* 2019-09-25 19:58:17 [Laragon] */ SELECT * FROM atividade a INNER JOIN dados_pessoais d ON d.id = a.fk_id_pessoal;
+/* 2019-09-25 19:58:17 [] */ /* Registros afetados: 0  Registros encontrados: 0  Avisos: 0  Duração de 1 consulta: 0,000 sec. */
+/* 2019-09-25 19:58:38 [Laragon] */ SELECT d.nome,d.caminho_foto, a.* FROM atividade a INNER JOIN dados_pessoais d ON d.id = a.fk_id_pessoal;
+/* 2019-09-25 19:58:38 [] */ /* Registros afetados: 0  Registros encontrados: 0  Avisos: 0  Duração de 1 consulta: 0,000 sec. */
+/* 2019-09-25 19:58:55 [Laragon] */ CREATE VIEW vw_atividade AS 
+SELECT d.nome,d.caminho_foto, a.* 
+FROM atividade a INNER JOIN dados_pessoais d ON d.id = a.fk_id_pessoal;
+/* 2019-09-25 19:58:56 [] */ /* Registros afetados: 0  Registros encontrados: 0  Avisos: 0  Duração de 1 consulta: 0,125 sec. */
+/* 2019-09-25 19:59:49 [Laragon] */ CREATE VIEW vw_ocorrencia AS 
+SELECT d.nome,d.caminho_foto, 
+
+o.* 
+
+FROM 
+
+ocorrencia o 
+
+INNER JOIN dados_pessoais d ON d.id = 
+
+o.fk_id_pessoal;
+/* 2019-09-25 19:59:49 [] */ /* Registros afetados: 0  Registros encontrados: 0  Avisos: 0  Duração de 1 consulta: 0,203 sec. */
+/* 2019-09-25 20:00:19 [Laragon] */ CREATE VIEW vw_registro_tecnico AS 
+SELECT d.nome,d.caminho_foto, 
+
+r.* 
+
+FROM 
+
+registro_tecnico r
+
+INNER JOIN dados_pessoais d ON d.id = 
+
+r.fk_id_pessoal;
+/* 2019-09-25 20:00:19 [Laragon] */ /* Erro SQL (1054): Unknown column 'r.fk_id_pessoal' in 'on clause' */
+/* 2019-09-25 20:00:22 [] */ /* Registros afetados: 0  Registros encontrados: 0  Avisos: 0  Duração de 0 of 1 consulta: 0,000 sec. */
+/* 2019-09-25 20:00:32 [Laragon] */ SELECT * FROM registro_tecnico;
+/* 2019-09-25 20:00:32 [] */ /* Registros afetados: 0  Registros encontrados: 0  Avisos: 0  Duração de 1 consulta: 0,000 sec. */
+/* 2019-09-25 20:01:20 [Laragon] */ SHOW CREATE TABLE `lar_feliz`.`registro_tecnico`;
+/* 2019-09-25 20:01:42 [Laragon] */ ALTER TABLE `registro_tecnico`
+	ADD COLUMN `fk_id_pessoal` INT(11) NULL DEFAULT NULL AFTER `fk_id_filiacao_visita`;
+/* 2019-09-25 20:01:43 [Laragon] */ SELECT `DEFAULT_COLLATION_NAME` FROM `information_schema`.`SCHEMATA` WHERE `SCHEMA_NAME`='lar_feliz';
+/* 2019-09-25 20:01:43 [Laragon] */ SHOW TABLE STATUS FROM `lar_feliz`;
+/* 2019-09-25 20:01:43 [Laragon] */ SHOW FUNCTION STATUS WHERE `Db`='lar_feliz';
+/* 2019-09-25 20:01:43 [Laragon] */ SHOW PROCEDURE STATUS WHERE `Db`='lar_feliz';
+/* 2019-09-25 20:01:43 [Laragon] */ SHOW TRIGGERS FROM `lar_feliz`;
+/* 2019-09-25 20:01:43 [Laragon] */ SELECT *, EVENT_SCHEMA AS `Db`, EVENT_NAME AS `Name` FROM information_schema.`EVENTS` WHERE `EVENT_SCHEMA`='lar_feliz';
+/* 2019-09-25 20:01:43 [Laragon] */ SHOW CREATE TABLE `lar_feliz`.`registro_tecnico`;
+/* 2019-09-25 20:01:43 [] */ /* Entrando na sessão "Laragon" */
+/* 2019-09-25 20:01:43 [Laragon] */ SHOW CREATE TABLE `lar_feliz`.`dados_pessoais`;
+/* 2019-09-25 20:01:49 [Laragon] */ SHOW CREATE TABLE `lar_feliz`.`educacao`;
+/* 2019-09-25 20:01:52 [Laragon] */ SHOW CREATE TABLE `lar_feliz`.`dados_pessoais`;
+/* 2019-09-25 20:01:57 [Laragon] */ CREATE VIEW vw_registro_tecnico AS 
+SELECT d.nome,d.caminho_foto, 
+
+r.* 
+
+FROM 
+
+registro_tecnico r
+
+INNER JOIN dados_pessoais d ON d.id = 
+
+r.fk_id_pessoal;
+/* 2019-09-25 20:01:57 [] */ /* Registros afetados: 0  Registros encontrados: 0  Avisos: 0  Duração de 1 consulta: 0,062 sec. */
+/* 2019-09-25 20:02:15 [Laragon] */ SHOW DATABASES;
+/* 2019-09-25 20:02:15 [] */ /* Entrando na sessão "Laragon" */
+/* 2019-09-25 20:02:16 [Laragon] */ SELECT `DEFAULT_COLLATION_NAME` FROM `information_schema`.`SCHEMATA` WHERE `SCHEMA_NAME`='lar_feliz';
+/* 2019-09-25 20:02:16 [Laragon] */ SHOW TABLE STATUS FROM `lar_feliz`;
+/* 2019-09-25 20:02:16 [Laragon] */ SHOW FUNCTION STATUS WHERE `Db`='lar_feliz';
+/* 2019-09-25 20:02:16 [Laragon] */ SHOW PROCEDURE STATUS WHERE `Db`='lar_feliz';
+/* 2019-09-25 20:02:16 [Laragon] */ SHOW TRIGGERS FROM `lar_feliz`;
+/* 2019-09-25 20:02:16 [Laragon] */ SELECT *, EVENT_SCHEMA AS `Db`, EVENT_NAME AS `Name` FROM information_schema.`EVENTS` WHERE `EVENT_SCHEMA`='lar_feliz';
+/* 2019-09-25 20:03:32 [Laragon] */ SHOW CREATE TABLE `lar_feliz`.`atividade`;
+/* 2019-09-25 20:10:55 [Laragon] */ SELECT * FROM atividades;
+/* 2019-09-25 20:10:55 [Laragon] */ /* Erro SQL (1146): Table 'lar_feliz.atividades' doesn't exist */
+/* 2019-09-25 20:10:56 [] */ /* Registros afetados: 0  Registros encontrados: 0  Avisos: 0  Duração de 0 of 1 consulta: 0,000 sec. */
+/* 2019-09-25 20:10:56 [Laragon] */ SELECT * FROM atividade;
+/* 2019-09-25 20:10:56 [] */ /* Registros afetados: 0  Registros encontrados: 0  Avisos: 0  Duração de 1 consulta: 0,000 sec. */
+/* 2019-09-25 20:10:59 [Laragon] */ SHOW CREATE TABLE `lar_feliz`.`atividade`;
+/* 2019-09-25 20:11:21 [Laragon] */ INSERT INTO `lar_feliz`.`atividade` (`fk_id_pessoal`, `frequencia`, `dia`, `horario`, `local`) VALUES ('14', 'Toda quarta feira', '10', '10:50', 'Centro esportivo');
+/* 2019-09-25 20:11:21 [Laragon] */ SELECT LAST_INSERT_ID();
+/* 2019-09-25 20:11:21 [Laragon] */ SELECT `id`, `fk_id_pessoal`, `frequencia`, `dia`, `horario`, `local` FROM `lar_feliz`.`atividade` WHERE  `id`=1;
+/* 2019-09-25 20:34:48 [Laragon] */ SHOW CREATE TABLE `lar_feliz`.`ocorrencia`;
+/* 2019-09-25 20:40:26 [Laragon] */ SELECT  `id`,  `fk_id_pessoal`,  `tipo`,  `data`,  `fato`,  `anexo_bo`,  LEFT(`descricao_obs`, 256),  `update_at` FROM `lar_feliz`.`ocorrencia` LIMIT 1000;
+/* 2019-09-25 20:40:26 [Laragon] */ SHOW CREATE TABLE `lar_feliz`.`ocorrencia`;
+/* 2019-09-25 20:41:04 [Laragon] */ INSERT INTO `lar_feliz`.`ocorrencia` (`fk_id_pessoal`, `tipo`, `data`, `fato`, `descricao_obs`) VALUES ('14', 'Policial', '2019-09-25 20:40:36', 'Fincou a faca no amigo', 'Deve passar acompanhamneto médico');
+/* 2019-09-25 20:41:04 [Laragon] */ SELECT LAST_INSERT_ID();
+/* 2019-09-25 20:41:04 [Laragon] */ SELECT `id`, `fk_id_pessoal`, `tipo`, `data`, `fato`, `anexo_bo`, `descricao_obs`, `update_at` FROM `lar_feliz`.`ocorrencia` WHERE  `id`=1;
+/* 2019-09-25 20:41:33 [Laragon] */ ALTER TABLE `ocorrencia`
+	CHANGE COLUMN `data` `data` VARCHAR(10) NULL DEFAULT NULL AFTER `tipo`;
+/* 2019-09-25 20:41:33 [Laragon] */ /* Erro SQL (1406): Data too long for column 'data' at row 1 */
+/* 2019-09-25 20:41:44 [Laragon] */ ALTER TABLE `ocorrencia`
+	CHANGE COLUMN `data` `data` VARCHAR(255) NULL DEFAULT NULL AFTER `tipo`;
+/* 2019-09-25 20:41:45 [Laragon] */ SELECT `DEFAULT_COLLATION_NAME` FROM `information_schema`.`SCHEMATA` WHERE `SCHEMA_NAME`='lar_feliz';
+/* 2019-09-25 20:41:45 [Laragon] */ SHOW TABLE STATUS FROM `lar_feliz`;
+/* 2019-09-25 20:41:45 [Laragon] */ SHOW FUNCTION STATUS WHERE `Db`='lar_feliz';
+/* 2019-09-25 20:41:45 [Laragon] */ SHOW PROCEDURE STATUS WHERE `Db`='lar_feliz';
+/* 2019-09-25 20:41:45 [Laragon] */ SHOW TRIGGERS FROM `lar_feliz`;
+/* 2019-09-25 20:41:45 [Laragon] */ SELECT *, EVENT_SCHEMA AS `Db`, EVENT_NAME AS `Name` FROM information_schema.`EVENTS` WHERE `EVENT_SCHEMA`='lar_feliz';
+/* 2019-09-25 20:41:45 [Laragon] */ SHOW CREATE TABLE `lar_feliz`.`ocorrencia`;
+/* 2019-09-25 20:41:45 [] */ /* Entrando na sessão "Laragon" */
+/* 2019-09-25 20:41:45 [Laragon] */ SHOW CREATE TABLE `lar_feliz`.`ocorrencia`;
+/* 2019-09-25 20:42:04 [Laragon] */ SHOW CREATE VIEW `lar_feliz`.`vw_ocorrencia`;
+/* 2019-09-25 20:42:04 [Laragon] */ SELECT CAST(LOAD_FILE(CONCAT(IFNULL(@@GLOBAL.datadir, CONCAT(@@GLOBAL.basedir, 'data/')), 'lar_feliz/vw_ocorrencia.frm')) AS CHAR CHARACTER SET utf8);
+/* 2019-09-25 20:42:04 [Laragon] */ SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE   TABLE_NAME='vw_ocorrencia' AND TABLE_SCHEMA='lar_feliz';
+/* 2019-09-25 20:42:04 [Laragon] */ SELECT CURRENT_USER();
+/* 2019-09-25 20:42:15 [Laragon] */ SELECT * FROM `lar_feliz`.`vw_ocorrencia` LIMIT 1000;
+/* 2019-09-25 20:42:15 [Laragon] */ SHOW CREATE VIEW `lar_feliz`.`vw_ocorrencia`;
+/* 2019-09-25 20:42:15 [Laragon] */ SELECT CAST(LOAD_FILE(CONCAT(IFNULL(@@GLOBAL.datadir, CONCAT(@@GLOBAL.basedir, 'data/')), 'lar_feliz/vw_ocorrencia.frm')) AS CHAR CHARACTER SET utf8);
+/* 2019-09-25 20:42:15 [Laragon] */ SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE   TABLE_NAME='vw_ocorrencia' AND TABLE_SCHEMA='lar_feliz';

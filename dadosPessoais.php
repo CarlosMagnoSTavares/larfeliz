@@ -1,4 +1,7 @@
 <?php 
+
+$titulo = "Dados pessoais";
+
 include_once('include/header.php'); 
 require_once('controll/Crud.class.php');
 
@@ -7,15 +10,7 @@ $formPost ="formDadosPessoais.php";
 //Config de cada pagina
 $table = 'dados_pessoais';
 
-$orderColumn = isset($_GET['orderColumn']) && !empty($_GET['orderColumn'])? trim($_GET['orderColumn']): "id desc";
-$where = " id > 0";
-$orderBy = $orderColumn;
-$max = 25;
-
-//Não alterar
-$pag = (isset($_GET['startPag']) && !empty($_GET['startPag']) && is_numeric($_GET['startPag']))? ($_GET['startPag']*$max): "0";
-$limit = "$pag,$max";
-//Fim
+require_once('pagina.php');
 ?>
 
 <div class="row">

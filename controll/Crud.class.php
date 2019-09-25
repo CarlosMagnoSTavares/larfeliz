@@ -8,7 +8,7 @@ class Crud extends Conn
 	{
 		date_default_timezone_set("Brazil/East"); //Definindo timezone padrão
 		$ext = strtolower(substr($anexo['name'],-4)); //Pegando extensão do arquivo
-		$new_name = md5($tipo."_".date("Y.m.d-H.i.s")).$ext; //Definindo um novo nome para o arquivo
+		$new_name = ($tipo."_".date("Y.m.d-H.i.s")).$ext; //Definindo um novo nome para o arquivo
 		$dir = '../documentos/'; //Diretório para uploads
 
 		if (($ext <> '.php') && ($ext <> '.html') && ($ext <> '.js')&&($ext <> '.css')) 

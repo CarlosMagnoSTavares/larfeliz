@@ -1,4 +1,5 @@
 <?php 
+$titulo = "Dados médicos e saúde";
 include_once('include/header.php'); 
 require_once('controll/Crud.class.php');
 
@@ -6,14 +7,7 @@ require_once('controll/Crud.class.php');
 $table = 'vw_saude';
 $formPost ="formSaude.php";
 
-//Não alterar "order e paginação" (TODAS AS TABELAS PRECISAM DE UMA COLUNA ID PRIMARY KEY)
-$orderColumn = isset($_GET['orderColumn']) && !empty($_GET['orderColumn'])? trim($_GET['orderColumn']): "id desc";
-$where = " id >= 0";
-$orderBy = $orderColumn;
-$max = 25;
-$pag = (isset($_GET['startPag']) && !empty($_GET['startPag']) && is_numeric($_GET['startPag']))? ($_GET['startPag']*$max): "0";
-$limit = "$pag,$max";
-//Fim
+require_once('pagina.php');
 ?>
 
 <div class="row">
@@ -59,7 +53,7 @@ $limit = "$pag,$max";
 					<tr>
 						<td><img src="'.$caminhoFoto.'"  data-caption="'.$nome.'" class="circle materialboxed" width="35px" height="35px"></td>
 						<td class="">'.$nome.'</td>
-						<td class="center-align">'.$tipo_consulta.'</td>
+						<td class="">'.$tipo_consulta.'</td>
 						<td class="">'.$data_da_consulta.'</td>
 						<td class="">'.$data_do_retorno.'</td>
 
