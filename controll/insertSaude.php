@@ -22,9 +22,24 @@ if (!empty($_POST)) {
 	$exames = !empty($_POST['exames'])? $_POST['exames'] : NULL;
 	$observacoes_medicas = !empty($_POST['observacoes_medicas'])? $_POST['observacoes_medicas'] : NULL;
 
-
 	$limpar = !empty($_POST['limpar'])? $_POST['limpar'] : NULL;
 	$salvar = !empty($_POST['salvar'])? $_POST['salvar'] : NULL;
+
+	//Guarda anexo vindo do POST na pasta e pega o caminho como resposta para salvar no banco↓
+	$anexo = isset($_FILES['anexo']) && $_FILES['anexo']['size'] > 0 ? 
+			$crud->saveFile("anexo", $_FILES['anexo']): "";
+
+	//Garante a persistencia dos anexos na edição (Caso não informe o anexo ele mantem o antigo)
+	if ($acao == 'editar') {
+		$where = " id = ".$_POST['id'];
+		$query = $crud->select($table,$where,NULL,NULL);
+		foreach ($files as $key => $file) 
+		{
+			$anexo = ($anexo=="")? $file['anexo'] : $anexo ;
+		}
+	}
+
+
 
 	$values =  array
 	(
@@ -34,7 +49,8 @@ if (!empty($_POST)) {
 		$data_do_retorno,
 		$medicamentos,
 		$exames,
-		$observacoes_medicas
+		$observacoes_medicas,
+		$anexo
 	);
 
 	$columns = array (
@@ -44,7 +60,8 @@ if (!empty($_POST)) {
 		'data_do_retorno',
 		'medicamentos',
 		'exames',
-		'observacoes_medicas'
+		'observacoes_medicas',
+		'anexo'
 	);
 	
 

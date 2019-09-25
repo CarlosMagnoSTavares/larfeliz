@@ -14,6 +14,7 @@ require_once('controll/Crud.class.php');
 	$nome = "";
 	$fk_id_pessoal = "";
 	$option="";
+	$anexo="";
 	
 	$tipo_consulta = "";
 	$data_da_consulta = "";
@@ -72,6 +73,7 @@ if ($acao == 'editar' || $acao == 'excluir'|| $acao == 'ver' )
 					$medicamentos = ($value['medicamentos']);
 					$exames = ($value['exames']);
 					$observacoes_medicas = ($value['observacoes_medicas']);
+					$anexo = ($value['anexo']);
 
 					$limpar = "Limpar";
 					$salvar = "editar";
@@ -145,6 +147,19 @@ if (isset($acao))
 				<textarea class="materialize-textarea" type="text" <?php echo ' value="'.$observacoes_medicas.'" '.$disable; ?> 
 				name="observacoes_medicas"> <?php echo $observacoes_medicas ?> </textarea>
 			</div>
+			<div class="col s12 m6" >
+			    <div class="file-field" >
+			      <div class="btn <?php echo $btnColor; ?>" >
+			        <span>anexo</span>
+			        <input <?php echo  $disable; echo 'value="'.$anexo.'"'; ?> name="anexo" type="file" class="<?php echo $btnColor; ?>" accept="image/*"> <!--  VALUE="anexo.pdf" -->
+			      </div>
+			      <div class="file-path-wrapper" >
+			        <input class="file-path validate" type="text" value="<?php echo $anexo; ?>" >
+			      </div>
+			    </div>
+			 <a target="_blank" <?php echo 'href="documentos/'.$anexo.'"';?>>  Download: <?php echo $anexo; ?> </a>   
+			</div>
+			
 		</div>
 	</div>
 
