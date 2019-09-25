@@ -100,7 +100,7 @@ class Crud extends Conn
 		if ($queryDelete) {
 			return 'Success';
 		} else {
-			return 'Fail';
+			return $queryDelete;
 		}
 
 	}
