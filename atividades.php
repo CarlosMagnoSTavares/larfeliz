@@ -26,7 +26,7 @@ require_once('pagina.php');
 		          <th><a href="?orderColumn=nome">Foto</a></th>
 		          <th><a href="?orderColumn=nome">Nome</a></th>
 
-		          <th><a href="?orderColumn=frequencia">Frequencia</a></th>
+		          <th><a href="?orderColumn=frequencia">Tipo e frequencia</a></th>
 		          <th><a href="?orderColumn=dia">Dia</a></th>
 		          <th><a href="?orderColumn=horario">Horario</a></th>
 		          <th><a href="?orderColumn=local">Local</a></th>

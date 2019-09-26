@@ -1,6 +1,6 @@
 <?php 
 
-$titulo = "Dados pessoais";
+$titulo = "Dados Pessoais";
 
 include_once('include/header.php'); 
 require_once('controll/Crud.class.php');

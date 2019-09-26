@@ -1,0 +1,49 @@
+/* 2019-09-25 21:08:46 [] */ /* Escrevendo o arquivo de log de sessão agora: C:\laragon\www\larfeliz\logDB\logDB.txt\000004.log */
+/* 2019-09-25 21:09:01 [Laragon] */ /* Conectando em localhost via MySQL (TCP/IP), usuário root, usando a senha: No... */
+/* 2019-09-25 21:09:01 [Laragon] */ SELECT CONNECTION_ID();
+/* 2019-09-25 21:09:01 [Laragon] */ /* Conectado. Thread-ID: 831 */
+/* 2019-09-25 21:09:01 [Laragon] */ /* CharacterSet: utf8mb4 */
+/* 2019-09-25 21:09:01 [Laragon] */ SHOW STATUS;
+/* 2019-09-25 21:09:01 [Laragon] */ SHOW VARIABLES;
+/* 2019-09-25 21:09:01 [Laragon] */ SHOW DATABASES;
+/* 2019-09-25 21:09:01 [Laragon] */ SHOW OPEN TABLES FROM lar_feliz WHERE `in_use`!=0;
+/* 2019-09-25 21:09:01 [Laragon] */ USE `lar_feliz`;
+/* 2019-09-25 21:09:01 [] */ /* Entrando na sessão "Laragon" */
+/* 2019-09-25 21:09:01 [Laragon] */ SELECT `DEFAULT_COLLATION_NAME` FROM `information_schema`.`SCHEMATA` WHERE `SCHEMA_NAME`='lar_feliz';
+/* 2019-09-25 21:09:01 [Laragon] */ SHOW TABLE STATUS FROM `lar_feliz`;
+/* 2019-09-25 21:09:01 [Laragon] */ SHOW FUNCTION STATUS WHERE `Db`='lar_feliz';
+/* 2019-09-25 21:09:01 [Laragon] */ SHOW PROCEDURE STATUS WHERE `Db`='lar_feliz';
+/* 2019-09-25 21:09:02 [Laragon] */ SHOW TRIGGERS FROM `lar_feliz`;
+/* 2019-09-25 21:09:02 [Laragon] */ SELECT `DEFAULT_COLLATION_NAME` FROM `information_schema`.`SCHEMATA` WHERE `SCHEMA_NAME`='information_schema';
+/* 2019-09-25 21:09:02 [Laragon] */ SHOW TABLE STATUS FROM `information_schema`;
+/* 2019-09-25 21:09:02 [Laragon] */ SHOW FUNCTION STATUS WHERE `Db`='information_schema';
+/* 2019-09-25 21:09:02 [Laragon] */ SHOW PROCEDURE STATUS WHERE `Db`='information_schema';
+/* 2019-09-25 21:09:02 [Laragon] */ SHOW TRIGGERS FROM `information_schema`;
+/* 2019-09-25 21:09:02 [Laragon] */ SHOW EVENTS FROM `information_schema`;
+/* 2019-09-25 21:09:02 [Laragon] */ SELECT *, EVENT_SCHEMA AS `Db`, EVENT_NAME AS `Name` FROM information_schema.`EVENTS` WHERE `EVENT_SCHEMA`='lar_feliz';
+/* 2019-09-25 21:09:09 [Laragon] */ SHOW CREATE TABLE `lar_feliz`.`registro_tecnico`;
+/* 2019-09-25 21:09:09 [Laragon] */ SHOW COLLATION;
+/* 2019-09-25 21:09:09 [Laragon] */ SHOW ENGINES;
+/* 2019-09-25 21:09:25 [Laragon] */ ALTER TABLE `registro_tecnico`
+	CHANGE COLUMN `data_visita_familiar` `data_visita_familiar` VARCHAR(50) NULL DEFAULT NULL AFTER `audiencia_declaracao_obs`;
+/* 2019-09-25 21:09:26 [Laragon] */ SELECT `DEFAULT_COLLATION_NAME` FROM `information_schema`.`SCHEMATA` WHERE `SCHEMA_NAME`='lar_feliz';
+/* 2019-09-25 21:09:26 [Laragon] */ SHOW TABLE STATUS FROM `lar_feliz`;
+/* 2019-09-25 21:09:26 [Laragon] */ SHOW FUNCTION STATUS WHERE `Db`='lar_feliz';
+/* 2019-09-25 21:09:26 [Laragon] */ SHOW PROCEDURE STATUS WHERE `Db`='lar_feliz';
+/* 2019-09-25 21:09:26 [Laragon] */ SHOW TRIGGERS FROM `lar_feliz`;
+/* 2019-09-25 21:09:26 [Laragon] */ SELECT *, EVENT_SCHEMA AS `Db`, EVENT_NAME AS `Name` FROM information_schema.`EVENTS` WHERE `EVENT_SCHEMA`='lar_feliz';
+/* 2019-09-25 21:09:26 [Laragon] */ SHOW CREATE TABLE `lar_feliz`.`registro_tecnico`;
+/* 2019-09-25 21:09:26 [] */ /* Entrando na sessão "Laragon" */
+/* 2019-09-25 21:09:26 [Laragon] */ SHOW CREATE TABLE `lar_feliz`.`registro_tecnico`;
+/* 2019-09-25 21:09:27 [Laragon] */ SELECT  `id`,  `fk_id_filiacao_visita`,  `fk_id_pessoal`,  `visita_domiciliar`,  `informacoes_sobre_visita`,  `data_audiencia`,  LEFT(`audiencia_declaracao_obs`, 256),  `data_visita_familiar`,  `update_at` FROM `lar_feliz`.`registro_tecnico` LIMIT 1000;
+/* 2019-09-25 21:09:27 [Laragon] */ SHOW CREATE TABLE `lar_feliz`.`registro_tecnico`;
+/* 2019-09-25 21:09:33 [Laragon] */ UPDATE `lar_feliz`.`registro_tecnico` SET `data_visita_familiar`='2019-09-25' WHERE  `id`=1;
+/* 2019-09-25 21:09:33 [Laragon] */ SELECT `id`, `fk_id_filiacao_visita`, `fk_id_pessoal`, `visita_domiciliar`, `informacoes_sobre_visita`, `data_audiencia`, `audiencia_declaracao_obs`, `data_visita_familiar`, `update_at` FROM `lar_feliz`.`registro_tecnico` WHERE  `id`=1;
+/* 2019-09-25 21:13:40 [Laragon] */ SELECT * FROM vw_registro_tecnico;
+/* 2019-09-25 21:13:40 [] */ /* Registros afetados: 0  Registros encontrados: 1  Avisos: 0  Duração de 1 consulta: 0,000 sec. */
+/* 2019-09-25 21:30:25 [Laragon] */ SELECT * FROM registro_tecnico;
+/* 2019-09-25 21:30:25 [] */ /* Registros afetados: 0  Registros encontrados: 1  Avisos: 0  Duração de 1 consulta: 0,000 sec. */
+/* 2019-09-25 21:35:21 [Laragon] */ SELECT * FROM vw_registro_tecnico;
+/* 2019-09-25 21:35:21 [] */ /* Registros afetados: 0  Registros encontrados: 1  Avisos: 0  Duração de 1 consulta: 0,000 sec. */
+/* 2019-09-25 21:37:46 [Laragon] */ SELECT * FROM registro_tecnico;
+/* 2019-09-25 21:37:46 [] */ /* Registros afetados: 0  Registros encontr

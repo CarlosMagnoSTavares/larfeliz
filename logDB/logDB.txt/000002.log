@@ -39,3 +39,64 @@
 /* 2019-09-25 20:43:02 [Laragon] */ SHOW CREATE TABLE `lar_feliz`.`ocorrencia`;
 /* 2019-09-25 20:43:02 [] */ /* Entrando na sessão "Laragon" */
 /* 2019-09-25 20:43:02 [Laragon] */ SHOW CREATE TABLE `lar_feliz`.`ocorrencia`;
+/* 2019-09-25 20:45:09 [Laragon] */ SELECT  `id`,  `fk_id_pessoal`,  `tipo`,  `data`,  `fato`,  `anexo_bo`,  LEFT(`descricao_obs`, 256),  `update_at` FROM `lar_feliz`.`ocorrencia` LIMIT 1000;
+/* 2019-09-25 20:45:09 [Laragon] */ SHOW CREATE TABLE `lar_feliz`.`ocorrencia`;
+/* 2019-09-25 20:54:42 [Laragon] */ SELECT * FROM registro_tecnico;
+/* 2019-09-25 20:54:42 [] */ /* Registros afetados: 0  Registros encontrados: 0  Avisos: 0  Duração de 1 consulta: 0,000 sec. */
+/* 2019-09-25 21:00:10 [Laragon] */ SHOW CREATE TABLE `lar_feliz`.`registro_tecnico`;
+/* 2019-09-25 21:03:36 [Laragon] */ SHOW CREATE TABLE `lar_feliz`.`filiacao`;
+/* 2019-09-25 21:03:40 [Laragon] */ SELECT  `id`,  `fk_id_pessoal`,  `nivel_parentesco`,  LEFT(`nome_parente`, 256),  LEFT(`Endereco`, 256),  `telefone`,  `atividade_profissional`,  LEFT(`dinamica_familiar_obs`, 256),  `update_at` FROM `lar_feliz`.`filiacao` LIMIT 1000;
+/* 2019-09-25 21:03:40 [Laragon] */ SHOW CREATE TABLE `lar_feliz`.`filiacao`;
+/* 2019-09-25 21:04:04 [Laragon] */ SHOW CREATE VIEW `lar_feliz`.`vw_registro_tecnico`;
+/* 2019-09-25 21:04:04 [Laragon] */ SELECT CAST(LOAD_FILE(CONCAT(IFNULL(@@GLOBAL.datadir, CONCAT(@@GLOBAL.basedir, 'data/')), 'lar_feliz/vw_registro_tecnico.frm')) AS CHAR CHARACTER SET utf8);
+/* 2019-09-25 21:04:04 [Laragon] */ SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE   TABLE_NAME='vw_registro_tecnico' AND TABLE_SCHEMA='lar_feliz';
+/* 2019-09-25 21:04:04 [Laragon] */ SELECT CURRENT_USER();
+/* 2019-09-25 21:04:04 [Laragon] */ SELECT * FROM `lar_feliz`.`vw_registro_tecnico` LIMIT 1000;
+/* 2019-09-25 21:04:04 [Laragon] */ SHOW CREATE VIEW `lar_feliz`.`vw_registro_tecnico`;
+/* 2019-09-25 21:04:04 [Laragon] */ SELECT CAST(LOAD_FILE(CONCAT(IFNULL(@@GLOBAL.datadir, CONCAT(@@GLOBAL.basedir, 'data/')), 'lar_feliz/vw_registro_tecnico.frm')) AS CHAR CHARACTER SET utf8);
+/* 2019-09-25 21:04:04 [Laragon] */ SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE   TABLE_NAME='vw_registro_tecnico' AND TABLE_SCHEMA='lar_feliz';
+/* 2019-09-25 21:04:45 [Laragon] */ SHOW CREATE TABLE `lar_feliz`.`filiacao`;
+/* 2019-09-25 21:05:01 [Laragon] */ SHOW CREATE TABLE `lar_feliz`.`registro_tecnico`;
+/* 2019-09-25 21:05:05 [Laragon] */ SELECT d.nome,d.caminho_foto, r.* 
+FROM registro_tecnico r
+INNER JOIN dados_pessoais d ON d.id = r.fk_id_pessoal 
+INNER JOIN filiacao f ON f.id = r.fk_id_filiacao_visita;
+/* 2019-09-25 21:05:05 [] */ /* Registros afetados: 0  Registros encontrados: 0  Avisos: 0  Duração de 1 consulta: 0,000 sec. */
+/* 2019-09-25 21:05:56 [Laragon] */ SELECT d.nome,d.caminho_foto, f.nivel_parentesco, f.nome_parente, r.* 
+FROM registro_tecnico r
+INNER JOIN dados_pessoais d ON d.id = r.fk_id_pessoal 
+INNER JOIN filiacao f ON f.id = r.fk_id_filiacao_visita;
+/* 2019-09-25 21:05:56 [] */ /* Registros afetados: 0  Registros encontrados: 0  Avisos: 0  Duração de 1 consulta: 0,000 sec. */
+/* 2019-09-25 21:06:02 [Laragon] */ ALTER ALGORITHM = UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vw_registro_tecnico` AS SELECT d.nome,d.caminho_foto, f.nivel_parentesco, f.nome_parente, r.* 
+FROM registro_tecnico r
+INNER JOIN dados_pessoais d ON d.id = r.fk_id_pessoal 
+INNER JOIN filiacao f ON f.id = r.fk_id_filiacao_visita ;
+/* 2019-09-25 21:06:02 [Laragon] */ SELECT `DEFAULT_COLLATION_NAME` FROM `information_schema`.`SCHEMATA` WHERE `SCHEMA_NAME`='lar_feliz';
+/* 2019-09-25 21:06:02 [Laragon] */ SHOW TABLE STATUS FROM `lar_feliz`;
+/* 2019-09-25 21:06:02 [Laragon] */ SHOW FUNCTION STATUS WHERE `Db`='lar_feliz';
+/* 2019-09-25 21:06:02 [Laragon] */ SHOW PROCEDURE STATUS WHERE `Db`='lar_feliz';
+/* 2019-09-25 21:06:02 [Laragon] */ SHOW TRIGGERS FROM `lar_feliz`;
+/* 2019-09-25 21:06:02 [Laragon] */ SELECT *, EVENT_SCHEMA AS `Db`, EVENT_NAME AS `Name` FROM information_schema.`EVENTS` WHERE `EVENT_SCHEMA`='lar_feliz';
+/* 2019-09-25 21:06:02 [Laragon] */ SHOW CREATE VIEW `lar_feliz`.`vw_registro_tecnico`;
+/* 2019-09-25 21:06:02 [Laragon] */ SELECT CAST(LOAD_FILE(CONCAT(IFNULL(@@GLOBAL.datadir, CONCAT(@@GLOBAL.basedir, 'data/')), 'lar_feliz/vw_registro_tecnico.frm')) AS CHAR CHARACTER SET utf8);
+/* 2019-09-25 21:06:02 [Laragon] */ SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE   TABLE_NAME='vw_registro_tecnico' AND TABLE_SCHEMA='lar_feliz';
+/* 2019-09-25 21:06:02 [] */ /* Entrando na sessão "Laragon" */
+/* 2019-09-25 21:06:20 [Laragon] */ SELECT * FROM `lar_feliz`.`vw_registro_tecnico` LIMIT 1000;
+/* 2019-09-25 21:06:20 [Laragon] */ SHOW CREATE VIEW `lar_feliz`.`vw_registro_tecnico`;
+/* 2019-09-25 21:06:20 [Laragon] */ SELECT CAST(LOAD_FILE(CONCAT(IFNULL(@@GLOBAL.datadir, CONCAT(@@GLOBAL.basedir, 'data/')), 'lar_feliz/vw_registro_tecnico.frm')) AS CHAR CHARACTER SET utf8);
+/* 2019-09-25 21:06:20 [Laragon] */ SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE   TABLE_NAME='vw_registro_tecnico' AND TABLE_SCHEMA='lar_feliz';
+/* 2019-09-25 21:06:25 [Laragon] */ SELECT d.nome,d.caminho_foto, f.nivel_parentesco, f.nome_parente, r.* 
+FROM registro_tecnico r
+INNER JOIN dados_pessoais d ON d.id = r.fk_id_pessoal 
+INNER JOIN filiacao f ON f.id = r.fk_id_filiacao_visita;
+/* 2019-09-25 21:06:25 [] */ /* Registros afetados: 0  Registros encontrados: 0  Avisos: 0  Duração de 1 consulta: 0,000 sec. */
+/* 2019-09-25 21:06:31 [Laragon] */ SHOW CHARSET;
+/* 2019-09-25 21:06:51 [Laragon] */ SHOW CREATE TABLE `lar_feliz`.`filiacao`;
+/* 2019-09-25 21:06:52 [Laragon] */ SELECT  `id`,  `fk_id_pessoal`,  `nivel_parentesco`,  LEFT(`nome_parente`, 256),  LEFT(`Endereco`, 256),  `telefone`,  `atividade_profissional`,  LEFT(`dinamica_familiar_obs`, 256),  `update_at` FROM `lar_feliz`.`filiacao` LIMIT 1000;
+/* 2019-09-25 21:06:52 [Laragon] */ SHOW CREATE TABLE `lar_feliz`.`filiacao`;
+/* 2019-09-25 21:06:59 [Laragon] */ SHOW CREATE TABLE `lar_feliz`.`ocorrencia`;
+/* 2019-09-25 21:06:59 [Laragon] */ SELECT  `id`,  `fk_id_pessoal`,  `tipo`,  `data`,  `fato`,  `anexo_bo`,  LEFT(`descricao_obs`, 256),  `update_at` FROM `lar_feliz`.`ocorrencia` LIMIT 1000;
+/* 2019-09-25 21:06:59 [Laragon] */ SHOW CREATE TABLE `lar_feliz`.`ocorrencia`;
+/* 2019-09-25 21:07:02 [Laragon] */ SHOW CREATE TABLE `lar_feliz`.`registro_tecnico`;
+/* 2019-09-25 21:07:02 [Laragon] */ SELECT  `id`,  `fk_id_filiacao_visita`,  `fk_id_pessoal`,  `visita_domiciliar`,  `informacoes_sobre_visita`,  `data_audiencia`,  LEFT(`audiencia_declaracao_obs`, 256),  `data_visita_familiar`,  `update_at` FROM `lar_feliz`.`registro_tecnico` LIMIT 1000;
+/* 2019-09-25 21:07:02 [Laragon] */ SHOW CREATE TABLE `lar_

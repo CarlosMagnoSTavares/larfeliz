@@ -1,32 +1,34 @@
 <?php 
 
-$titulo = "Ocorrências";
+
+FAZERRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR
+
+$titulo = "Registro tecnico";
 
 include_once('include/header.php'); 
 require_once('controll/Crud.class.php');
 
 //Default da pagina
-	$table = "ocorrencia";
-	$view = 'vw_ocorrencia';
+	$table = "registro_tecnico";
+	$view = 'vw_registro_tecnico';
 	$disable = "";// Default tudo habilitado
 	$btnColor = "orange"; // Default tudo laranja
-	$formPost ="insertOcorrencia.php";
-	$telaRedirect="ocorrencias.php";
+	$formPost ="insertRegistroTecnico.php";
+	$telaRedirect="registroTecnico.php";
 
 	// Default todos os campos sem valor
 	$id = "";
 	$nome = "";
 	$fk_id_pessoal = "";
+	$fk_id_filiacao_visita = "";
 	$option="";
-	$anexo_bo="";
+	// $anexo_bo="";
 
-
-	$tipo = "";
-	$data = "";
-	$fato = "";
-	$descricao_obs = "";
-	$exames = "";
-	$observacoes_medicas = "";
+	$visita_domiciliar = "";
+	$data_audiencia = "";
+	$informacoes_sobre_visita = "";
+	$audiencia_declaracao_obs = "";
+	$data_visita_familiar = "";
 
 	$limpar = "Limpar";
 	$salvar = "inserir";
@@ -52,20 +54,26 @@ if ($acao == 'editar' || $acao == 'excluir'|| $acao == 'ver' )
 			$option = "";
 			foreach ($list as $key => $value) 
 				{
+					$id = ($value['id']);
 					$caminhoFoto = !empty(trim($value['caminho_foto']))? 
 					"documentos/".$value['caminho_foto']:"include/sem-foto.gif";
 					$nome = ($value['nome']);
-					$id = ($value['id']);
+					$nome_parente = ($value['nome_parente']);
+					$nivel_parentesco = ($value['nivel_parentesco']);
 					$fk_id_pessoal = ($value['fk_id_pessoal']);
-					$tipo = ($value['tipo']);
-					$data = ($value['data']);
-					$fato = ($value['fato']);
-					$descricao_obs = ($value['descricao_obs']);
-					$anexo_bo = ($value['anexo_bo']);
+					$fk_id_filiacao_visita = ($value['fk_id_filiacao_visita']);
+					$visita_domiciliar = ($value['visita_domiciliar']);
+
+					$informacoes_sobre_visita = ($value['informacoes_sobre_visita']);
+					$data_audiencia = ($value['data_audiencia']);
+					$audiencia_declaracao_obs = ($value['audiencia_declaracao_obs']);
+					$data_visita_familiar = ($value['data_visita_familiar']);
+					
 
 					$limpar = "Limpar";
 					$salvar = "editar";
 					$option .= '<option data-icon="'.$caminhoFoto.'" value="'.$fk_id_pessoal.'" selected>'.$nome.'</option>';
+					$option_parente .= '<option data-icon="" value="'.$fk_id_filiacao_visita.'" selected>'.$nome_parente.'</option>';
 				}
 	} 	
 } 
@@ -85,37 +93,20 @@ require_once('delete.php');
 			</div>
 
 			<div class="col s12 m12" >
-				*Tipo:
-				<input type="text" <?php echo ' value="'.$tipo.'" '.$disable; ?> 
-				name="tipo" required="true" >
+				<select <?php echo  $disable; ?> name="fk_id_pessoal" >
+					<?php echo $option_parente; ?>
+				</select>
+				<label>Nome do filiado</label>
 			</div>
+
 			<div class="col s12 m12" >
-				*Data da ocorrencia
-				<input type="date" <?php echo ' value="'.$data.'" '.$disable; ?> 
-				name="data" required="true" >
+				*visita_domiciliar:
+				<input type="text" <?php echo ' value="'.$visita_domiciliar.'" '.$disable; ?> 
+				name="visita_domiciliar" required="true" >
 			</div>
-			<div class="col s12 m6" >
-				Fato:
-				<input type="text" <?php echo ' value="'.$fato.'" '.$disable; ?> 
-				name="fato">
-			</div>
-			<div class="col s12 m6" >
-				Observações:
-				<input type="text" <?php echo ' value="'.$descricao_obs.'" '.$disable; ?> 
-				name="descricao_obs">
-			</div>
-			<div class="col s12 m6" >
-			    <div class="file-field" >
-			      <div class="btn <?php echo $btnColor; ?>" >
-			        <span>Boletim de ocorrencia</span>
-			        <input <?php echo  $disable; echo 'value="'.$anexo_bo.'"'; ?> name="anexo_bo" type="file" class="<?php echo $btnColor; ?>" accept="image/*"> <!--  VALUE="anexo_bo.pdf" -->
-			      </div>
-			      <div class="file-path-wrapper" >
-			        <input class="file-path validate" type="text" value="<?php echo $anexo_bo; ?>" >
-			      </div>
-			    </div>
-			 <a target="_blank" <?php echo 'href="documentos/'.$anexo_bo.'"';?>>  Download: <?php echo $anexo_bo; ?> </a>   
-			</div>
+			
+
+
 			
 		</div>
 	</div>

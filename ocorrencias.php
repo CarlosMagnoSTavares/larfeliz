@@ -4,7 +4,6 @@ include_once('include/header.php');
 require_once('controll/Crud.class.php');
 
 
-
 //Config de cada pagina
 $table = 'vw_ocorrencia';
 $formPost ="formOcorrencia.php";

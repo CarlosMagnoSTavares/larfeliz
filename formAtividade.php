@@ -82,7 +82,7 @@ require_once('delete.php');
 				<label>Nome da criança</label>
 			</div>
 			<div class="col s12 m12" >
-				*Frequencia:<input type="text" <?php echo ' value="'.$frequencia.'" '.$disable; ?> 
+				*Tipo e frequencia:<input type="text" <?php echo ' value="'.$frequencia.'" '.$disable; ?> 
 				name="frequencia" required="true" >
 			</div>
 			<div class="col s12 m12" >
