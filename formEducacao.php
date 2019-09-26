@@ -83,6 +83,7 @@ require_once('delete.php');
 	<div class="" >
 		<div class="row" >
 			<div class="col s12 m12" >
+				<lbl>Nome da criança</lbl>
 				<select <?php echo  $disable; ?> name="fk_id_pessoal" >
 					<?php echo $option; ?>
 				</select>

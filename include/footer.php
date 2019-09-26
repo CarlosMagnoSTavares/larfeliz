@@ -1,6 +1,6 @@
 <!-- AQUI COMEÇA O FOOTER -->
 
-<br><br><br>
+<br><br><br><br><br><br>
 <div align="center" class="center-align">
   <!-- <img id="logo-container" src="css/voa-logo.png" class="brand-logo" width="200" height="75"></img> -->
 </div>
