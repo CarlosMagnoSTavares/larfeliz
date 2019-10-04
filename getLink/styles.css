@@ -1,0 +1,19 @@
+body {
+  /*background: url('https://http2.mlstatic.com/paralama-traseiro-honda-cbr-600-f-cbr600f-preto-fosco-D_NQ_NP_659444-MLB25755854196_072017-F.jpg') !important;*/
+}
+
+ 
+#masthead,
+#primary {
+  -webkit-filter: invert(100%);
+  filter: invert(100%);
+  background-color: #fff;
+  padding: 20px !important;
+}
+#masthead {
+  background: none;
+}
+#masthead img, #primary img {
+  -webkit-filter: invert(100%);
+  filter: invert(100%);
+}
