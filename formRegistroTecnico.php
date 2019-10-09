@@ -1,8 +1,5 @@
 <?php 
 
-
-FAZERRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR
-
 $titulo = "Registro tecnico";
 
 include_once('include/header.php'); 
@@ -37,6 +34,7 @@ $acao = isset($_GET['acao'])? $_GET['acao']:null;
 
 
 // lista os otions com as crianças e fotos 
+$optionList = "filiacao";
 require_once('optionKids.php'); 
 
 //EDITAR carrega dados no form

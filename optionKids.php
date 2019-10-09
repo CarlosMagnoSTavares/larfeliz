@@ -1,8 +1,22 @@
 <?php 
-//LISTAR CRIANCAS (DADOS_PESOAIS)
+
+
+$chave = isset($optionList) && !empty($optionList)? $optionList : NULL; 
+
+if (empty($chave)) 
+{
 	$tableDP = 'dados_pessoais';
 	$orderBy ="nome";
-	$crud = new Crud;
+} 
+else 
+{
+	$tableDP = 'vw_list_filiacao';
+	$orderBy ="nome_parente, nome_crianca";
+}
+
+
+
+ 	$crud = new Crud;
 	$list = $crud->select($tableDP,NULL,$orderBy,NULL);
 
 	foreach ($list as $key => $value) 
@@ -14,4 +28,6 @@
 		$option .= '<option data-icon="'.$caminhoFoto.'" value="'.$id.'">'.$nome.'</option>';
 		
 	}
+
 ?>
+
