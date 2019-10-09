@@ -13,12 +13,10 @@
 
 
 -- Copiando estrutura do banco de dados para lar_feliz
-DROP DATABASE IF EXISTS `lar_feliz`;
 CREATE DATABASE IF NOT EXISTS `lar_feliz` /*!40100 DEFAULT CHARACTER SET utf8 COLLATE utf8_bin */;
 USE `lar_feliz`;
 
 -- Copiando estrutura para tabela lar_feliz.admin
-DROP TABLE IF EXISTS `admin`;
 CREATE TABLE IF NOT EXISTS `admin` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(255) COLLATE utf8_bin DEFAULT NULL,
@@ -35,7 +33,6 @@ DELETE FROM `admin`;
 /*!40000 ALTER TABLE `admin` ENABLE KEYS */;
 
 -- Copiando estrutura para tabela lar_feliz.atividade
-DROP TABLE IF EXISTS `atividade`;
 CREATE TABLE IF NOT EXISTS `atividade` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `fk_id_pessoal` varchar(255) COLLATE utf8_bin DEFAULT NULL,
@@ -46,7 +43,7 @@ CREATE TABLE IF NOT EXISTS `atividade` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
--- Copiando dados para a tabela lar_feliz.atividade: ~1 rows (aproximadamente)
+-- Copiando dados para a tabela lar_feliz.atividade: ~2 rows (aproximadamente)
 DELETE FROM `atividade`;
 /*!40000 ALTER TABLE `atividade` DISABLE KEYS */;
 INSERT INTO `atividade` (`id`, `fk_id_pessoal`, `frequencia`, `dia`, `horario`, `local`) VALUES
@@ -54,7 +51,6 @@ INSERT INTO `atividade` (`id`, `fk_id_pessoal`, `frequencia`, `dia`, `horario`, 
 /*!40000 ALTER TABLE `atividade` ENABLE KEYS */;
 
 -- Copiando estrutura para tabela lar_feliz.dados_pessoais
-DROP TABLE IF EXISTS `dados_pessoais`;
 CREATE TABLE IF NOT EXISTS `dados_pessoais` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(555) COLLATE utf8_bin NOT NULL,
@@ -82,12 +78,11 @@ CREATE TABLE IF NOT EXISTS `dados_pessoais` (
 DELETE FROM `dados_pessoais`;
 /*!40000 ALTER TABLE `dados_pessoais` DISABLE KEYS */;
 INSERT INTO `dados_pessoais` (`id`, `nome`, `caminho_foto`, `endereco`, `data_acolhimento`, `motivo_acolhimento`, `anexo_certidao`, `anexo_CPF`, `anexo_cartao_cidadao`, `anexo_carteira_vacinacao`, `anexo_guia_recolhimento`, `anexo_determinacao_acolhimento`, `anexo_historico_escolar`, `dados_bancarios`, `tipo_sanguineo`, `aspectos_gerais_obs`, `visitas_familiares_obs`, `data_desligamento`, `update_at`) VALUES
-  (14, 'Teste joÃ£o', 'b119ab22c579eb3c65268d20421a33ec.jpg', '', '2019-08-14', '', '', '', '', '', '', '', '', '', '', '  ', '  ', '', '2019-09-25 15:44:12'),
-  (15, 'Luquinhas', 'foto_2019.09.25-19.34.35.jpg', 'aoskda', '0012-03-12', 'Sem motivo', '', '', '', '', '', '', '', '123123-12312', 'A+', 'Sem aspectos', 'Sem familiares', '0102-03-12', '2019-09-25 19:34:35');
+  (14, 'Carlos Magno Silva Tavares', 'foto_2019.10.09-10.55.25.jpg', '', '2019-08-14', '', '', '', '', '', '', '', '', '', '', '  ', '  ', '', '2019-10-09 11:00:01'),
+  (15, 'Lucas da Silva Oliveira Santos', 'foto_2019.09.25-19.34.35.jpg', 'aoskda', '0012-03-12', 'Sem motivo', '', '', '', '', '', '', '', '123123-12312', 'A+', 'Sem aspectos', 'Sem familiares', '0102-03-12', '2019-10-09 11:00:15');
 /*!40000 ALTER TABLE `dados_pessoais` ENABLE KEYS */;
 
 -- Copiando estrutura para tabela lar_feliz.educacao
-DROP TABLE IF EXISTS `educacao`;
 CREATE TABLE IF NOT EXISTS `educacao` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `fk_id_pessoal` int(11) DEFAULT NULL,
@@ -102,17 +97,14 @@ CREATE TABLE IF NOT EXISTS `educacao` (
   `atividade_compl` varchar(555) COLLATE utf8_bin DEFAULT NULL,
   `update_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
--- Copiando dados para a tabela lar_feliz.educacao: ~1 rows (aproximadamente)
+-- Copiando dados para a tabela lar_feliz.educacao: ~0 rows (aproximadamente)
 DELETE FROM `educacao`;
 /*!40000 ALTER TABLE `educacao` DISABLE KEYS */;
-INSERT INTO `educacao` (`id`, `fk_id_pessoal`, `ano`, `tipo_escolaridade`, `escola`, `nome_pessoa_contato`, `numero_tel`, `numero_cel`, `anexo_rel_prim_semestre`, `anexo_rel_segun_semestre`, `atividade_compl`, `update_at`) VALUES
-  (2, 14, '2019', 'Teste', 'asdas', 'asdas', '123123', '  123123', 'anexo_rel_prim_semestre_2019.09.25-19.56.35.jpg', '', NULL, '2019-09-25 19:56:35');
 /*!40000 ALTER TABLE `educacao` ENABLE KEYS */;
 
 -- Copiando estrutura para tabela lar_feliz.filiacao
-DROP TABLE IF EXISTS `filiacao`;
 CREATE TABLE IF NOT EXISTS `filiacao` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `fk_id_pessoal` int(11) DEFAULT NULL,
@@ -130,13 +122,12 @@ CREATE TABLE IF NOT EXISTS `filiacao` (
 DELETE FROM `filiacao`;
 /*!40000 ALTER TABLE `filiacao` DISABLE KEYS */;
 INSERT INTO `filiacao` (`id`, `fk_id_pessoal`, `nivel_parentesco`, `nome_parente`, `Endereco`, `telefone`, `atividade_profissional`, `dinamica_familiar_obs`, `update_at`) VALUES
-  (3, 15, 'Pai', 'JÃ£o marcos', 'RUa', '132131', 'Teste', ' Normazinho ', '2019-08-14 23:02:30'),
-  (4, 14, 'Pai do jÃ£o pai', 'Jao pai', 'end', 'tel', 'ativ', ' dinami  ', '2019-08-14 23:02:12'),
-  (5, 14, 'Mae', 'MÃ£e do JÃ£o', 'asjdkasj', '10923901283', 'nada', 'legal  ', '2019-09-25 14:18:50');
+  (3, 15, 'Pai', 'Joao Marcos da Silva Tavares', 'RUa', '132131', 'Teste', ' Normazinho ', '2019-10-09 10:58:34'),
+  (4, 14, 'Tio', 'Jorge Marcelo dos Santos pereira', 'end', 'tel', 'ativ', ' dinami  ', '2019-10-09 10:59:09'),
+  (5, 14, 'Mae', 'Mariana pereira fantin Souza', 'asjdkasj', '10923901283', 'nada', 'legal  ', '2019-10-09 10:59:03');
 /*!40000 ALTER TABLE `filiacao` ENABLE KEYS */;
 
 -- Copiando estrutura para tabela lar_feliz.ocorrencia
-DROP TABLE IF EXISTS `ocorrencia`;
 CREATE TABLE IF NOT EXISTS `ocorrencia` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `fk_id_pessoal` int(11) DEFAULT NULL,
@@ -157,7 +148,6 @@ INSERT INTO `ocorrencia` (`id`, `fk_id_pessoal`, `tipo`, `data`, `fato`, `anexo_
 /*!40000 ALTER TABLE `ocorrencia` ENABLE KEYS */;
 
 -- Copiando estrutura para tabela lar_feliz.registro_tecnico
-DROP TABLE IF EXISTS `registro_tecnico`;
 CREATE TABLE IF NOT EXISTS `registro_tecnico` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `fk_id_filiacao_visita` int(11) DEFAULT NULL,
@@ -179,7 +169,6 @@ INSERT INTO `registro_tecnico` (`id`, `fk_id_filiacao_visita`, `fk_id_pessoal`, 
 /*!40000 ALTER TABLE `registro_tecnico` ENABLE KEYS */;
 
 -- Copiando estrutura para tabela lar_feliz.saude
-DROP TABLE IF EXISTS `saude`;
 CREATE TABLE IF NOT EXISTS `saude` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `fk_id_pessoal` int(11) DEFAULT NULL,
@@ -203,7 +192,6 @@ INSERT INTO `saude` (`id`, `fk_id_pessoal`, `tipo_consulta`, `data_da_consulta`,
 /*!40000 ALTER TABLE `saude` ENABLE KEYS */;
 
 -- Copiando estrutura para view lar_feliz.vw_atividade
-DROP VIEW IF EXISTS `vw_atividade`;
 -- Criando tabela temporária para evitar erros de dependência de VIEW
 CREATE TABLE `vw_atividade` (
   `nome` VARCHAR(555) NOT NULL COLLATE 'utf8_bin',
@@ -217,7 +205,6 @@ CREATE TABLE `vw_atividade` (
 ) ENGINE=MyISAM;
 
 -- Copiando estrutura para view lar_feliz.vw_educacao
-DROP VIEW IF EXISTS `vw_educacao`;
 -- Criando tabela temporária para evitar erros de dependência de VIEW
 CREATE TABLE `vw_educacao` (
   `nome` VARCHAR(555) NOT NULL COLLATE 'utf8_bin',
@@ -237,7 +224,6 @@ CREATE TABLE `vw_educacao` (
 ) ENGINE=MyISAM;
 
 -- Copiando estrutura para view lar_feliz.vw_filiacao
-DROP VIEW IF EXISTS `vw_filiacao`;
 -- Criando tabela temporária para evitar erros de dependência de VIEW
 CREATE TABLE `vw_filiacao` (
   `nome` VARCHAR(555) NOT NULL COLLATE 'utf8_bin',
@@ -253,8 +239,18 @@ CREATE TABLE `vw_filiacao` (
   `update_at` TIMESTAMP NULL
 ) ENGINE=MyISAM;
 
+-- Copiando estrutura para view lar_feliz.vw_list_filiacao
+-- Criando tabela temporária para evitar erros de dependência de VIEW
+CREATE TABLE `vw_list_filiacao` (
+  `nome_crianca` VARCHAR(555) NOT NULL COLLATE 'utf8_bin',
+  `nome_parente` VARCHAR(500) NULL COLLATE 'utf8_bin',
+  `id_parente` INT(11) NOT NULL,
+  `id` INT(11) NOT NULL,
+  `nome` TEXT NULL COLLATE 'utf8_bin',
+  `caminho_foto` VARCHAR(555) NULL COLLATE 'utf8_bin'
+) ENGINE=MyISAM;
+
 -- Copiando estrutura para view lar_feliz.vw_ocorrencia
-DROP VIEW IF EXISTS `vw_ocorrencia`;
 -- Criando tabela temporária para evitar erros de dependência de VIEW
 CREATE TABLE `vw_ocorrencia` (
   `nome` VARCHAR(555) NOT NULL COLLATE 'utf8_bin',
@@ -270,7 +266,6 @@ CREATE TABLE `vw_ocorrencia` (
 ) ENGINE=MyISAM;
 
 -- Copiando estrutura para view lar_feliz.vw_registro_tecnico
-DROP VIEW IF EXISTS `vw_registro_tecnico`;
 -- Criando tabela temporária para evitar erros de dependência de VIEW
 CREATE TABLE `vw_registro_tecnico` (
   `nome` VARCHAR(555) NOT NULL COLLATE 'utf8_bin',
@@ -289,7 +284,6 @@ CREATE TABLE `vw_registro_tecnico` (
 ) ENGINE=MyISAM;
 
 -- Copiando estrutura para view lar_feliz.vw_saude
-DROP VIEW IF EXISTS `vw_saude`;
 -- Criando tabela temporária para evitar erros de dependência de VIEW
 CREATE TABLE `vw_saude` (
   `id` INT(11) NOT NULL,
@@ -307,26 +301,35 @@ CREATE TABLE `vw_saude` (
 ) ENGINE=MyISAM;
 
 -- Copiando estrutura para view lar_feliz.vw_atividade
-DROP VIEW IF EXISTS `vw_atividade`;
 -- Removendo tabela temporária e criando a estrutura VIEW final
 DROP TABLE IF EXISTS `vw_atividade`;
 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vw_atividade` AS SELECT d.nome,d.caminho_foto, a.* 
 FROM atividade a INNER JOIN dados_pessoais d ON d.id = a.fk_id_pessoal ;
 
 -- Copiando estrutura para view lar_feliz.vw_educacao
-DROP VIEW IF EXISTS `vw_educacao`;
 -- Removendo tabela temporária e criando a estrutura VIEW final
 DROP TABLE IF EXISTS `vw_educacao`;
 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vw_educacao` AS SELECT d.nome,d.caminho_foto, e.* FROM educacao e INNER JOIN dados_pessoais d ON d.id = e.fk_id_pessoal ;
 
 -- Copiando estrutura para view lar_feliz.vw_filiacao
-DROP VIEW IF EXISTS `vw_filiacao`;
 -- Removendo tabela temporária e criando a estrutura VIEW final
 DROP TABLE IF EXISTS `vw_filiacao`;
 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vw_filiacao` AS SELECT d.nome, d.caminho_foto, f.* FROM filiacao f INNER JOIN dados_pessoais d ON d.id = f.fk_id_pessoal ;
 
+-- Copiando estrutura para view lar_feliz.vw_list_filiacao
+-- Removendo tabela temporária e criando a estrutura VIEW final
+DROP TABLE IF EXISTS `vw_list_filiacao`;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vw_list_filiacao` AS SELECT
+d.nome AS nome_crianca, f.nome_parente, 
+f.id as id_parente,
+f.id as id,
+CONCAT 
+(f.nome_parente," - ", f.nivel_parentesco, " de ", d.nome)AS nome,
+
+d.caminho_foto AS caminho_foto
+ FROM filiacao f INNER JOIN dados_pessoais d ON d.id = f.fk_id_pessoal ;
+
 -- Copiando estrutura para view lar_feliz.vw_ocorrencia
-DROP VIEW IF EXISTS `vw_ocorrencia`;
 -- Removendo tabela temporária e criando a estrutura VIEW final
 DROP TABLE IF EXISTS `vw_ocorrencia`;
 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vw_ocorrencia` AS SELECT d.nome,d.caminho_foto, 
@@ -342,7 +345,6 @@ INNER JOIN dados_pessoais d ON d.id =
 o.fk_id_pessoal ;
 
 -- Copiando estrutura para view lar_feliz.vw_registro_tecnico
-DROP VIEW IF EXISTS `vw_registro_tecnico`;
 -- Removendo tabela temporária e criando a estrutura VIEW final
 DROP TABLE IF EXISTS `vw_registro_tecnico`;
 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vw_registro_tecnico` AS SELECT d.nome,d.caminho_foto, f.nivel_parentesco, f.nome_parente, r.* 
@@ -351,7 +353,6 @@ INNER JOIN dados_pessoais d ON d.id = r.fk_id_pessoal
 INNER JOIN filiacao f ON f.id = r.fk_id_filiacao_visita ;
 
 -- Copiando estrutura para view lar_feliz.vw_saude
-DROP VIEW IF EXISTS `vw_saude`;
 -- Removendo tabela temporária e criando a estrutura VIEW final
 DROP TABLE IF EXISTS `vw_saude`;
 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vw_saude` AS SELECT s.`*`,d.nome, d.caminho_foto FROM saude s INNER JOIN dados_pessoais d ON d.id = s.fk_id_pessoal ;

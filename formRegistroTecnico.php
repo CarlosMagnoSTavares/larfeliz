@@ -84,20 +84,20 @@ require_once('delete.php');
 	<div class="" >
 		<div class="row" >
 			<div class="col s12 m12" >
-				<lbl>Nome da criança</lbl>
+				<lbl>Nome da filiação</lbl>
 				<select <?php echo  $disable; ?> name="fk_id_pessoal" >
 					<?php echo $option; ?>
 				</select>
-				<label>Nome da criança</label>
+				<label>Nome da filiação</label>
 			</div>
 
-			<div class="col s12 m12" >
+<!-- 			<div class="col s12 m12" >
 				<select <?php echo  $disable; ?> name="fk_id_pessoal" >
 					<?php echo $option_parente; ?>
 				</select>
 				<label>Nome do filiado</label>
 			</div>
-
+ -->
 			<div class="col s12 m12" >
 				*visita_domiciliar:
 				<input type="text" <?php echo ' value="'.$visita_domiciliar.'" '.$disable; ?> 
