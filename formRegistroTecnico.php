@@ -5,6 +5,16 @@ $titulo = "Registro tecnico";
 include_once('include/header.php'); 
 require_once('controll/Crud.class.php');
 
+	// id
+	// fk_id_filiacao_visita
+	// fk_id_pessoal
+	// visita_domiciliar
+	// informacoes_sobre_visita
+	// data_audiencia
+	// audiencia_declaracao_obs
+	// data_visita_familiar
+
+
 //Default da pagina
 	$table = "registro_tecnico";
 	$view = 'vw_registro_tecnico';
@@ -91,25 +101,13 @@ require_once('delete.php');
 				<label>Nome da filiação</label>
 			</div>
 
-<!-- 			<div class="col s12 m12" >
-				<select <?php echo  $disable; ?> name="fk_id_pessoal" >
-					<?php echo $option_parente; ?>
-				</select>
-				<label>Nome do filiado</label>
-			</div>
- -->
 			<div class="col s12 m12" >
 				*visita_domiciliar:
 				<input type="text" <?php echo ' value="'.$visita_domiciliar.'" '.$disable; ?> 
 				name="visita_domiciliar" required="true" >
 			</div>
-			
-
-
-			
 		</div>
 	</div>
-
 
 	<div class="row" >
 		<div class="col s12 m12 right-align" >
