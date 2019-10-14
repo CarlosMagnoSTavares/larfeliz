@@ -93,6 +93,14 @@ if (isset($_GET['opcao']) && isset($_GET['VALUE']) && isset($_GET['COLUMN_NAME']
 QUERY PARA CRIAR FILTROS
 	CREATE TABLE FILTROS AS 
 	SELECT TABLE_NAME,COLUMN_NAME,COLUMN_NAME AS LABEL, DATA_TYPE FROM information_schema.columns c WHERE c.table_schema = 'lar_feliz' AND c.table_name LIKE 'vw_%'
+
+INSERT into FILTROS 
+SELECT TABLE_NAME,COLUMN_NAME,COLUMN_NAME AS LABEL, DATA_TYPE
+FROM information_schema.columns c
+WHERE c.table_schema = 'lar_feliz' AND c.table_name LIKE 'hist_acolhidos'
+
+
+
 */
 
 //Não alterar "order e paginação" (TODAS AS TABELAS PRECISAM DE UMA COLUNA ID PRIMARY KEY)

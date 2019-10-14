@@ -114,6 +114,18 @@ $colorCard8 = $adminColor.' darken-4';
             </div>
           </div>
         </div>
+
+        <div class="col s12 m12">
+          <div class="card z-depth-5 <?php echo $colorCard8; ?>">
+            <div class="card-content white-text">
+              <span class="card-title center-align"><b>Histórico de acolhidos</b></span>
+              <p class="center-align">Apendice para cadastro e listagem de histórico de acolhidos.</p>
+            </div>
+            <div class="card-action center">
+              <a href="histAcolhidos.php" class="z-depth-5 btn-small waves-effect waves-light <?php echo $adminColor; ?>">Entrar</a>
+            </div>
+          </div>
+        </div>
     </div>
 <?php include_once('include/footer.php'); ?>
 
