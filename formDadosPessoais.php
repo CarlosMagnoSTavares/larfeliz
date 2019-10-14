@@ -34,6 +34,9 @@ include_once('include/header.php');
 
 $acao = isset($_GET['acao'])? $_GET['acao']:null;
 
+$tela = "dadosPessoais"; // Tela para liberar o acesso 
+require_once('loghelper.php');//Permite o acesso ou não 
+
 //EDITAR
 if ($acao == 'editar' || $acao == 'excluir'|| $acao == 'ver' ) 
 {

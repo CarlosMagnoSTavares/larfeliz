@@ -360,27 +360,20 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 
 
--- --------------------------------------------------------
--- Servidor:                     localhost
--- Versão do servidor:           5.7.24 - MySQL Community Server (GPL)
--- OS do Servidor:               Win64
--- HeidiSQL Versão:              10.2.0.5599
--- --------------------------------------------------------
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET NAMES utf8 */;
-/*!50503 SET NAMES utf8mb4 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
 
--- Copiando estrutura do banco de dados para lar_feliz
-DROP DATABASE IF EXISTS `lar_feliz`;
-CREATE DATABASE IF NOT EXISTS `lar_feliz` /*!40100 DEFAULT CHARACTER SET utf8 COLLATE utf8_bin */;
-USE `lar_feliz`;
+
+
+
+
+
+
+
+
+
+
 
 -- Copiando estrutura para tabela lar_feliz.filtros
-DROP TABLE IF EXISTS `filtros`;
 CREATE TABLE IF NOT EXISTS `filtros` (
   `TABLE_NAME` varchar(64) CHARACTER SET utf8 NOT NULL DEFAULT '',
   `COLUMN_NAME` varchar(64) CHARACTER SET utf8 NOT NULL DEFAULT '',
@@ -388,7 +381,7 @@ CREATE TABLE IF NOT EXISTS `filtros` (
   `DATA_TYPE` varchar(64) CHARACTER SET utf8 NOT NULL DEFAULT ''
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
--- Copiando dados para a tabela lar_feliz.filtros: ~75 rows (aproximadamente)
+-- Copiando dados para a tabela lar_feliz.filtros: ~50 rows (aproximadamente)
 DELETE FROM `filtros`;
 /*!40000 ALTER TABLE `filtros` DISABLE KEYS */;
 INSERT INTO `filtros` (`TABLE_NAME`, `COLUMN_NAME`, `LABEL`, `DATA_TYPE`) VALUES
@@ -441,7 +434,13 @@ INSERT INTO `filtros` (`TABLE_NAME`, `COLUMN_NAME`, `LABEL`, `DATA_TYPE`) VALUES
   ('vw_saude', 'exames', 'exames', 'varchar'),
   ('vw_saude', 'data_do_retorno', 'data_do_retorno', 'varchar'),
   ('vw_saude', 'observacoes_medicas', 'observacoes_medicas', 'varchar'),
-  ('vw_saude', 'nome', 'nome', 'varchar');
+  ('vw_saude', 'nome', 'nome', 'varchar'),
+  ('admin', 'id', 'id', 'int'),
+  ('admin', 'nome', 'nome', 'varchar'),
+  ('admin', 'email', 'email', 'varchar'),
+  ('admin', 'senha', 'senha', 'varchar'),
+  ('admin', 'tipo_acesso', 'tipo_acesso', 'varchar'),
+  ('admin', 'update_at', 'update_at', 'timestamp');
 /*!40000 ALTER TABLE `filtros` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;

@@ -31,6 +31,8 @@ require_once('controll/Crud.class.php');
 
 $acao = isset($_GET['acao'])? $_GET['acao']:null;
 
+$tela = "filiacao"; // Tela para liberar o acesso 
+require_once('loghelper.php');//Permite o acesso ou não 
 
 // lista os otions com as crianças e fotos 
 require_once('optionKids.php'); 
