@@ -1,5 +1,5 @@
 <?php 
-
+$telaAcessada = "educacao";
 $titulo = " Dados de Educação";
 
 include_once('include/header.php'); 

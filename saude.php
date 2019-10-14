@@ -1,4 +1,5 @@
 <?php 
+$telaAcessada = "saude";
 $titulo = "Dados médicos e saúde";
 include_once('include/header.php'); 
 require_once('controll/Crud.class.php');

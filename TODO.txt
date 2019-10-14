@@ -1,125 +1,223 @@
---------------------------------------------------------------------
-FALTA
+Entrega 1 = (1,3,8)
 
-Resgitro tecnico
-Admin
-Filtros
-Relatório (Lista tudão de uma criança só) FIXA COMPLETA CAPIVARA
+Entrega 2 = (2)
 
-Historico de acolhidos (Apendice)
+Entrega 3 = (4,5,6,7)
 
+Entrega 4 = (10,11)
 
---------------------------------------------------------------------
+Entrega 5 = (9)
 
-1° Sprint ↓ 
-	Módulos: (1,3,8)
-	Telas: Dados_pessoais, Filiação, Desligamento (ok)
+ 
 
-2° Sprint  ↓
-	Módulos: (2)
-	Telas: Saude
+IDENTIDADE VISUAL: https://larfeliz.com.br/
 
-3° Sprint  ↓
-	Módulos: (4,5,6,7)
-	Telas: EDUCAÇÃO, ATIVIDADES, REGISTRO TECNICO, OCORRENCIA POLICIAL
+ 
 
-4° Sprint  ↓
-	Módulos: (10,11)
-	Telas: ADMINS, TIPOS DE ACESSO
+ 
 
-5° Sprint  ↓
-	Módulos: (9)
-	Telas: HISTORICO DE ACOLHIDOS (APENDICE SEM LIGAÇÃO)
+1)Dados pessoais
 
---------------------------------------------------------------------
+                Nome
 
-admin
-  id
-  nome
-  email
-  senha
-  tipo_acesso
+                Foto
 
-atividade
-  id
-  fk_id_pessoal
-  frequencia
-  dia
-  horario
-  local
+                3)Filiação
 
-dados_pessoais
-  id
-  nome
-  caminho_foto
-  endereco
-  data_acolhimento
-  motivo_acolhimento
-  anexo_certidao
-  anexo_CPF
-  anexo_cartao_cidadao
-  anexo_carteira_vacinacao
-  anexo_guia_recolhimento
-  anexo_determinacao_acolhimento
-  anexo_historico_escolar
-  dados_bancarios
-  tipo_sanguineo
-  aspectos_gerais_obs
-  visitas_familiares_obs
-  data_desligamento
+                               Parentesco (Pai,Mae...)
 
-educacao
-  id
-  fk_id_pessoal
-  ano
-  tipo_escolaridade
-  escola
-  nome_pessoa_contato
-  numero_tel
-  numero_cel
-  anexo_rel_prim_semestre
-  anexo_rel_segun_semestre
-  atividade_compl
+                               Nome
 
-filiacao
-  id
-  fk_id_pessoal
-  nivel_parentesco
-  nome_parente
-  Endereco
-  telefone
-  atividade_profissional
-  dinamica_familiar_obs
+                               Endereço
 
-ocorrencia
-  id
-  fk_id_pessoal
-  tipo
-  data
-  fato
-  anexo_bo
-  descricao_obs
+                               Telefone
 
-registro_tecnico
-  id
-  fk_id_filiacao_visita
-  visita_domiciliar
-  informacoes_sobre_visita
-  data_audiencia
-  audiencia_declaracao_obs
-  data_visita_familiar
+                               Atividade profissional
 
-saude
-  id
-  fk_id_pessoal
-  tipo_consulta
-  data_da_consulta
-  medicamentos
-  exames
-  data_do_retorno
-  observacoes_medicas
-  anexo
-  CREATE TABLE
-  nome
+                               Dinâmica familiar OBS
 
+                Escolaridade
 
+                Escola
+
+                Endereço
+
+                Data acolhimento
+
+                Motivo acolhimento
+
+                               Tipo acolhimento
+
+                Medicamento continuo
+
+                               Nome medicamento
+
+                               Dosagem
+
+                               Horário de uso
+
+                OBS do medicamento
+
+                Anexos (8)
+
+                               (Certidão, CPF, RG, Cartão cidadão, Carteira vacinação, Guia recolhimento, Determinação acolhimento, Historio escolar)
+
+                Dados Bancários (AG/CC)
+
+                Tipo sanguíneo
+
+                Aspectos gerais OBS
+
+                Visitas familiares OBS
+
+                8)Desligamento
+
+                               Data
+
+                               Parente
+
+                               Destino (Endereço desta filiação)
+
+ 
+
+2)SAUDE
+
+                Tipo Consulta
+
+                Data da consulta
+
+                               Tipos
+
+                Medicamentos
+
+                Exames
+
+                Data do retorno
+
+                OBS MEDICA
+
+                Anexo (Por Consulta)
+
+ 
+
+4)EDUCAÇÃO
+
+                ANO
+
+                Escolaridade
+
+                               Tipo Escolaridade
+
+                Escola
+
+                               Pessoa de contato
+
+                               Numero Tel
+
+                               Numero Cel
+
+                Anexo
+
+                               Relatório Semestral
+
+                Atividades complementares OBS
+
+                Ocorrências
+
+                               Data
+
+                               Motivo
+
+                               OBS Ocorrência
+
+ 
+
+5)ATIVIDADES
+
+                Frequência
+
+                Dia
+
+                Horário
+
+                Local
+
+ 
+
+ 
+
+6)REGISTRO TECNICO
+
+                Visita domiciliar
+
+                               Data Informação OBS
+
+                Audiência
+
+                               Data
+
+                               Declaração OBS
+
+                Visitas familiares
+
+                               DATA
+
+                               Filiação (Tabela de parentes)
+
+ 
+
+7)OCORRENCIA POLICIAL
+
+                Data
+
+                Dato
+
+                Anexo B.O
+
+                Descrição OBS
+
+ 
+
+9)HISTORICO DE ACOLHIDOS (APENDICE SEM LIGAÇÃO)
+
+                Nome
+
+                Data acolhimento
+
+                Origem
+
+                Data nascimento
+
+      
+
+                               Nome pai
+
+                               Nome Mae
+
+                Data desligamento
+
+                Destino OBS
+
+                Informações diversas OBS
+
+ 
+
+ 
+
+10)ADMINS
+
+                NOME
+
+                EMAIL
+
+                SENHA
+
+                TIPO DE ACESSO
+
+ 
+
+11)TIPOS DE ACESSO
+
+                Educadores(1,2,4,5) dados_pessoais, saude, educacao, atividade 
+
+                Equipe (Todos)

@@ -1,5 +1,5 @@
 <?php 
-
+$telaAcessada = "ocorrencia";
 $titulo = "Ocorrências";
 
 include_once('include/header.php'); 

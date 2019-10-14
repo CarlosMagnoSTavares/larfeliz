@@ -3,10 +3,6 @@
 $educador = @$_SESSION["usuario"];
 $tipo_acesso = @$_SESSION['tipo_acesso'];
 
-if (empty($educador)) {
-  die();
-}//Se nao tiver logado nem carrega nada
-
 $titulo = isset($titulo)? "<b>".$titulo."</b>": " <br>BEM-VINDO<br><b>".$educador."</b><br> Você está acessando como: ".$tipo_acesso;
 ?>
 
@@ -26,7 +22,7 @@ $titulo = isset($titulo)? "<b>".$titulo."</b>": " <br>BEM-VINDO<br><b>".$educado
 <body>
   <nav class="orange" role="navigation">
     <div class="nav-wrapper container">
-        <a href="index.php">
+        <a href="logoff.php">
           <img id="logo-container" src="css/logo.png" class="brand-logo" width="100px" height="100px" ></img>
         </a>
       <ul class="right hide-on-med-and-down">
@@ -66,41 +62,8 @@ if (!empty($start)) {?>
   }
  </script>
 
-<?php } 
+<?php } ?>
 
-
-// GESTÃO DO NIVEL DE ACESSO
-$telaAcessada = isset($telaAcessada)? $telaAcessada : "ERROR";
-
-if ($tipo_acesso == "EDUCADOR" ) {
-  if ( $telaAcessada <> 'dados_pessoais' && $telaAcessada  <> "saude" && $telaAcessada  <> "educacao" && $telaAcessada  <> "atividade" && $telaAcessada  <> "index" ) 
-  {
-  echo '
-  <br><br><br>
-  <h5 align="center" class="center-align" >ACESSO NÃO AUTORIZADO</h5>';
-  echo '<p align="center" class="center-align" >Por favor, solicite ao admin que libere seu acesso a esta tela, obrigado.</p>
-  <br><br><br><br><br><br><br><br><br><br><br><br>';
-  include_once('include/footer.php'); 
-  die();
-  }
-} 
-
-
-if ($tipo_acesso <> 'ADMIN' && $telaAcessada == "admin") 
-{
-  echo '
-  <br><br><br>
-  <h5 align="center" class="center-align" >ACESSO NÃO AUTORIZADO</h5>';
-  echo '<p align="center" class="center-align" >Acesso restrito a administradores.</p>
-  <br><br><br><br><br><br><br><br><br><br><br><br>';
-  include_once('include/footer.php'); 
-  die();
-}
-
-
-
- // Educadores(1,2,4,5) dados_pessoais, saude, educacao, atividade 
-
- //Equipe (Todos)
-
-?>
+<!-- start=update_Success -->
+<!-- start=delete_Success -->
+<!-- start=insert_Success -->

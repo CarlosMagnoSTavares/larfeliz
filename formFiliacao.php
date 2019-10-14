@@ -1,5 +1,5 @@
 <?php 
-
+$telaAcessada = "filiacao";
 $titulo = "Filiação";
 
 include_once('include/header.php'); 

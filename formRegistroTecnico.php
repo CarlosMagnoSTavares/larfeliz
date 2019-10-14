@@ -1,5 +1,5 @@
 <?php 
-
+$telaAcessada = "registro_tecnico";
 $titulo = "Registro tecnico";
 
 include_once('include/header.php'); 

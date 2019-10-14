@@ -1,5 +1,5 @@
 <?php 
-
+$telaAcessada = "dados_pessoais";
 $titulo = "Dados Pessoais";
 
 include_once('include/header.php'); 

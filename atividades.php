@@ -1,4 +1,5 @@
 <?php 
+$telaAcessada = "atividades";
 $titulo = "Atividades complementares";
 include_once('include/header.php'); 
 require_once('controll/Crud.class.php');

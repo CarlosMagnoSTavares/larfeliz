@@ -1,5 +1,5 @@
 <?php 
-
+$telaAcessada = "saude";
 $titulo = "Saúde";
 
 include_once('include/header.php'); 

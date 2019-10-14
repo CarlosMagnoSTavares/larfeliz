@@ -1,4 +1,5 @@
 <?php 
+$telaAcessada = "index";
 include_once('include/header.php'); 
 
 $dadosPessoaisColor = 'orange'; //disabled 
@@ -22,7 +23,7 @@ $colorCard8 = $adminColor.' darken-4';
 ?>
     <!-- Primeira linha de blocos -->
     <div class="row">
-        <div class="col s12 m3">
+        <div class="col s12 m6">
           <div class="card z-depth-5 <?php echo $colorCard1; ?>">
             <div class="card-content white-text">
               <span class="card-title center-align"><b>Dados Pessoais</b></span>
@@ -33,7 +34,7 @@ $colorCard8 = $adminColor.' darken-4';
             </div>
           </div>
         </div>
-        <div class="col s12 m3">
+        <div class="col s12 m6">
           <div class="card z-depth-5 <?php echo $colorCard2; ?>">
             <div class="card-content white-text">
               <span class="card-title center-align"><b>Registro Filiação</b></span>
@@ -44,7 +45,7 @@ $colorCard8 = $adminColor.' darken-4';
             </div>
           </div>
         </div>
-        <div class="col s12 m3">
+        <div class="col s12 m6">
           <div class="card z-depth-5 <?php echo $colorCard3; ?>">
             <div class="card-content white-text">
               <span class="card-title center-align"><b>Registro Educação</b></span>
@@ -55,7 +56,7 @@ $colorCard8 = $adminColor.' darken-4';
             </div>
           </div>
         </div>
-        <div class="col s12 m3">
+        <div class="col s12 m6">
           <div class="card z-depth-5 <?php echo $colorCard4; ?>">
             <div class="card-content white-text">
               <span class="card-title center-align"><b>Registro Saúde</b></span>
@@ -69,7 +70,7 @@ $colorCard8 = $adminColor.' darken-4';
     </div>
     <!-- Segunda linha de blocos -->
     <div class="row">
-        <div class="col s12 m3">
+        <div class="col s12 m6">
           <div class="card z-depth-5 <?php echo $colorCard5; ?>">
             <div class="card-content white-text">
               <span class="card-title center-align"><b>Atividades</b></span>
@@ -80,7 +81,7 @@ $colorCard8 = $adminColor.' darken-4';
             </div>
           </div>
         </div>
-        <div class="col s12 m3">
+        <div class="col s12 m6">
           <div class="card z-depth-5 <?php echo $colorCard6; ?>">
             <div class="card-content white-text">
               <span class="card-title center-align"><b>Ocorrências</b></span>
@@ -91,7 +92,7 @@ $colorCard8 = $adminColor.' darken-4';
             </div>
           </div>
         </div>
-        <div class="col s12 m3">
+        <div class="col s12 m6">
           <div class="card z-depth-5 <?php echo $colorCard7; ?>">
             <div class="card-content white-text">
               <span class="card-title center-align"><b>Reg. técnico</b></span>
@@ -102,7 +103,7 @@ $colorCard8 = $adminColor.' darken-4';
             </div>
           </div>
         </div>
-        <div class="col s12 m3">
+        <div class="col s12 m6">
           <div class="card z-depth-5 <?php echo $colorCard8; ?>">
             <div class="card-content white-text">
               <span class="card-title center-align"><b>Admin</b></span>

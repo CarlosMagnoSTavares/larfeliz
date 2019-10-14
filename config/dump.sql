@@ -27,7 +27,7 @@ CREATE TABLE IF NOT EXISTS `admin` (
   `tipo_acesso` varchar(255) COLLATE utf8_bin DEFAULT NULL,
   `update_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- Exportação de dados foi desmarcado.
 
@@ -292,26 +292,26 @@ CREATE TABLE `vw_saude` (
 DROP VIEW IF EXISTS `vw_atividade`;
 -- Removendo tabela temporária e criando a estrutura VIEW final
 DROP TABLE IF EXISTS `vw_atividade`;
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vw_atividade` AS SELECT d.nome,d.caminho_foto, a.* 
+CREATE ALGORITHM=UNDEFINED  SQL SECURITY DEFINER VIEW `vw_atividade` AS SELECT d.nome,d.caminho_foto, a.* 
 FROM atividade a INNER JOIN dados_pessoais d ON d.id = a.fk_id_pessoal ;
 
 -- Copiando estrutura para view lar_feliz.vw_educacao
 DROP VIEW IF EXISTS `vw_educacao`;
 -- Removendo tabela temporária e criando a estrutura VIEW final
 DROP TABLE IF EXISTS `vw_educacao`;
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vw_educacao` AS SELECT d.nome,d.caminho_foto, e.* FROM educacao e INNER JOIN dados_pessoais d ON d.id = e.fk_id_pessoal ;
+CREATE ALGORITHM=UNDEFINED  SQL SECURITY DEFINER VIEW `vw_educacao` AS SELECT d.nome,d.caminho_foto, e.* FROM educacao e INNER JOIN dados_pessoais d ON d.id = e.fk_id_pessoal ;
 
 -- Copiando estrutura para view lar_feliz.vw_filiacao
 DROP VIEW IF EXISTS `vw_filiacao`;
 -- Removendo tabela temporária e criando a estrutura VIEW final
 DROP TABLE IF EXISTS `vw_filiacao`;
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vw_filiacao` AS SELECT d.nome, d.caminho_foto, f.* FROM filiacao f INNER JOIN dados_pessoais d ON d.id = f.fk_id_pessoal ;
+CREATE ALGORITHM=UNDEFINED  SQL SECURITY DEFINER VIEW `vw_filiacao` AS SELECT d.nome, d.caminho_foto, f.* FROM filiacao f INNER JOIN dados_pessoais d ON d.id = f.fk_id_pessoal ;
 
 -- Copiando estrutura para view lar_feliz.vw_list_filiacao
 DROP VIEW IF EXISTS `vw_list_filiacao`;
 -- Removendo tabela temporária e criando a estrutura VIEW final
 DROP TABLE IF EXISTS `vw_list_filiacao`;
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vw_list_filiacao` AS SELECT
+CREATE ALGORITHM=UNDEFINED  SQL SECURITY DEFINER VIEW `vw_list_filiacao` AS SELECT
 d.nome AS nome_crianca, f.nome_parente, 
 f.id as id_parente,
 f.id as id,
@@ -325,7 +325,7 @@ d.caminho_foto AS caminho_foto
 DROP VIEW IF EXISTS `vw_ocorrencia`;
 -- Removendo tabela temporária e criando a estrutura VIEW final
 DROP TABLE IF EXISTS `vw_ocorrencia`;
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vw_ocorrencia` AS SELECT d.nome,d.caminho_foto, 
+CREATE ALGORITHM=UNDEFINED  SQL SECURITY DEFINER VIEW `vw_ocorrencia` AS SELECT d.nome,d.caminho_foto, 
 
 o.* 
 
@@ -341,7 +341,7 @@ o.fk_id_pessoal ;
 DROP VIEW IF EXISTS `vw_registro_tecnico`;
 -- Removendo tabela temporária e criando a estrutura VIEW final
 DROP TABLE IF EXISTS `vw_registro_tecnico`;
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vw_registro_tecnico` AS SELECT d.nome as nome_crianca,d.caminho_foto, f.nivel_parentesco, f.nome_parente, 
+CREATE ALGORITHM=UNDEFINED  SQL SECURITY DEFINER VIEW `vw_registro_tecnico` AS SELECT d.nome as nome_crianca,d.caminho_foto, f.nivel_parentesco, f.nome_parente, 
 CONCAT 
 (f.nome_parente," - ", f.nivel_parentesco, " de ", d.nome)AS nome,
 r.* 
@@ -353,7 +353,7 @@ INNER JOIN dados_pessoais d ON d.id = f.fk_id_pessoal ;
 DROP VIEW IF EXISTS `vw_saude`;
 -- Removendo tabela temporária e criando a estrutura VIEW final
 DROP TABLE IF EXISTS `vw_saude`;
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vw_saude` AS SELECT s.`*`,d.nome, d.caminho_foto FROM saude s INNER JOIN dados_pessoais d ON d.id = s.fk_id_pessoal ;
+CREATE ALGORITHM=UNDEFINED  SQL SECURITY DEFINER VIEW `vw_saude` AS SELECT s.`*`,d.nome, d.caminho_foto FROM saude s INNER JOIN dados_pessoais d ON d.id = s.fk_id_pessoal ;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
@@ -361,19 +361,42 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 
 
 
+-- --------------------------------------------------------
+-- Servidor:                     localhost
+-- Versão do servidor:           5.7.24 - MySQL Community Server (GPL)
+-- OS do Servidor:               Win64
+-- HeidiSQL Versão:              10.2.0.5599
+-- --------------------------------------------------------
 
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET NAMES utf8 */;
+/*!50503 SET NAMES utf8mb4 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
+-- Copiando estrutura para tabela lar_feliz.admin
+DROP TABLE IF EXISTS `admin`;
+CREATE TABLE IF NOT EXISTS `admin` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `email` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `senha` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `tipo_acesso` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `update_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
-
-
-
-
-
+-- Copiando dados para a tabela lar_feliz.admin: ~0 rows (aproximadamente)
+DELETE FROM `admin`;
+/*!40000 ALTER TABLE `admin` DISABLE KEYS */;
+INSERT INTO `admin` (`id`, `nome`, `email`, `senha`, `tipo_acesso`, `update_at`) VALUES
+  (6, 'CARLOS MAGNO SILVA TAVARES', 'CARLOSCRLS@HOTMAIL.COM', 'CARLOSCRLS', 'ADMIN', '2019-10-14 19:54:31');
 
 
 
 
 -- Copiando estrutura para tabela lar_feliz.filtros
+DROP TABLE IF EXISTS `filtros`;
 CREATE TABLE IF NOT EXISTS `filtros` (
   `TABLE_NAME` varchar(64) CHARACTER SET utf8 NOT NULL DEFAULT '',
   `COLUMN_NAME` varchar(64) CHARACTER SET utf8 NOT NULL DEFAULT '',
@@ -381,7 +404,7 @@ CREATE TABLE IF NOT EXISTS `filtros` (
   `DATA_TYPE` varchar(64) CHARACTER SET utf8 NOT NULL DEFAULT ''
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
--- Copiando dados para a tabela lar_feliz.filtros: ~50 rows (aproximadamente)
+-- Copiando dados para a tabela lar_feliz.filtros: ~56 rows (aproximadamente)
 DELETE FROM `filtros`;
 /*!40000 ALTER TABLE `filtros` DISABLE KEYS */;
 INSERT INTO `filtros` (`TABLE_NAME`, `COLUMN_NAME`, `LABEL`, `DATA_TYPE`) VALUES
@@ -446,5 +469,4 @@ INSERT INTO `filtros` (`TABLE_NAME`, `COLUMN_NAME`, `LABEL`, `DATA_TYPE`) VALUES
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-
 

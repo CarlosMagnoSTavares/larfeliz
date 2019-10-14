@@ -1,5 +1,5 @@
 <?php 
-
+$telaAcessada = "admin";
 $titulo = "Admin";
 
 include_once('include/header.php'); 
@@ -78,14 +78,20 @@ require_once('delete.php');
 				*senha:<input type="text" <?php echo ' value="'.$senha.'" '.$disable; ?> 
 				name="senha" required="true" >
 			</div>
+
 			<div class="col s12 m12" >
-				*tipo_acesso:<input type="text" <?php echo ' value="'.$tipo_acesso.'" '.$disable; ?> 
-				name="tipo_acesso" required="true" >
+				<lbl>Tipo acesso</lbl>
+				<select  name="tipo_acesso" <?php echo ' value="'.$tipo_acesso.'" '.$disable; ?> required="true"  >
+					<option <?php echo ' value="'.$tipo_acesso.'" '; ?>  selected="true"><?php echo $tipo_acesso; ?> </option>
+					<option value="EDUCADOR">EDUCADOR</option>
+					<option value="EQUIPE">EQUIPE</option>
+					<option value="ADMIN">ADMIN</option>
+				</select>
 			</div>
 			
 		</div>
 	</div>
-
+	<label>Obs: educadores tem acesso somente a: <b> Dados pessoais, Saúde, Educacao e Atividade </b></label>
 
 	<div class="row" >
 		<div class="col s12 m12 right-align" >
@@ -93,6 +99,7 @@ require_once('delete.php');
 			<input type="submit" class="btn btn-large orange" <?php echo ' value="'.$salvar.'" '.$disable; ?> name="salvar"  >
 		</div>
 	</div>
+
 </form>
 
 <?php include_once('include/footer.php'); ?>
