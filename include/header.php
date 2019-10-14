@@ -45,3 +45,21 @@ $titulo = isset($titulo)? "<b>".$titulo."</b>": "Bem-vindo educador <br><b> Nome
   <div class="container">
 <!-- AQUI TERMINA O HEADER -->
 
+
+
+<?php 
+$start = isset($_GET['start']) ? isset($_GET['start']) : NULL;
+
+if (!empty($start)) {?>
+
+ <script type="text/javascript">
+  window.onload = function() {
+   M.toast({html: '<a class="green-text"><b> Sucesso! </b></a>', classes: 'rounded'})
+  }
+ </script>
+
+<?php } ?>
+
+<!-- start=update_Success -->
+<!-- start=delete_Success -->
+<!-- start=insert_Success -->

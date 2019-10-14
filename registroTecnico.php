@@ -26,13 +26,13 @@ require_once('pagina.php');// paginação
 		      <tr>
 		          <th><a href="?orderColumn=nome">Foto</a></th>
 		          <th><a href="?orderColumn=nome">Nome Criança</a></th>
-		          <th><a href="?orderColumn=nivel_parentesco">Parentesco</a></th>
+		          <!-- <th><a href="?orderColumn=nivel_parentesco">Parentesco</a></th>
 		          <th><a href="?orderColumn=nome_parente">Filiação</a></th>
 
-		          <th><a href="?orderColumn=visita_domiciliar">visita_domiciliar</a></th>
-		          <th><a href="?orderColumn=data_audiencia">data_audiencia</a></th>
-		          <th><a href="?orderColumn=audiencia_declaracao_obs">audiencia_declaracao_obs</a></th>
-		          <th><a href="?orderColumn=data_visita_familiar">data_visita_familiar</a></th>
+		          <th><a href="?orderColumn=visita_domiciliar">visita_domiciliar</a></th> -->
+		          <th><a href="?orderColumn=data_audiencia">Data audiencia</a></th>
+		          <!-- <th><a href="?orderColumn=audiencia_declaracao_obs">audiencia_declaracao_obs</a></th> -->
+		          <th><a href="?orderColumn=data_visita_familiar">Data visita</a></th>
 
 		          <!-- Padrão nao alterar -->
 		          <th><a href="?orderColumn=id">Ver</a></th>
@@ -63,11 +63,11 @@ require_once('pagina.php');// paginação
 					<tr>
 						<td><img src="'.$caminhoFoto.'"  data_audiencia-caption="'.$nome.'" class="circle materialboxed" width="35px" height="35px"></td>
 						<td class="">'.$nome.'</td>
-						<td class="">'.$nivel_parentesco.'</td>
-						<td class="">'.$nome_parente.'</td>
-						<td class="">'.$visita_domiciliar.'</td>
+						<!-- <td class="">'.$nivel_parentesco.'</td>-->
+						<!-- <td class="">'.$nome_parente.'</td>-->
+						<!-- <td class="">'.$visita_domiciliar.'</td>-->
 						<td class="">'.$data_audiencia.'</td>
-						<td class="">'.$audiencia_declaracao_obs.'</td>
+						<!-- <td class="">'.$audiencia_declaracao_obs.'</td> -->
 						<td class="">'.$data_visita_familiar.'</td>
 
 						<!-- Padrão nao alterar -->
@@ -89,3 +89,4 @@ include_once('include/pagination.php');
 include_once('include/footer.php'); 
 
 ?>
+<!-- asdasd -->

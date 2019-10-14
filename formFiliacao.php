@@ -14,6 +14,7 @@ require_once('controll/Crud.class.php');
 	$telaRedirect="filiacao.php";
 
 	// Default todos os campos sem valor
+	$table= "filiacao";
 	$id = "";
 	$nome = "";
 	$fk_id_pessoal = "";
@@ -40,13 +41,13 @@ if ($acao == 'editar' || $acao == 'excluir'|| $acao == 'ver' )
 	if (isset($_GET['id']) && is_numeric($_GET['id']) ) 
 	{
 		// LISTA USUARIO DO ID INFORMADO ↓
-			$table = 'vw_filiacao';
+			$view = 'vw_filiacao';
 			$where = " id = ".$_GET['id'];
 			$orderBy ="";
 			$limit = "1";
 
 			$crud = new Crud;
-			$list = $crud->select($table,$where,$orderBy,$limit);
+			$list = $crud->select($view,$where,$orderBy,$limit);
 			$option = "";
 			foreach ($list as $key => $value) 
 				{

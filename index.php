@@ -36,7 +36,7 @@ $colorCard8 = $adminColor.' darken-4';
         <div class="col s12 m3">
           <div class="card z-depth-5 <?php echo $colorCard2; ?>">
             <div class="card-content white-text">
-              <span class="card-title center-align"><b>Filiação</b></span>
+              <span class="card-title center-align"><b>Registro Filiação</b></span>
               <p class="center-align">Cadastro da família.</p>
             </div>
             <div class="card-action center">
@@ -47,8 +47,8 @@ $colorCard8 = $adminColor.' darken-4';
         <div class="col s12 m3">
           <div class="card z-depth-5 <?php echo $colorCard3; ?>">
             <div class="card-content white-text">
-              <span class="card-title center-align"><b>Educação</b></span>
-              <p class="center-align">Registrar dados escolares.</p>
+              <span class="card-title center-align"><b>Registro Educação</b></span>
+              <p class="center-align">Dados escolares.</p>
             </div>
             <div class="card-action center">
               <a href="educacao.php" class="z-depth-5 btn-small waves-effect waves-light <?php echo $educacaoColor; ?>">Entrar</a>
@@ -58,8 +58,8 @@ $colorCard8 = $adminColor.' darken-4';
         <div class="col s12 m3">
           <div class="card z-depth-5 <?php echo $colorCard4; ?>">
             <div class="card-content white-text">
-              <span class="card-title center-align"><b>Saúde</b></span>
-              <p class="center-align">Dados médicos da criança.</p>
+              <span class="card-title center-align"><b>Registro Saúde</b></span>
+              <p class="center-align">Dados médicos.</p>
             </div>
             <div class="card-action center">
               <a href="saude.php" class="z-depth-5 btn-small waves-effect waves-light <?php echo $saudeColor; ?>">Entrar</a>
@@ -94,7 +94,7 @@ $colorCard8 = $adminColor.' darken-4';
         <div class="col s12 m3">
           <div class="card z-depth-5 <?php echo $colorCard7; ?>">
             <div class="card-content white-text">
-              <span class="card-title center-align"><b>Registro técnico</b></span>
+              <span class="card-title center-align"><b>Reg. técnico</b></span>
               <p class="center-align">Dados de visitas domiciliares e audiências.</p>
             </div>
             <div class="card-action center">

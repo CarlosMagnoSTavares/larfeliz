@@ -30,8 +30,8 @@ class Crud extends Conn
 		$orderBy = !empty($orderBy)? " order by ". $orderBy : NULL;
 		$limit = !empty($limit)? " limit ". $limit : NULL;
 		$con = Conn::conectar();
-		$querySelect = 'SELECT * FROM '.addslashes($table).$where.$orderBy.$limit.' ;';
-			// Conn::log($querySelect);//GERA LOG DA AÇÂO
+		$querySelect = strtoupper('SELECT * FROM '.addslashes($table).$where.$orderBy.$limit.' ;');
+			 //Conn::log($querySelect);//GERA LOG DA AÇÂO
 		$querySelect = mysqli_query($con,$querySelect);
 		mysqli_close($con);
  		return $querySelect;
@@ -54,7 +54,7 @@ class Crud extends Conn
 		$columns = "`".implode("`,`", $columns)."`";
 		$values = "'".implode("','", $values)."'";
 		$con = Conn::conectar();
-		$queryInsert = "INSERT INTO $table ($columns) VALUES ($values) ;";
+		$queryInsert = strtoupper("INSERT INTO $table ($columns) VALUES ($values) ;");
 			// Conn::log($queryInsert);//GERA LOG DA AÇÂO
 		$resultInsert = mysqli_query($con,$queryInsert);
 		mysqli_close($con);
@@ -73,7 +73,7 @@ class Crud extends Conn
 		$where = !empty($where)? " WHERE ". $where : NULL;
 
 		$con = Conn::conectar();
-		$queryUpdate = 'UPDATE '.$table.' SET '.$setValues.$where.';';
+		$queryUpdate = strtoupper('UPDATE '.$table.' SET '.$setValues.$where.';');
 			//Conn::log($queryUpdate);//GERA LOG DA AÇÂO
 		$texto =  $queryUpdate;
 		$queryUpdate = mysqli_query($con,$queryUpdate);
@@ -92,15 +92,16 @@ class Crud extends Conn
 		$where = !empty($where)? " WHERE ". $where : NULL;
 
 		$con = Conn::conectar();
-		$queryDelete = "DELETE FROM $table $where;";
+		$queryDel = "DELETE FROM $table $where;";
 			// Conn::log($queryDelete);//GERA LOG DA AÇÂO
-		$queryDelete = mysqli_query($con,$queryDelete);
+		$queryDelete = mysqli_query($con,$queryDel);
 		mysqli_close($con);
 		
 		if ($queryDelete) {
 			return 'Success';
 		} else {
-			return $queryDelete;
+			// return $queryDel;
+			return 'Fail';
 		}
 
 	}

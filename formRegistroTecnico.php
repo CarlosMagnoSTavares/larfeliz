@@ -5,14 +5,7 @@ $titulo = "Registro tecnico";
 include_once('include/header.php'); 
 require_once('controll/Crud.class.php');
 
-	// id
-	// fk_id_filiacao_visita
-	// fk_id_pessoal
-	// visita_domiciliar
-	// informacoes_sobre_visita
-	// data_audiencia
-	// audiencia_declaracao_obs
-	// data_visita_familiar
+
 
 
 //Default da pagina
@@ -80,8 +73,8 @@ if ($acao == 'editar' || $acao == 'excluir'|| $acao == 'ver' )
 
 					$limpar = "Limpar";
 					$salvar = "editar";
-					$option .= '<option data-icon="'.$caminhoFoto.'" value="'.$fk_id_pessoal.'" selected>'.$nome.'</option>';
-					$option_parente .= '<option data-icon="" value="'.$fk_id_filiacao_visita.'" selected>'.$nome_parente.'</option>';
+					$option .= '<option data-icon="'.$caminhoFoto.'" value="'.$fk_id_filiacao_visita.'" selected>'.$nome.'</option>';
+					// $option_parente .= '<option data-icon="" value="'.$fk_id_filiacao_visita.'" selected>'.$nome_parente.'</option>';
 				}
 	} 	
 } 
@@ -89,13 +82,24 @@ if ($acao == 'editar' || $acao == 'excluir'|| $acao == 'ver' )
 require_once('delete.php');
 ?>
 
+<!-- 	
+	// fk_id_pessoal
+
+	// fk_id_filiacao_visita
+	// visita_domiciliar
+	// informacoes_sobre_visita
+	// data_audiencia
+	// data_visita_familiar 
+	// audiencia_declaracao_obs
+-->
+
 <form action="controll/<?php echo $formPost; ?>" method="POST" enctype="multipart/form-data" >
 <input type="hidden" name="id" value="<?php echo $id; ?>">
 	<div class="" >
 		<div class="row" >
 			<div class="col s12 m12" >
 				<lbl>Nome da filiação</lbl>
-				<select <?php echo  $disable; ?> name="fk_id_pessoal" >
+				<select <?php echo  $disable; ?> name="fk_id_filiacao_visita" required="true">
 					<?php echo $option; ?>
 				</select>
 				<label>Nome da filiação</label>
@@ -106,6 +110,33 @@ require_once('delete.php');
 				<input type="text" <?php echo ' value="'.$visita_domiciliar.'" '.$disable; ?> 
 				name="visita_domiciliar" required="true" >
 			</div>
+
+			<div class="col s12 m12" >
+				*informacoes_sobre_visita:
+				<input type="text" <?php echo ' value="'.$informacoes_sobre_visita.'" '.$disable; ?> 
+				name="informacoes_sobre_visita" required="true" >
+			</div>
+
+
+			<div class="col s6 m6" >
+				*data_audiencia:
+				<input type="date" <?php echo ' value="'.$data_audiencia.'" '.$disable; ?> 
+				name="data_audiencia" >
+			</div>
+
+			<div class="col s6 m6" >
+				*data_visita_familiar:
+				<input type="date" <?php echo ' value="'.$data_visita_familiar.'" '.$disable; ?> 
+				name="data_visita_familiar" required="true" >
+			</div>
+
+			<div class="col s12 m12" >
+				*audiencia_declaracao_obs:
+				<input type="text" <?php echo ' value="'.$audiencia_declaracao_obs.'" '.$disable; ?> 
+				name="audiencia_declaracao_obs">
+			</div>
+
+
 		</div>
 	</div>
 
