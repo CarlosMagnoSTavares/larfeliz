@@ -13,12 +13,12 @@ else
 
     <form action="#" method="POST" >
             <div class="row center center-align" align="center" >
-                <div class="col s12 m12" >
-                    E-MAIL<input type="email" name="email" required="true" >
+                <div class="col s12 m12 " >
+                    E-MAIL<input type="email" class="center-align" name="email" required="true" >
                 </div>
                 <br>
                 <div class="col s12 m12" >
-                    SENHA<input type="password" name="senha" required="true" >
+                    SENHA<input type="password" class="center-align" name="senha" required="true" >
                 </div>
             </div>
 
