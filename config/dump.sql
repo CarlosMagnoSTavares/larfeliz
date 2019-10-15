@@ -409,26 +409,26 @@ CREATE TABLE `vw_saude` (
 DROP VIEW IF EXISTS `vw_atividade`;
 -- Removendo tabela temporária e criando a estrutura VIEW final
 DROP TABLE IF EXISTS `vw_atividade`;
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vw_atividade` AS SELECT d.nome,d.caminho_foto, a.* 
+CREATE ALGORITHM=UNDEFINED  SQL SECURITY DEFINER VIEW `vw_atividade` AS SELECT d.nome,d.caminho_foto, a.* 
 FROM atividade a INNER JOIN dados_pessoais d ON d.id = a.fk_id_pessoal ;
 
 -- Copiando estrutura para view lar_feliz.vw_educacao
 DROP VIEW IF EXISTS `vw_educacao`;
 -- Removendo tabela temporária e criando a estrutura VIEW final
 DROP TABLE IF EXISTS `vw_educacao`;
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vw_educacao` AS SELECT d.nome,d.caminho_foto, e.* FROM educacao e INNER JOIN dados_pessoais d ON d.id = e.fk_id_pessoal ;
+CREATE ALGORITHM=UNDEFINED  SQL SECURITY DEFINER VIEW `vw_educacao` AS SELECT d.nome,d.caminho_foto, e.* FROM educacao e INNER JOIN dados_pessoais d ON d.id = e.fk_id_pessoal ;
 
 -- Copiando estrutura para view lar_feliz.vw_filiacao
 DROP VIEW IF EXISTS `vw_filiacao`;
 -- Removendo tabela temporária e criando a estrutura VIEW final
 DROP TABLE IF EXISTS `vw_filiacao`;
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vw_filiacao` AS SELECT d.nome, d.caminho_foto, f.* FROM filiacao f INNER JOIN dados_pessoais d ON d.id = f.fk_id_pessoal ;
+CREATE ALGORITHM=UNDEFINED  SQL SECURITY DEFINER VIEW `vw_filiacao` AS SELECT d.nome, d.caminho_foto, f.* FROM filiacao f INNER JOIN dados_pessoais d ON d.id = f.fk_id_pessoal ;
 
 -- Copiando estrutura para view lar_feliz.vw_list_filiacao
 DROP VIEW IF EXISTS `vw_list_filiacao`;
 -- Removendo tabela temporária e criando a estrutura VIEW final
 DROP TABLE IF EXISTS `vw_list_filiacao`;
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vw_list_filiacao` AS SELECT
+CREATE ALGORITHM=UNDEFINED  SQL SECURITY DEFINER VIEW `vw_list_filiacao` AS SELECT
 d.nome AS nome_crianca, f.nome_parente, 
 f.id as id_parente,
 f.id as id,
@@ -442,7 +442,7 @@ d.caminho_foto AS caminho_foto
 DROP VIEW IF EXISTS `vw_ocorrencia`;
 -- Removendo tabela temporária e criando a estrutura VIEW final
 DROP TABLE IF EXISTS `vw_ocorrencia`;
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vw_ocorrencia` AS SELECT d.nome,d.caminho_foto, 
+CREATE ALGORITHM=UNDEFINED  SQL SECURITY DEFINER VIEW `vw_ocorrencia` AS SELECT d.nome,d.caminho_foto, 
 
 o.* 
 
@@ -458,7 +458,7 @@ o.fk_id_pessoal ;
 DROP VIEW IF EXISTS `vw_registro_tecnico`;
 -- Removendo tabela temporária e criando a estrutura VIEW final
 DROP TABLE IF EXISTS `vw_registro_tecnico`;
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vw_registro_tecnico` AS SELECT d.nome as nome_crianca,d.caminho_foto, f.nivel_parentesco, f.nome_parente, 
+CREATE ALGORITHM=UNDEFINED  SQL SECURITY DEFINER VIEW `vw_registro_tecnico` AS SELECT d.nome as nome_crianca,d.caminho_foto, f.nivel_parentesco, f.nome_parente, 
 CONCAT 
 (f.nome_parente," - ", f.nivel_parentesco, " de ", d.nome)AS nome,
 r.* 
@@ -470,7 +470,7 @@ INNER JOIN dados_pessoais d ON d.id = f.fk_id_pessoal ;
 DROP VIEW IF EXISTS `vw_saude`;
 -- Removendo tabela temporária e criando a estrutura VIEW final
 DROP TABLE IF EXISTS `vw_saude`;
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vw_saude` AS SELECT s.`*`,d.nome, d.caminho_foto FROM saude s INNER JOIN dados_pessoais d ON d.id = s.fk_id_pessoal ;
+CREATE ALGORITHM=UNDEFINED  SQL SECURITY DEFINER VIEW `vw_saude` AS SELECT s.`*`,d.nome, d.caminho_foto FROM saude s INNER JOIN dados_pessoais d ON d.id = s.fk_id_pessoal ;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
