@@ -1,4 +1,11 @@
 <?php
+
+echo "conn = true or false?";
+if (isset($_GET['conn'])) {
+	echo "<br><pre>";
+	var_dump(Conn::conectar());
+}
+
 class Conn
 {
 	public function conectar()

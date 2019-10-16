@@ -4,6 +4,7 @@ $educador = @$_SESSION["usuario"];
 $tipo_acesso = @$_SESSION['tipo_acesso'];
 
 if (empty($educador)) {
+  header('location:login.php');
   die();
 }//Se nao tiver logado nem carrega nada
 
