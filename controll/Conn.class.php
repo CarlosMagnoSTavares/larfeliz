@@ -15,17 +15,17 @@ class Conn
 		// 	$senha = "";
 		// 	$dbname = "lar_feliz";
 
-		// // PRODUCAO
-		// 	// $servidor = "localhost";
-		// 	// $usuario = "larf_feliz";
-		// 	// $senha = "sisTEMAlar";
-		// 	// $dbname = "larf_feliz";
-
-		// PRODUCAO 2
+		// PRODUCAO
 			$servidor = "localhost";
-			$usuario = "larf_admin_sistema";
-			$senha = "larfesd45w";
-			$dbname = "larf_feliz";
+			$usuario = "larf_feliz";
+			$senha = "sisTEMAlar";
+			$dbname = "voar_feliz";
+
+		// // PRODUCAO 2
+		// 	$servidor = "localhost";
+		// 	$usuario = "larf_admin_sistema";
+		// 	$senha = "larfesd45w";
+		// 	$dbname = "larf_feliz";
 
 		$con = mysqli_connect($servidor, $usuario, $senha, $dbname);
 
