@@ -69,6 +69,22 @@ else
 
 }
 
+if (isset($_GET['dump'])) {
+    require_once('controll/Crud.class.php');
+    $crud = new Crud;
+    $table = "information_schema.tables";
+    $where = NULL;
+    $orderBy = NULL;
+    $limit = NULL;
+    $list = $crud->select($table,$where,$orderBy,$limit);
+    echo "<pre>";
+    foreach ($list as $key => $table) {
+        var_dump($table);
+    }
+    var_dump($list);
+
+}
+
 
 ?>
 

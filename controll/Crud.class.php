@@ -2,6 +2,7 @@
 
 require_once('Conn.class.php');
 
+
 class Crud extends Conn
 {
 	function saveFile($tipo,$anexo)
@@ -103,9 +104,7 @@ class Crud extends Conn
 			// return $queryDel;
 			return 'Fail';
 		}
-
 	}
-
 }	
 
 
