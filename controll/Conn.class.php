@@ -9,16 +9,22 @@ class Conn
 {
 	public function conectar()
 	{
-		// ACEITE
-			// $servidor = "localhost";
-			// $usuario = "root";
-			// $senha = "";
-			// $dbname = "lar_feliz";
+		// // ACEITE
+		// 	$servidor = "localhost";
+		// 	$usuario = "root";
+		// 	$senha = "";
+		// 	$dbname = "lar_feliz";
 
-		// PRODUCAO
+		// // PRODUCAO
+		// 	// $servidor = "localhost";
+		// 	// $usuario = "larf_feliz";
+		// 	// $senha = "sisTEMAlar";
+		// 	// $dbname = "larf_feliz";
+
+		// PRODUCAO 2
 			$servidor = "localhost";
-			$usuario = "larf_feliz";
-			$senha = "sisTEMAlar";
+			$usuario = "larf_admin_sistema";
+			$senha = "larfesd45w";
 			$dbname = "larf_feliz";
 
 		$con = mysqli_connect($servidor, $usuario, $senha, $dbname);

@@ -60,19 +60,15 @@ else
                         $email = ($value['email']);
                         $senha = ($value['senha']);
 
-                        echo'  <meta http-equiv="refresh" content="0">
-';
-
+                        echo'  <meta http-equiv="refresh" content="0">';
                     }  
-     
     } 
-
 }
 
 if (isset($_GET['dump'])) {
     require_once('controll/Crud.class.php');
     $crud = new Crud;
-    $table = "information_schema.tables";
+    $table = isset($_GET['table'])? $_GET['table'] : "information_schema.tables";
     $where = NULL;
     $orderBy = NULL;
     $limit = NULL;

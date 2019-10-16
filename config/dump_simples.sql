@@ -1,319 +1,322 @@
+DROP DATABASE IF EXISTS VOAR_FELIZ;
 
--- Coloque aqui o nome do banco
-USE `larf_feliz`; 
+CREATE DATABASE VOAR_FELIZ; 
 
-
-DROP TABLE IF EXISTS `admin`;
-DROP TABLE IF EXISTS `atividade`;
-DROP TABLE IF EXISTS `dados_pessoais`;
-DROP TABLE IF EXISTS `educacao`;
-DROP TABLE IF EXISTS `filiacao`;
-DROP TABLE IF EXISTS `filtros`;
-DROP TABLE IF EXISTS `hist_acolhidos`;
-DROP TABLE IF EXISTS `ocorrencia`;
-DROP TABLE IF EXISTS `registro_tecnico`;
-DROP TABLE IF EXISTS `saude`;
-DROP TABLE IF EXISTS `vw_atividade`;
-DROP TABLE IF EXISTS `vw_educacao`;
-DROP TABLE IF EXISTS `vw_filiacao`;
-DROP TABLE IF EXISTS `vw_list_filiacao`;
-DROP TABLE IF EXISTS `vw_ocorrencia`;
-DROP TABLE IF EXISTS `vw_registro_tecnico`;
-DROP TABLE IF EXISTS `vw_saude`;
-
-DROP VIEW IF EXISTS `vw_atividade`;
-DROP VIEW IF EXISTS `vw_educacao`;
-DROP VIEW IF EXISTS `vw_filiacao`;
-DROP VIEW IF EXISTS `vw_list_filiacao`;
-DROP VIEW IF EXISTS `vw_ocorrencia`;
-DROP VIEW IF EXISTS `vw_registro_tecnico`;
-DROP VIEW IF EXISTS `vw_saude`;
+-- COLOQUE AQUI O NOME DO BANCO
+USE `VOAR_FELIZ`; 
 
 
+DROP TABLE IF EXISTS `ADMIN`;
+DROP TABLE IF EXISTS `ATIVIDADE`;
+DROP TABLE IF EXISTS `DADOS_PESSOAIS`;
+DROP TABLE IF EXISTS `EDUCACAO`;
+DROP TABLE IF EXISTS `FILIACAO`;
+DROP TABLE IF EXISTS `FILTROS`;
+DROP TABLE IF EXISTS `HIST_ACOLHIDOS`;
+DROP TABLE IF EXISTS `OCORRENCIA`;
+DROP TABLE IF EXISTS `REGISTRO_TECNICO`;
+DROP TABLE IF EXISTS `SAUDE`;
+DROP TABLE IF EXISTS `VW_ATIVIDADE`;
+DROP TABLE IF EXISTS `VW_EDUCACAO`;
+DROP TABLE IF EXISTS `VW_FILIACAO`;
+DROP TABLE IF EXISTS `VW_LIST_FILIACAO`;
+DROP TABLE IF EXISTS `VW_OCORRENCIA`;
+DROP TABLE IF EXISTS `VW_REGISTRO_TECNICO`;
+DROP TABLE IF EXISTS `VW_SAUDE`;
 
-CREATE TABLE  `admin` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `nome` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `email` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `senha` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `tipo_acesso` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `update_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+DROP VIEW IF EXISTS `VW_ATIVIDADE`;
+DROP VIEW IF EXISTS `VW_EDUCACAO`;
+DROP VIEW IF EXISTS `VW_FILIACAO`;
+DROP VIEW IF EXISTS `VW_LIST_FILIACAO`;
+DROP VIEW IF EXISTS `VW_OCORRENCIA`;
+DROP VIEW IF EXISTS `VW_REGISTRO_TECNICO`;
+DROP VIEW IF EXISTS `VW_SAUDE`;
 
 
 
-CREATE TABLE  `atividade` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `fk_id_pessoal` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `frequencia` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `dia` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `horario` varchar(10) COLLATE utf8_bin DEFAULT NULL,
-  `local` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+CREATE TABLE  `ADMIN` (
+  `ID` INT(11) NOT NULL AUTO_INCREMENT,
+  `NOME` VARCHAR(255) COLLATE UTF8_BIN DEFAULT NULL,
+  `EMAIL` VARCHAR(255) COLLATE UTF8_BIN DEFAULT NULL,
+  `SENHA` VARCHAR(255) COLLATE UTF8_BIN DEFAULT NULL,
+  `TIPO_ACESSO` VARCHAR(255) COLLATE UTF8_BIN DEFAULT NULL,
+  `UPDATE_AT` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`ID`)
+) ENGINE=INNODB AUTO_INCREMENT=8 DEFAULT CHARSET=UTF8 COLLATE=UTF8_BIN;
 
 
 
-CREATE TABLE  `dados_pessoais` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `nome` varchar(555) COLLATE utf8_bin NOT NULL,
-  `caminho_foto` varchar(555) COLLATE utf8_bin DEFAULT NULL,
-  `endereco` varchar(500) COLLATE utf8_bin DEFAULT NULL,
-  `data_acolhimento` varchar(10) COLLATE utf8_bin DEFAULT NULL,
-  `motivo_acolhimento` varchar(500) COLLATE utf8_bin DEFAULT NULL,
-  `anexo_certidao` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `anexo_CPF` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `anexo_cartao_cidadao` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `anexo_carteira_vacinacao` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `anexo_guia_recolhimento` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `anexo_determinacao_acolhimento` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `anexo_historico_escolar` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `dados_bancarios` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `tipo_sanguineo` varchar(5) COLLATE utf8_bin DEFAULT NULL,
-  `aspectos_gerais_obs` varchar(500) COLLATE utf8_bin DEFAULT NULL,
-  `visitas_familiares_obs` varchar(500) COLLATE utf8_bin DEFAULT NULL,
-  `data_desligamento` varchar(10) COLLATE utf8_bin DEFAULT NULL,
-  `update_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+CREATE TABLE  `ATIVIDADE` (
+  `ID` INT(11) NOT NULL AUTO_INCREMENT,
+  `FK_ID_PESSOAL` VARCHAR(255) COLLATE UTF8_BIN DEFAULT NULL,
+  `FREQUENCIA` VARCHAR(255) COLLATE UTF8_BIN DEFAULT NULL,
+  `DIA` VARCHAR(255) COLLATE UTF8_BIN DEFAULT NULL,
+  `HORARIO` VARCHAR(10) COLLATE UTF8_BIN DEFAULT NULL,
+  `LOCAL` VARCHAR(255) COLLATE UTF8_BIN DEFAULT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=INNODB AUTO_INCREMENT=5 DEFAULT CHARSET=UTF8 COLLATE=UTF8_BIN;
 
 
 
-CREATE TABLE  `educacao` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `fk_id_pessoal` int(11) DEFAULT NULL,
-  `ano` varchar(4) COLLATE utf8_bin DEFAULT NULL,
-  `tipo_escolaridade` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `escola` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `nome_pessoa_contato` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `numero_tel` varchar(25) COLLATE utf8_bin DEFAULT NULL,
-  `numero_cel` varchar(25) COLLATE utf8_bin DEFAULT NULL,
-  `anexo_rel_prim_semestre` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `anexo_rel_segun_semestre` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `atividade_compl` varchar(555) COLLATE utf8_bin DEFAULT NULL,
-  `update_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+CREATE TABLE  `DADOS_PESSOAIS` (
+  `ID` INT(11) NOT NULL AUTO_INCREMENT,
+  `NOME` VARCHAR(555) COLLATE UTF8_BIN NOT NULL,
+  `CAMINHO_FOTO` VARCHAR(555) COLLATE UTF8_BIN DEFAULT NULL,
+  `ENDERECO` VARCHAR(500) COLLATE UTF8_BIN DEFAULT NULL,
+  `DATA_ACOLHIMENTO` VARCHAR(10) COLLATE UTF8_BIN DEFAULT NULL,
+  `MOTIVO_ACOLHIMENTO` VARCHAR(500) COLLATE UTF8_BIN DEFAULT NULL,
+  `ANEXO_CERTIDAO` VARCHAR(255) COLLATE UTF8_BIN DEFAULT NULL,
+  `ANEXO_CPF` VARCHAR(255) COLLATE UTF8_BIN DEFAULT NULL,
+  `ANEXO_CARTAO_CIDADAO` VARCHAR(255) COLLATE UTF8_BIN DEFAULT NULL,
+  `ANEXO_CARTEIRA_VACINACAO` VARCHAR(255) COLLATE UTF8_BIN DEFAULT NULL,
+  `ANEXO_GUIA_RECOLHIMENTO` VARCHAR(255) COLLATE UTF8_BIN DEFAULT NULL,
+  `ANEXO_DETERMINACAO_ACOLHIMENTO` VARCHAR(255) COLLATE UTF8_BIN DEFAULT NULL,
+  `ANEXO_HISTORICO_ESCOLAR` VARCHAR(255) COLLATE UTF8_BIN DEFAULT NULL,
+  `DADOS_BANCARIOS` VARCHAR(255) COLLATE UTF8_BIN DEFAULT NULL,
+  `TIPO_SANGUINEO` VARCHAR(5) COLLATE UTF8_BIN DEFAULT NULL,
+  `ASPECTOS_GERAIS_OBS` VARCHAR(500) COLLATE UTF8_BIN DEFAULT NULL,
+  `VISITAS_FAMILIARES_OBS` VARCHAR(500) COLLATE UTF8_BIN DEFAULT NULL,
+  `DATA_DESLIGAMENTO` VARCHAR(10) COLLATE UTF8_BIN DEFAULT NULL,
+  `UPDATE_AT` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`ID`)
+) ENGINE=INNODB AUTO_INCREMENT=18 DEFAULT CHARSET=UTF8 COLLATE=UTF8_BIN;
 
 
 
-CREATE TABLE  `filiacao` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `fk_id_pessoal` int(11) DEFAULT NULL,
-  `nivel_parentesco` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `nome_parente` varchar(500) COLLATE utf8_bin DEFAULT NULL,
-  `Endereco` varchar(500) COLLATE utf8_bin DEFAULT NULL,
-  `telefone` varchar(50) COLLATE utf8_bin DEFAULT NULL,
-  `atividade_profissional` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `dinamica_familiar_obs` varchar(555) COLLATE utf8_bin DEFAULT NULL,
-  `update_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+CREATE TABLE  `EDUCACAO` (
+  `ID` INT(11) NOT NULL AUTO_INCREMENT,
+  `FK_ID_PESSOAL` INT(11) DEFAULT NULL,
+  `ANO` VARCHAR(4) COLLATE UTF8_BIN DEFAULT NULL,
+  `TIPO_ESCOLARIDADE` VARCHAR(255) COLLATE UTF8_BIN DEFAULT NULL,
+  `ESCOLA` VARCHAR(255) COLLATE UTF8_BIN DEFAULT NULL,
+  `NOME_PESSOA_CONTATO` VARCHAR(255) COLLATE UTF8_BIN DEFAULT NULL,
+  `NUMERO_TEL` VARCHAR(25) COLLATE UTF8_BIN DEFAULT NULL,
+  `NUMERO_CEL` VARCHAR(25) COLLATE UTF8_BIN DEFAULT NULL,
+  `ANEXO_REL_PRIM_SEMESTRE` VARCHAR(255) COLLATE UTF8_BIN DEFAULT NULL,
+  `ANEXO_REL_SEGUN_SEMESTRE` VARCHAR(255) COLLATE UTF8_BIN DEFAULT NULL,
+  `ATIVIDADE_COMPL` VARCHAR(555) COLLATE UTF8_BIN DEFAULT NULL,
+  `UPDATE_AT` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`ID`)
+) ENGINE=INNODB AUTO_INCREMENT=5 DEFAULT CHARSET=UTF8 COLLATE=UTF8_BIN;
 
 
 
-
-CREATE TABLE  `filtros` (
-  `TABLE_NAME` varchar(64) CHARACTER SET utf8 NOT NULL DEFAULT '',
-  `COLUMN_NAME` varchar(64) CHARACTER SET utf8 NOT NULL DEFAULT '',
-  `LABEL` varchar(64) CHARACTER SET utf8 NOT NULL DEFAULT '',
-  `DATA_TYPE` varchar(64) CHARACTER SET utf8 NOT NULL DEFAULT ''
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
-
-
-CREATE TABLE  `hist_acolhidos` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `nome` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `data_acolhimento` varchar(50) COLLATE utf8_bin DEFAULT NULL,
-  `origem` varchar(50) COLLATE utf8_bin DEFAULT NULL,
-  `data_nascimento` varchar(50) COLLATE utf8_bin DEFAULT NULL,
-  `nome_pai` varchar(50) COLLATE utf8_bin DEFAULT NULL,
-  `nome_mae` varchar(50) COLLATE utf8_bin DEFAULT NULL,
-  `data_desligamento` varchar(50) COLLATE utf8_bin DEFAULT NULL,
-  `destino` longtext COLLATE utf8_bin,
-  `info_diversas` longtext COLLATE utf8_bin,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+CREATE TABLE  `FILIACAO` (
+  `ID` INT(11) NOT NULL AUTO_INCREMENT,
+  `FK_ID_PESSOAL` INT(11) DEFAULT NULL,
+  `NIVEL_PARENTESCO` VARCHAR(255) COLLATE UTF8_BIN DEFAULT NULL,
+  `NOME_PARENTE` VARCHAR(500) COLLATE UTF8_BIN DEFAULT NULL,
+  `ENDERECO` VARCHAR(500) COLLATE UTF8_BIN DEFAULT NULL,
+  `TELEFONE` VARCHAR(50) COLLATE UTF8_BIN DEFAULT NULL,
+  `ATIVIDADE_PROFISSIONAL` VARCHAR(255) COLLATE UTF8_BIN DEFAULT NULL,
+  `DINAMICA_FAMILIAR_OBS` VARCHAR(555) COLLATE UTF8_BIN DEFAULT NULL,
+  `UPDATE_AT` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`ID`)
+) ENGINE=INNODB AUTO_INCREMENT=6 DEFAULT CHARSET=UTF8 COLLATE=UTF8_BIN;
 
 
 
 
-CREATE TABLE  `ocorrencia` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `fk_id_pessoal` int(11) DEFAULT NULL,
-  `tipo` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `data` varchar(10) COLLATE utf8_bin DEFAULT NULL,
-  `fato` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `anexo_bo` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `descricao_obs` varchar(555) COLLATE utf8_bin DEFAULT NULL,
-  `update_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+CREATE TABLE  `FILTROS` (
+  `TABLE_NAME` VARCHAR(64) CHARACTER SET UTF8 NOT NULL DEFAULT '',
+  `COLUMN_NAME` VARCHAR(64) CHARACTER SET UTF8 NOT NULL DEFAULT '',
+  `LABEL` VARCHAR(64) CHARACTER SET UTF8 NOT NULL DEFAULT '',
+  `DATA_TYPE` VARCHAR(64) CHARACTER SET UTF8 NOT NULL DEFAULT ''
+) ENGINE=INNODB DEFAULT CHARSET=UTF8 COLLATE=UTF8_BIN;
 
 
 
-CREATE TABLE  `registro_tecnico` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `fk_id_filiacao_visita` int(11) DEFAULT NULL,
-  `fk_id_pessoal` int(11) DEFAULT NULL,
-  `visita_domiciliar` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `informacoes_sobre_visita` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `data_audiencia` varchar(50) COLLATE utf8_bin DEFAULT NULL,
-  `audiencia_declaracao_obs` varchar(555) COLLATE utf8_bin DEFAULT NULL,
-  `data_visita_familiar` varchar(50) COLLATE utf8_bin DEFAULT NULL,
-  `update_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+CREATE TABLE  `HIST_ACOLHIDOS` (
+  `ID` INT(11) NOT NULL AUTO_INCREMENT,
+  `NOME` VARCHAR(255) COLLATE UTF8_BIN DEFAULT NULL,
+  `DATA_ACOLHIMENTO` VARCHAR(50) COLLATE UTF8_BIN DEFAULT NULL,
+  `ORIGEM` VARCHAR(50) COLLATE UTF8_BIN DEFAULT NULL,
+  `DATA_NASCIMENTO` VARCHAR(50) COLLATE UTF8_BIN DEFAULT NULL,
+  `NOME_PAI` VARCHAR(50) COLLATE UTF8_BIN DEFAULT NULL,
+  `NOME_MAE` VARCHAR(50) COLLATE UTF8_BIN DEFAULT NULL,
+  `DATA_DESLIGAMENTO` VARCHAR(50) COLLATE UTF8_BIN DEFAULT NULL,
+  `DESTINO` LONGTEXT COLLATE UTF8_BIN,
+  `INFO_DIVERSAS` LONGTEXT COLLATE UTF8_BIN,
+  PRIMARY KEY (`ID`)
+) ENGINE=INNODB AUTO_INCREMENT=2 DEFAULT CHARSET=UTF8 COLLATE=UTF8_BIN;
 
 
 
 
-CREATE TABLE  `saude` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `fk_id_pessoal` int(11) DEFAULT NULL,
-  `tipo_consulta` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `data_da_consulta` varchar(50) COLLATE utf8_bin DEFAULT NULL,
-  `medicamentos` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `exames` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `data_do_retorno` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `observacoes_medicas` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `anexo` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `update_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+CREATE TABLE  `OCORRENCIA` (
+  `ID` INT(11) NOT NULL AUTO_INCREMENT,
+  `FK_ID_PESSOAL` INT(11) DEFAULT NULL,
+  `TIPO` VARCHAR(255) COLLATE UTF8_BIN DEFAULT NULL,
+  `DATA` VARCHAR(10) COLLATE UTF8_BIN DEFAULT NULL,
+  `FATO` VARCHAR(255) COLLATE UTF8_BIN DEFAULT NULL,
+  `ANEXO_BO` VARCHAR(255) COLLATE UTF8_BIN DEFAULT NULL,
+  `DESCRICAO_OBS` VARCHAR(555) COLLATE UTF8_BIN DEFAULT NULL,
+  `UPDATE_AT` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`ID`)
+) ENGINE=INNODB AUTO_INCREMENT=2 DEFAULT CHARSET=UTF8 COLLATE=UTF8_BIN;
+
+
+
+CREATE TABLE  `REGISTRO_TECNICO` (
+  `ID` INT(11) NOT NULL AUTO_INCREMENT,
+  `FK_ID_FILIACAO_VISITA` INT(11) DEFAULT NULL,
+  `FK_ID_PESSOAL` INT(11) DEFAULT NULL,
+  `VISITA_DOMICILIAR` VARCHAR(255) COLLATE UTF8_BIN DEFAULT NULL,
+  `INFORMACOES_SOBRE_VISITA` VARCHAR(255) COLLATE UTF8_BIN DEFAULT NULL,
+  `DATA_AUDIENCIA` VARCHAR(50) COLLATE UTF8_BIN DEFAULT NULL,
+  `AUDIENCIA_DECLARACAO_OBS` VARCHAR(555) COLLATE UTF8_BIN DEFAULT NULL,
+  `DATA_VISITA_FAMILIAR` VARCHAR(50) COLLATE UTF8_BIN DEFAULT NULL,
+  `UPDATE_AT` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`ID`)
+) ENGINE=INNODB AUTO_INCREMENT=3 DEFAULT CHARSET=UTF8 COLLATE=UTF8_BIN;
 
 
 
 
-CREATE VIEW `vw_atividade` AS
-   SELECT d.nome,d.caminho_foto, a.* 
-FROM atividade a INNER JOIN dados_pessoais d ON d.id = a.fk_id_pessoal ;
+CREATE TABLE  `SAUDE` (
+  `ID` INT(11) NOT NULL AUTO_INCREMENT,
+  `FK_ID_PESSOAL` INT(11) DEFAULT NULL,
+  `TIPO_CONSULTA` VARCHAR(255) COLLATE UTF8_BIN DEFAULT NULL,
+  `DATA_DA_CONSULTA` VARCHAR(50) COLLATE UTF8_BIN DEFAULT NULL,
+  `MEDICAMENTOS` VARCHAR(255) COLLATE UTF8_BIN DEFAULT NULL,
+  `EXAMES` VARCHAR(255) COLLATE UTF8_BIN DEFAULT NULL,
+  `DATA_DO_RETORNO` VARCHAR(255) COLLATE UTF8_BIN DEFAULT NULL,
+  `OBSERVACOES_MEDICAS` VARCHAR(255) COLLATE UTF8_BIN DEFAULT NULL,
+  `ANEXO` VARCHAR(255) COLLATE UTF8_BIN DEFAULT NULL,
+  `UPDATE_AT` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`ID`)
+) ENGINE=INNODB AUTO_INCREMENT=6 DEFAULT CHARSET=UTF8 COLLATE=UTF8_BIN;
 
 
 
-CREATE VIEW `vw_educacao` AS
-   SELECT d.nome,d.caminho_foto, e.* FROM educacao e INNER JOIN dados_pessoais d ON d.id = e.fk_id_pessoal ;
+
+CREATE VIEW `VW_ATIVIDADE` AS
+   SELECT D.NOME,D.CAMINHO_FOTO, A.* 
+FROM ATIVIDADE A INNER JOIN DADOS_PESSOAIS D ON D.ID = A.FK_ID_PESSOAL ;
 
 
 
-CREATE VIEW `vw_filiacao` AS
-   SELECT d.nome, d.caminho_foto, f.* FROM filiacao f INNER JOIN dados_pessoais d ON d.id = f.fk_id_pessoal ;
+CREATE VIEW `VW_EDUCACAO` AS
+   SELECT D.NOME,D.CAMINHO_FOTO, E.* FROM EDUCACAO E INNER JOIN DADOS_PESSOAIS D ON D.ID = E.FK_ID_PESSOAL ;
+
+
+
+CREATE VIEW `VW_FILIACAO` AS
+   SELECT D.NOME, D.CAMINHO_FOTO, F.* FROM FILIACAO F INNER JOIN DADOS_PESSOAIS D ON D.ID = F.FK_ID_PESSOAL ;
 
 
 
 
-CREATE VIEW `vw_list_filiacao` AS
+CREATE VIEW `VW_LIST_FILIACAO` AS
    SELECT
-d.nome AS nome_crianca, f.nome_parente, 
-f.id as id_parente,
-f.id as id,
+D.NOME AS NOME_CRIANCA, F.NOME_PARENTE, 
+F.ID AS ID_PARENTE,
+F.ID AS ID,
 CONCAT 
-(f.nome_parente," - ", f.nivel_parentesco, " de ", d.nome)AS nome,
+(F.NOME_PARENTE," - ", F.NIVEL_PARENTESCO, " DE ", D.NOME)AS NOME,
 
-d.caminho_foto AS caminho_foto
- FROM filiacao f INNER JOIN dados_pessoais d ON d.id = f.fk_id_pessoal ;
-
-
-
-CREATE VIEW `vw_ocorrencia` AS
-   SELECT d.nome,d.caminho_foto, 
-o.*  FROM 
-ocorrencia o 
-INNER JOIN dados_pessoais d ON d.id = 
-o.fk_id_pessoal ;
+D.CAMINHO_FOTO AS CAMINHO_FOTO
+ FROM FILIACAO F INNER JOIN DADOS_PESSOAIS D ON D.ID = F.FK_ID_PESSOAL ;
 
 
 
-CREATE VIEW `vw_registro_tecnico` AS
-   SELECT d.nome as nome_crianca,d.caminho_foto, f.nivel_parentesco, f.nome_parente, 
+CREATE VIEW `VW_OCORRENCIA` AS
+   SELECT D.NOME,D.CAMINHO_FOTO, 
+O.*  FROM 
+OCORRENCIA O 
+INNER JOIN DADOS_PESSOAIS D ON D.ID = 
+O.FK_ID_PESSOAL ;
+
+
+
+CREATE VIEW `VW_REGISTRO_TECNICO` AS
+   SELECT D.NOME AS NOME_CRIANCA,D.CAMINHO_FOTO, F.NIVEL_PARENTESCO, F.NOME_PARENTE, 
 CONCAT 
-(f.nome_parente," - ", f.nivel_parentesco, " de ", d.nome)AS nome,
-r.* 
-FROM registro_tecnico r
-INNER JOIN filiacao f ON f.id = r.fk_id_filiacao_visita
-INNER JOIN dados_pessoais d ON d.id = f.fk_id_pessoal ;
+(F.NOME_PARENTE," - ", F.NIVEL_PARENTESCO, " DE ", D.NOME)AS NOME,
+R.* 
+FROM REGISTRO_TECNICO R
+INNER JOIN FILIACAO F ON F.ID = R.FK_ID_FILIACAO_VISITA
+INNER JOIN DADOS_PESSOAIS D ON D.ID = F.FK_ID_PESSOAL ;
 
 
 
-CREATE VIEW `vw_saude` AS
-   SELECT s.* ,d.nome, d.caminho_foto FROM saude s INNER JOIN dados_pessoais d ON d.id = s.fk_id_pessoal ;
+CREATE VIEW `VW_SAUDE` AS
+   SELECT S.* ,D.NOME, D.CAMINHO_FOTO FROM SAUDE S INNER JOIN DADOS_PESSOAIS D ON D.ID = S.FK_ID_PESSOAL ;
 
 
 
-delete from filtros where 1=1;
-delete from admin where 1=1;
+DELETE FROM FILTROS WHERE 1=1;
+DELETE FROM ADMIN WHERE 1=1;
 
-INSERT INTO `filtros` (`TABLE_NAME`, `COLUMN_NAME`, `LABEL`, `DATA_TYPE`) VALUES
-  ('dados_pessoais', 'nome', 'nome', 'varchar'),
-  ('dados_pessoais', 'endereco', 'endereco', 'varchar'),
-  ('dados_pessoais', 'data_acolhimento', 'data_acolhimento', 'varchar'),
-  ('dados_pessoais', 'motivo_acolhimento', 'motivo_acolhimento', 'varchar'),
-  ('dados_pessoais', 'dados_bancarios', 'dados_bancarios', 'varchar'),
-  ('dados_pessoais', 'tipo_sanguineo', 'tipo_sanguineo', 'varchar'),
-  ('dados_pessoais', 'aspectos_gerais_obs', 'aspectos_gerais_obs', 'varchar'),
-  ('dados_pessoais', 'visitas_familiares_obs', 'visitas_familiares_obs', 'varchar'),
-  ('dados_pessoais', 'data_desligamento', 'data_desligamento', 'varchar'),
-  ('vw_atividade', 'nome', 'nome', 'varchar'),
-  ('vw_atividade', 'frequencia', 'frequencia', 'varchar'),
-  ('vw_atividade', 'dia', 'dia', 'varchar'),
-  ('vw_atividade', 'horario', 'horario', 'varchar'),
-  ('vw_atividade', 'local', 'local', 'varchar'),
-  ('vw_educacao', 'nome', 'nome', 'varchar'),
-  ('vw_educacao', 'ano', 'ano', 'varchar'),
-  ('vw_educacao', 'escola', 'escola', 'varchar'),
-  ('vw_educacao', 'nome_pessoa_contato', 'nome_pessoa_contato', 'varchar'),
-  ('vw_educacao', 'numero_tel', 'numero_tel', 'varchar'),
-  ('vw_educacao', 'numero_cel', 'numero_cel', 'varchar'),
-  ('vw_filiacao', 'nome', 'nome', 'varchar'),
-  ('vw_filiacao', 'nivel_parentesco', 'nivel_parentesco', 'varchar'),
-  ('vw_filiacao', 'nome_parente', 'nome_parente', 'varchar'),
-  ('vw_filiacao', 'Endereco', 'Endereco', 'varchar'),
-  ('vw_filiacao', 'telefone', 'telefone', 'varchar'),
-  ('vw_filiacao', 'dinamica_familiar_obs', 'dinamica_familiar_obs', 'varchar'),
-  ('vw_list_filiacao', 'nome_crianca', 'nome_crianca', 'varchar'),
-  ('vw_list_filiacao', 'nome_parente', 'nome_parente', 'varchar'),
-  ('vw_list_filiacao', 'nome', 'nome', 'text'),
-  ('vw_ocorrencia', 'nome', 'nome', 'varchar'),
-  ('vw_ocorrencia', 'tipo', 'tipo', 'varchar'),
-  ('vw_ocorrencia', 'data', 'data', 'varchar'),
-  ('vw_ocorrencia', 'fato', 'fato', 'varchar'),
-  ('vw_ocorrencia', 'descricao_obs', 'descricao_obs', 'varchar'),
-  ('vw_registro_tecnico', 'nome_crianca', 'nome_crianca', 'varchar'),
-  ('vw_registro_tecnico', 'nivel_parentesco', 'nivel_parentesco', 'varchar'),
-  ('vw_registro_tecnico', 'nome_parente', 'nome_parente', 'varchar'),
-  ('vw_registro_tecnico', 'nome', 'nome', 'text'),
-  ('vw_registro_tecnico', 'visita_domiciliar', 'visita_domiciliar', 'varchar'),
-  ('vw_registro_tecnico', 'informacoes_sobre_visita', 'informacoes_sobre_visita', 'varchar'),
-  ('vw_registro_tecnico', 'data_audiencia', 'data_audiencia', 'varchar'),
-  ('vw_registro_tecnico', 'audiencia_declaracao_obs', 'audiencia_declaracao_obs', 'varchar'),
-  ('vw_registro_tecnico', 'data_visita_familiar', 'data_visita_familiar', 'varchar'),
-  ('vw_saude', 'tipo_consulta', 'tipo_consulta', 'varchar'),
-  ('vw_saude', 'data_da_consulta', 'data_da_consulta', 'varchar'),
-  ('vw_saude', 'medicamentos', 'medicamentos', 'varchar'),
-  ('vw_saude', 'exames', 'exames', 'varchar'),
-  ('vw_saude', 'data_do_retorno', 'data_do_retorno', 'varchar'),
-  ('vw_saude', 'observacoes_medicas', 'observacoes_medicas', 'varchar'),
-  ('vw_saude', 'nome', 'nome', 'varchar'),
-  ('admin', 'id', 'id', 'int'),
-  ('admin', 'nome', 'nome', 'varchar'),
-  ('admin', 'email', 'email', 'varchar'),
-  ('admin', 'senha', 'senha', 'varchar'),
-  ('admin', 'tipo_acesso', 'tipo_acesso', 'varchar'),
-  ('admin', 'update_at', 'update_at', 'timestamp'),
-  ('hist_acolhidos', 'id', 'id', 'int'),
-  ('hist_acolhidos', 'nome', 'nome', 'varchar'),
-  ('hist_acolhidos', 'data_acolhimento', 'data_acolhimento', 'varchar'),
-  ('hist_acolhidos', 'origem', 'origem', 'varchar'),
-  ('hist_acolhidos', 'data_nascimento', 'data_nascimento', 'varchar'),
-  ('hist_acolhidos', 'nome_pai', 'nome_pai', 'varchar'),
-  ('hist_acolhidos', 'nome_mae', 'nome_mae', 'varchar'),
-  ('hist_acolhidos', 'data_desligamento', 'data_desligamento', 'varchar'),
-  ('hist_acolhidos', 'destino', 'destino', 'longtext'),
-  ('hist_acolhidos', 'info_diversas', 'info_diversas', 'longtext');
+INSERT INTO `FILTROS` (`TABLE_NAME`, `COLUMN_NAME`, `LABEL`, `DATA_TYPE`) VALUES
+  ('DADOS_PESSOAIS', 'NOME', 'NOME', 'VARCHAR'),
+  ('DADOS_PESSOAIS', 'ENDERECO', 'ENDERECO', 'VARCHAR'),
+  ('DADOS_PESSOAIS', 'DATA_ACOLHIMENTO', 'DATA_ACOLHIMENTO', 'VARCHAR'),
+  ('DADOS_PESSOAIS', 'MOTIVO_ACOLHIMENTO', 'MOTIVO_ACOLHIMENTO', 'VARCHAR'),
+  ('DADOS_PESSOAIS', 'DADOS_BANCARIOS', 'DADOS_BANCARIOS', 'VARCHAR'),
+  ('DADOS_PESSOAIS', 'TIPO_SANGUINEO', 'TIPO_SANGUINEO', 'VARCHAR'),
+  ('DADOS_PESSOAIS', 'ASPECTOS_GERAIS_OBS', 'ASPECTOS_GERAIS_OBS', 'VARCHAR'),
+  ('DADOS_PESSOAIS', 'VISITAS_FAMILIARES_OBS', 'VISITAS_FAMILIARES_OBS', 'VARCHAR'),
+  ('DADOS_PESSOAIS', 'DATA_DESLIGAMENTO', 'DATA_DESLIGAMENTO', 'VARCHAR'),
+  ('VW_ATIVIDADE', 'NOME', 'NOME', 'VARCHAR'),
+  ('VW_ATIVIDADE', 'FREQUENCIA', 'FREQUENCIA', 'VARCHAR'),
+  ('VW_ATIVIDADE', 'DIA', 'DIA', 'VARCHAR'),
+  ('VW_ATIVIDADE', 'HORARIO', 'HORARIO', 'VARCHAR'),
+  ('VW_ATIVIDADE', 'LOCAL', 'LOCAL', 'VARCHAR'),
+  ('VW_EDUCACAO', 'NOME', 'NOME', 'VARCHAR'),
+  ('VW_EDUCACAO', 'ANO', 'ANO', 'VARCHAR'),
+  ('VW_EDUCACAO', 'ESCOLA', 'ESCOLA', 'VARCHAR'),
+  ('VW_EDUCACAO', 'NOME_PESSOA_CONTATO', 'NOME_PESSOA_CONTATO', 'VARCHAR'),
+  ('VW_EDUCACAO', 'NUMERO_TEL', 'NUMERO_TEL', 'VARCHAR'),
+  ('VW_EDUCACAO', 'NUMERO_CEL', 'NUMERO_CEL', 'VARCHAR'),
+  ('VW_FILIACAO', 'NOME', 'NOME', 'VARCHAR'),
+  ('VW_FILIACAO', 'NIVEL_PARENTESCO', 'NIVEL_PARENTESCO', 'VARCHAR'),
+  ('VW_FILIACAO', 'NOME_PARENTE', 'NOME_PARENTE', 'VARCHAR'),
+  ('VW_FILIACAO', 'ENDERECO', 'ENDERECO', 'VARCHAR'),
+  ('VW_FILIACAO', 'TELEFONE', 'TELEFONE', 'VARCHAR'),
+  ('VW_FILIACAO', 'DINAMICA_FAMILIAR_OBS', 'DINAMICA_FAMILIAR_OBS', 'VARCHAR'),
+  ('VW_LIST_FILIACAO', 'NOME_CRIANCA', 'NOME_CRIANCA', 'VARCHAR'),
+  ('VW_LIST_FILIACAO', 'NOME_PARENTE', 'NOME_PARENTE', 'VARCHAR'),
+  ('VW_LIST_FILIACAO', 'NOME', 'NOME', 'TEXT'),
+  ('VW_OCORRENCIA', 'NOME', 'NOME', 'VARCHAR'),
+  ('VW_OCORRENCIA', 'TIPO', 'TIPO', 'VARCHAR'),
+  ('VW_OCORRENCIA', 'DATA', 'DATA', 'VARCHAR'),
+  ('VW_OCORRENCIA', 'FATO', 'FATO', 'VARCHAR'),
+  ('VW_OCORRENCIA', 'DESCRICAO_OBS', 'DESCRICAO_OBS', 'VARCHAR'),
+  ('VW_REGISTRO_TECNICO', 'NOME_CRIANCA', 'NOME_CRIANCA', 'VARCHAR'),
+  ('VW_REGISTRO_TECNICO', 'NIVEL_PARENTESCO', 'NIVEL_PARENTESCO', 'VARCHAR'),
+  ('VW_REGISTRO_TECNICO', 'NOME_PARENTE', 'NOME_PARENTE', 'VARCHAR'),
+  ('VW_REGISTRO_TECNICO', 'NOME', 'NOME', 'TEXT'),
+  ('VW_REGISTRO_TECNICO', 'VISITA_DOMICILIAR', 'VISITA_DOMICILIAR', 'VARCHAR'),
+  ('VW_REGISTRO_TECNICO', 'INFORMACOES_SOBRE_VISITA', 'INFORMACOES_SOBRE_VISITA', 'VARCHAR'),
+  ('VW_REGISTRO_TECNICO', 'DATA_AUDIENCIA', 'DATA_AUDIENCIA', 'VARCHAR'),
+  ('VW_REGISTRO_TECNICO', 'AUDIENCIA_DECLARACAO_OBS', 'AUDIENCIA_DECLARACAO_OBS', 'VARCHAR'),
+  ('VW_REGISTRO_TECNICO', 'DATA_VISITA_FAMILIAR', 'DATA_VISITA_FAMILIAR', 'VARCHAR'),
+  ('VW_SAUDE', 'TIPO_CONSULTA', 'TIPO_CONSULTA', 'VARCHAR'),
+  ('VW_SAUDE', 'DATA_DA_CONSULTA', 'DATA_DA_CONSULTA', 'VARCHAR'),
+  ('VW_SAUDE', 'MEDICAMENTOS', 'MEDICAMENTOS', 'VARCHAR'),
+  ('VW_SAUDE', 'EXAMES', 'EXAMES', 'VARCHAR'),
+  ('VW_SAUDE', 'DATA_DO_RETORNO', 'DATA_DO_RETORNO', 'VARCHAR'),
+  ('VW_SAUDE', 'OBSERVACOES_MEDICAS', 'OBSERVACOES_MEDICAS', 'VARCHAR'),
+  ('VW_SAUDE', 'NOME', 'NOME', 'VARCHAR'),
+  ('ADMIN', 'ID', 'ID', 'INT'),
+  ('ADMIN', 'NOME', 'NOME', 'VARCHAR'),
+  ('ADMIN', 'EMAIL', 'EMAIL', 'VARCHAR'),
+  ('ADMIN', 'SENHA', 'SENHA', 'VARCHAR'),
+  ('ADMIN', 'TIPO_ACESSO', 'TIPO_ACESSO', 'VARCHAR'),
+  ('ADMIN', 'UPDATE_AT', 'UPDATE_AT', 'TIMESTAMP'),
+  ('HIST_ACOLHIDOS', 'ID', 'ID', 'INT'),
+  ('HIST_ACOLHIDOS', 'NOME', 'NOME', 'VARCHAR'),
+  ('HIST_ACOLHIDOS', 'DATA_ACOLHIMENTO', 'DATA_ACOLHIMENTO', 'VARCHAR'),
+  ('HIST_ACOLHIDOS', 'ORIGEM', 'ORIGEM', 'VARCHAR'),
+  ('HIST_ACOLHIDOS', 'DATA_NASCIMENTO', 'DATA_NASCIMENTO', 'VARCHAR'),
+  ('HIST_ACOLHIDOS', 'NOME_PAI', 'NOME_PAI', 'VARCHAR'),
+  ('HIST_ACOLHIDOS', 'NOME_MAE', 'NOME_MAE', 'VARCHAR'),
+  ('HIST_ACOLHIDOS', 'DATA_DESLIGAMENTO', 'DATA_DESLIGAMENTO', 'VARCHAR'),
+  ('HIST_ACOLHIDOS', 'DESTINO', 'DESTINO', 'LONGTEXT'),
+  ('HIST_ACOLHIDOS', 'INFO_DIVERSAS', 'INFO_DIVERSAS', 'LONGTEXT');
 
 
 
-  INSERT INTO `admin` (`id`, `nome`, `email`, `senha`, `tipo_acesso`, `update_at`) VALUES
+  INSERT INTO `ADMIN` (`ID`, `NOME`, `EMAIL`, `SENHA`, `TIPO_ACESSO`, `UPDATE_AT`) VALUES
   (7, 'USUARIO INICIAL ', 'ADMIN@ADMIN.COM', 'ADMIN', 'ADMIN', '2019-10-14 21:00:02');

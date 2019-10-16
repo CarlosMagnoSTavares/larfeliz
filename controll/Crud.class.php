@@ -9,7 +9,7 @@ class Crud extends Conn
 	{
 		date_default_timezone_set("Brazil/East"); //Definindo timezone padrão
 		$ext = strtolower(substr($anexo['name'],-4)); //Pegando extensão do arquivo
-		$new_name = ($tipo."_".date("Y.m.d-H.i.s")).$ext; //Definindo um novo nome para o arquivo
+		$new_name = strtoupper(($tipo."_".date("Y.m.d-H.i.s")).$ext); //Definindo um novo nome para o arquivo
 		$dir = '../documentos/'; //Diretório para uploads
 
 		if (($ext <> '.php') && ($ext <> '.html') && ($ext <> '.js')&&($ext <> '.css')) 
@@ -41,7 +41,7 @@ class Crud extends Conn
 	function pagination($table,$limit)
 	{
 		$con = Conn::conectar();
-		$queryPagination = "SELECT CEILING(SUM(1)/$limit) AS PAG FROM $table";
+		$queryPagination = strtoupper("SELECT CEILING(SUM(1)/$limit) AS PAG FROM $table");
 			// Conn::log($queryPagination);//GERA LOG DA AÇÂO
 		$queryPagination = mysqli_query($con,$queryPagination);
 		mysqli_close($con);
@@ -93,7 +93,7 @@ class Crud extends Conn
 		$where = !empty($where)? " WHERE ". $where : NULL;
 
 		$con = Conn::conectar();
-		$queryDel = "DELETE FROM $table $where;";
+		$queryDel = strtoupper("DELETE FROM $table $where;");
 			// Conn::log($queryDelete);//GERA LOG DA AÇÂO
 		$queryDelete = mysqli_query($con,$queryDel);
 		mysqli_close($con);
