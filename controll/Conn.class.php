@@ -9,23 +9,29 @@ class Conn
 {
 	public function conectar()
 	{
-		$servidor = "localhost";
-		$usuario = "root";
-		$senha = "";
-		$dbname = "lar_feliz";
+		// ACEITE
+			// $servidor = "localhost";
+			// $usuario = "root";
+			// $senha = "";
+			// $dbname = "lar_feliz";
+
+		// PRODUCAO
+			$servidor = "localhost";
+			$usuario = "larf_feliz";
+			$senha = "sisTEMAlar";
+			$dbname = "larf_feliz";
+
 		$con = mysqli_connect($servidor, $usuario, $senha, $dbname);
 
 		if ($con->connect_errno) 
 		{
-		    return ("Connect failed: %s\n". $con->connect_error);
-		    exit();
-		} else 
+			return ("Connect failed: %s\n". $con->connect_error);
+			exit();	
+		} 
+		 else 
 		{
 			return  $con;
 		}
-
-		
-
 	}
 
 	public function log($msg=NULL)
