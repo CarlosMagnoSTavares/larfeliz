@@ -9,7 +9,7 @@ class Crud extends Conn
 	{
 		date_default_timezone_set("Brazil/East"); //Definindo timezone padrão
 		$ext = strtolower(substr($anexo['name'],-4)); //Pegando extensão do arquivo
-		$new_name = strtoupper(($tipo."_".date("Y.m.d-H.i.s")).$ext); //Definindo um novo nome para o arquivo
+		$new_name = (($tipo."_".date("Y.m.d-H.i.s")).$ext); //Definindo um novo nome para o arquivo
 		$dir = '../documentos/'; //Diretório para uploads
 
 		if (($ext <> '.php') && ($ext <> '.html') && ($ext <> '.js')&&($ext <> '.css')) 
@@ -31,7 +31,7 @@ class Crud extends Conn
 		$orderBy = !empty($orderBy)? " order by ". $orderBy : NULL;
 		$limit = !empty($limit)? " limit ". $limit : NULL;
 		$con = Conn::conectar();
-		$querySelect = strtoupper('SELECT * FROM '.addslashes($table).$where.$orderBy.$limit.' ;');
+		$querySelect = ('SELECT * FROM '.addslashes($table).$where.$orderBy.$limit.' ;');
 			 //Conn::log($querySelect);//GERA LOG DA AÇÂO
 		$querySelect = mysqli_query($con,$querySelect);
 		mysqli_close($con);
@@ -41,7 +41,7 @@ class Crud extends Conn
 	function pagination($table,$limit)
 	{
 		$con = Conn::conectar();
-		$queryPagination = strtoupper("SELECT CEILING(SUM(1)/$limit) AS PAG FROM $table");
+		$queryPagination = ("SELECT CEILING(SUM(1)/$limit) AS PAG FROM $table");
 			// Conn::log($queryPagination);//GERA LOG DA AÇÂO
 		$queryPagination = mysqli_query($con,$queryPagination);
 		mysqli_close($con);
@@ -55,7 +55,7 @@ class Crud extends Conn
 		$columns = "`".implode("`,`", $columns)."`";
 		$values = "'".implode("','", $values)."'";
 		$con = Conn::conectar();
-		$queryInsert = strtoupper("INSERT INTO $table ($columns) VALUES ($values) ;");
+		$queryInsert = ("INSERT INTO $table ($columns) VALUES ($values) ;");
 			// Conn::log($queryInsert);//GERA LOG DA AÇÂO
 		$resultInsert = mysqli_query($con,$queryInsert);
 		mysqli_close($con);
@@ -74,7 +74,7 @@ class Crud extends Conn
 		$where = !empty($where)? " WHERE ". $where : NULL;
 
 		$con = Conn::conectar();
-		$queryUpdate = strtoupper('UPDATE '.$table.' SET '.$setValues.$where.';');
+		$queryUpdate = ('UPDATE '.$table.' SET '.$setValues.$where.';');
 			//Conn::log($queryUpdate);//GERA LOG DA AÇÂO
 		$texto =  $queryUpdate;
 		$queryUpdate = mysqli_query($con,$queryUpdate);
@@ -93,7 +93,7 @@ class Crud extends Conn
 		$where = !empty($where)? " WHERE ". $where : NULL;
 
 		$con = Conn::conectar();
-		$queryDel = strtoupper("DELETE FROM $table $where;");
+		$queryDel = ("DELETE FROM $table $where;");
 			// Conn::log($queryDelete);//GERA LOG DA AÇÂO
 		$queryDelete = mysqli_query($con,$queryDel);
 		mysqli_close($con);

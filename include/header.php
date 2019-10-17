@@ -36,6 +36,16 @@ $titulo = isset($titulo)? "<b>".$titulo."</b>": " <br>BEM-VINDO<br><b>".$educado
       </ul>
 
       <ul id="nav-mobile" class="sidenav">
+        <li><a href="dadosPessoais.php" class="btn-small orange">Dados Pessoais</a></li>
+        <li><a href="filiacao.php" class="btn-small orange">Filiação</a></li>
+        <li><a href="educacao.php" class="btn-small orange">Educação</a></li>
+        <li><a href="saude.php" class="btn-small orange">Saúde</a></li>
+        <li><a href="atividades.php" class="btn-small orange">Atividades</a></li>
+        <li><a href="ocorrencias.php" class="btn-small orange">Ocorrencias</a></li>
+        <li><a href="registroTecnico.php" class="btn-small orange">Registro Tecnico</a></li>
+        <li><a href="histAcolhidos.php" class="btn-small orange">Hist. Acolhidos</a></li>
+
+        <li><a href="admin.php" class="btn-small orange">Admin</a></li>
         <li><a onClick="history.go(-1)" class="btn-small green">Voltar</a></li>
         <li><a href="logoff.php" class="btn-small red">Sair</a></li>
       </ul>

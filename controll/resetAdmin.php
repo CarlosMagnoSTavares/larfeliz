@@ -15,9 +15,9 @@ if (!empty($_GET)) {
 	$crud = new Crud;
 
 	// Recebe dados do POST ↓
-	$nome = "ADMIN INICIAL";
-	$email = "ADMIN@ADMIN.COM";
-	$senha = "ADMIN";
+	$nome = "Admin Inicial";
+	$email = "admin@admin.com";
+	$senha = "admin";
 	$tipo_acesso = "ADMIN";
 
 	$values =  array

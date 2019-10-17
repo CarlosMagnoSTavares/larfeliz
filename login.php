@@ -38,8 +38,8 @@ else
     if ($_POST) 
     {
                 require_once('controll/Crud.class.php');
-                $email = addslashes(strtoupper($_POST['email']));
-                $senha = addslashes(strtoupper($_POST['senha']));
+                $email = addslashes(($_POST['email']));
+                $senha = addslashes(($_POST['senha']));
 
                 $view = 'admin';
                 $where = " email = '".$email."' and senha = '".$senha."'";

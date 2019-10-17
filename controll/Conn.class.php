@@ -10,12 +10,12 @@ class Conn
 	public function conectar()
 	{
 		// // ACEITE
-		// 	$servidor = "localhost";
-		// 	$usuario = "root";
-		// 	$senha = "";
-		// 	$dbname = "lar_feliz";
+			// $servidor = "localhost";
+			// $usuario = "root";
+			// $senha = "";
+			// $dbname = "lar_feliz";
 
-		// PRODUCAO
+		//PRODUCAO
 			$servidor = "localhost";
 			$usuario = "larf_feliz";
 			$senha = "sisTEMAlar";

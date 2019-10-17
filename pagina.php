@@ -5,27 +5,27 @@
 
 <?php
 $labelResult = "";
-if (isset($_GET['opcao']) && isset($_GET['VALUE']) && isset($_GET['COLUMN_NAME'])&& !empty($_GET['VALUE'])) {
+if (isset($_GET['opcao']) && isset($_GET['VALUE']) && isset($_GET['column_name'])&& !empty($_GET['VALUE'])) {
 	$valueFiltro = addslashes($_GET['VALUE']);
-	if ($_GET['opcao'] == 1){ $descLabel = " maior que "; $opcao = $_GET['COLUMN_NAME']." > '".$valueFiltro."'"; }
-	if ($_GET['opcao'] == 2){ $descLabel = " menor que "; $opcao = $_GET['COLUMN_NAME']." < '".$valueFiltro."'"; }
-	if ($_GET['opcao'] == 3){ $descLabel = " maior ou igual a "; $opcao = $_GET['COLUMN_NAME']." >= '".$valueFiltro."'"; }
-	if ($_GET['opcao'] == 4){ $descLabel = " menor ou igual a "; $opcao = $_GET['COLUMN_NAME']." <= '".$valueFiltro."'"; }
-	if ($_GET['opcao'] == 5){ $descLabel = " diferente de "; $opcao = $_GET['COLUMN_NAME']." <> '".$valueFiltro."'"; }
-	if ($_GET['opcao'] == 6){ $descLabel = " contendo no inicio "; $opcao = $_GET['COLUMN_NAME']." like '"."%".$valueFiltro."'"; }
-	if ($_GET['opcao'] == 7){ $descLabel = " contendo no final "; $opcao = $_GET['COLUMN_NAME']." like '".$valueFiltro."%"."'"; }
-	if ($_GET['opcao'] == 8){ $descLabel = " contendo "; $opcao = $_GET['COLUMN_NAME']." like '"."%".$valueFiltro."%"."'"; }
-	if ($_GET['opcao'] == 9){ $descLabel = " não contendo "; $opcao = $_GET['COLUMN_NAME']." not like '"."%".$valueFiltro."%"."'"; }
+	if ($_GET['opcao'] == 1){ $descLabel = " maior que "; $opcao = $_GET['column_name']." > '".$valueFiltro."'"; }
+	if ($_GET['opcao'] == 2){ $descLabel = " menor que "; $opcao = $_GET['column_name']." < '".$valueFiltro."'"; }
+	if ($_GET['opcao'] == 3){ $descLabel = " maior ou igual a "; $opcao = $_GET['column_name']." >= '".$valueFiltro."'"; }
+	if ($_GET['opcao'] == 4){ $descLabel = " menor ou igual a "; $opcao = $_GET['column_name']." <= '".$valueFiltro."'"; }
+	if ($_GET['opcao'] == 5){ $descLabel = " diferente de "; $opcao = $_GET['column_name']." <> '".$valueFiltro."'"; }
+	if ($_GET['opcao'] == 6){ $descLabel = " contendo no inicio "; $opcao = $_GET['column_name']." like '"."%".$valueFiltro."'"; }
+	if ($_GET['opcao'] == 7){ $descLabel = " contendo no final "; $opcao = $_GET['column_name']." like '".$valueFiltro."%"."'"; }
+	if ($_GET['opcao'] == 8){ $descLabel = " contendo "; $opcao = $_GET['column_name']." like '"."%".$valueFiltro."%"."'"; }
+	if ($_GET['opcao'] == 9){ $descLabel = " não contendo "; $opcao = $_GET['column_name']." not like '"."%".$valueFiltro."%"."'"; }
 
-	$labelColumn = strtoupper(str_replace("_", " ", $_GET['COLUMN_NAME']));
+	$labelColumn = (str_replace("_", " ", $_GET['column_name']));
 	$labelResult= "Resultados para ".$titulo." contendo ".$labelColumn." ".$descLabel." ".$_GET['VALUE'];
 }
 
 
 // LISTA colunas do filtro ↓
-	$tabelaDeFiltros = 'FILTROS';
+	$tabelaDeFiltros = 'filtros';
 	$whereFiltro = " table_name = '".$table."'";
-	$orderByFiltro =" LABEL ";
+	$orderByFiltro =" label ";
 	$limitFiltro = NULL;
 
 	$crudFiltro = new Crud;
@@ -34,10 +34,10 @@ if (isset($_GET['opcao']) && isset($_GET['VALUE']) && isset($_GET['COLUMN_NAME']
 	$option = "";
 	foreach ($listFiltro as $key => $valueFiltros) 
 		{
-			$COLUMN_NAME = ($valueFiltros['COLUMN_NAME']);
-			$LABEL = strtoupper(($valueFiltros['LABEL']));
-			$LABEL = str_replace("_", " ", $LABEL);
-			$option .= '<option  value="'.$COLUMN_NAME.'">'.$LABEL.'</option>';
+			$column_name = ($valueFiltros['column_name']);
+			$label = (($valueFiltros['label']));
+			$label = str_replace("_", " ", $label);
+			$option .= '<option  value="'.$column_name.'">'.$label.'</option>';
 		}
 
 
@@ -49,7 +49,7 @@ if (isset($_GET['opcao']) && isset($_GET['VALUE']) && isset($_GET['COLUMN_NAME']
 
 			<div class="col s12 m4" >
 				<lbl>Campo</lbl>
-				<select  name="COLUMN_NAME" >
+				<select  name="column_name" >
 					<?php echo $option; ?>
 				</select>
 			</div>
@@ -90,12 +90,12 @@ if (isset($_GET['opcao']) && isset($_GET['VALUE']) && isset($_GET['COLUMN_NAME']
 
 
 /*
-QUERY PARA CRIAR FILTROS
-	CREATE TABLE FILTROS AS 
-	SELECT TABLE_NAME,COLUMN_NAME,COLUMN_NAME AS LABEL, DATA_TYPE FROM information_schema.columns c WHERE c.table_schema = 'lar_feliz' AND c.table_name LIKE 'vw_%'
+QUERY PARA CRIAR filtros
+	CREATE TABLE filtros AS 
+	SELECT TABLE_NAME,column_name,column_name AS label, DATA_TYPE FROM information_schema.columns c WHERE c.table_schema = 'lar_feliz' AND c.table_name LIKE 'vw_%'
 
-INSERT into FILTROS 
-SELECT TABLE_NAME,COLUMN_NAME,COLUMN_NAME AS LABEL, DATA_TYPE
+INSERT into filtros 
+SELECT TABLE_NAME,column_name,column_name AS label, DATA_TYPE
 FROM information_schema.columns c
 WHERE c.table_schema = 'lar_feliz' AND c.table_name LIKE 'hist_acolhidos'
 
