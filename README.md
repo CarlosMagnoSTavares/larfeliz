@@ -9,23 +9,15 @@
  
  
  INFORMAÇÕES TECNICAS SOBRE A INSTALAÇÃO DO PROJETO
- 
-├───config (Aqui está o DUMP da base para evitar problemas de compatibilidade utilize o "dump_simples")
+|--- LAR FELIZ
+|--- config (Aqui está o DUMP da base para evitar problemas de compatibilidade utilize o "dump_simples")
+|--- controll (O backend para inserir e calcular os dados estão aqui)
+|--- css (Aparencia)
+|--- documentos (aqui ficam todos os documentos anexados no sistema como foto ou PDFs)
+|--- include (Todos os "retalhos" comuns entre os sistemas como cabeçalho e rodapé do site) 
+|--- js (Animações e temas)
+|--- logDB (Log caso ativado, necessário ativar em controll/Crud.class.php removendo comentáio da linha //Conn::log() ) 
 
-├───controll (O backend para inserir e calcular os dados estão aqui)
-
-├───css (Aparencia)
-
-├───documentos (aqui ficam todos os documentos anexados no sistema como foto ou PDFs)
-
-├───include (Todos os "retalhos" comuns entre os sistemas como cabeçalho e rodapé do site) 
-
-├───js (Animações e temas)
-
-└───logDB (Log caso ativado, necessário ativar em controll/Crud.class.php removendo comentáio da linha //Conn::log() ) 
-
-    └───logDB.txt 
- 
  
  OPEN SOURCE 
  
