@@ -9,17 +9,17 @@ class Conn
 {
 	public function conectar()
 	{
-		// // ACEITE
-			// $servidor = "localhost";
-			// $usuario = "root";
-			// $senha = "";
-			// $dbname = "lar_feliz";
+		// ACEITE
+			$servidor = "localhost";
+			$usuario = "root";
+			$senha = "";
+			$dbname = "lar_feliz";
 
 		//PRODUCAO
-			$servidor = "localhost";
-			$usuario = "larf_feliz";
-			$senha = "sisTEMAlar";
-			$dbname = "voar_feliz";
+			// $servidor = "localhost";
+			// $usuario = "larf_feliz";
+			// $senha = "sisTEMAlar";
+			// $dbname = "voar_feliz";
 
 		// // PRODUCAO 2
 		// 	$servidor = "localhost";
@@ -40,8 +40,30 @@ class Conn
 		}
 	}
 
+	function var_error_log( $object=null )
+	{
+	    ob_start();                    // start buffer capture
+	    var_dump( $object );           // dump the values
+	    $contents = ob_get_contents(); // put the buffer into a variable
+	    ob_end_clean();                // end capture
+	    error_log( $contents );        // log contents of the result of var_dump( $object )
+	}
+
+	
 	public function log($msg=NULL)
 	{
+		//Deleta arquivo se passar de 10k linhas
+		$linhas = count( file( 'log.txt' ) );
+			if ($linhas >= 10000) 
+			{
+				$myFile = "log.txt";
+				$myFileLink = fopen($myFile, 'w') or die("can't open file");
+				fclose($myFileLink);
+				$myFile = "log.txt";
+				unlink($myFile) or die("Couldn't delete file");
+			}
+
+		//Grava o log
 		date_default_timezone_set('America/Sao_Paulo');
 		$dataLocal = date('d/m/Y H:i:s', time());
 		$msg = isset($msg) && !empty($msg)? "[".$dataLocal."] ".$msg."\n" : "";
