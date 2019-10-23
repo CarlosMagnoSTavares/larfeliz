@@ -1,35 +1,26 @@
-[23/10/2019 17:29:56] DELETE FROM dados_pessoais  WHERE  id = 6;
-[23/10/2019 17:29:56] DELETE FROM   WHERE  id = ;
-[23/10/2019 17:30:02] DELETE FROM dados_pessoais  WHERE  id = 6;
-[23/10/2019 17:30:02] DELETE FROM   WHERE  id = ;
-[23/10/2019 17:30:09] DELETE FROM dados_pessoais  WHERE  id = 6;
-[23/10/2019 17:30:09] DELETE FROM   WHERE  id = ;
-[23/10/2019 17:30:59] DELETE FROM dados_pessoais  WHERE  id = 6;
-[23/10/2019 17:30:59] DELETE FROM   WHERE  id = ;
-[23/10/2019 17:31:08] DELETE FROM dados_pessoais  WHERE  id = 6;
-[23/10/2019 17:31:08] DELETE FROM   WHERE  id = ;
-[23/10/2019 17:31:41] DELETE FROM dados_pessoais  WHERE  id = 6;
-[23/10/2019 17:31:41] DELETE FROM   WHERE  id = ;
-[23/10/2019 17:32:36] DELETE FROM dados_pessoais  WHERE  id = 6;
-[23/10/2019 17:32:36] SELECT * FROM dados_pessoais WHERE  WHERE  id = 6 ;
-[23/10/2019 17:32:36] DELETE FROM   WHERE  id = ;
-[23/10/2019 17:32:36] SELECT * FROM  WHERE  WHERE  id =  ;
-[23/10/2019 17:33:17] DELETE FROM dados_pessoais  WHERE  id = 6;
-[23/10/2019 17:33:17] SELECT * FROM dados_pessoais WHERE  WHERE  id = 6 ;
-[23/10/2019 17:33:17] DELETE FROM   WHERE  id = ;
-[23/10/2019 17:33:17] SELECT * FROM  WHERE  WHERE  id =  ;
-[23/10/2019 17:34:18] DELETE FROM dados_pessoais  WHERE  id = 6;
-[23/10/2019 17:34:19] DELETE FROM   WHERE  id = ;
-[23/10/2019 17:34:21] DELETE FROM dados_pessoais  WHERE  id = 6;
-[23/10/2019 17:34:21] DELETE FROM   WHERE  id = ;
-[23/10/2019 17:52:56] 1
-[23/10/2019 17:52:56] foto_2019.10.23-17.52.56.jpg
-[23/10/2019 17:52:56] SELECT * FROM dados_pessoais WHERE  id = 3 ;
-[23/10/2019 17:53:32] 1
-[23/10/2019 17:53:32] foto_2019.10.23-17.53.32.jpg
-[23/10/2019 17:53:32] SELECT * FROM dados_pessoais WHERE  id = 4 ;
-[23/10/2019 17:54:54] INSERT INTO dados_pessoais (`nome`,`endereco`,`data_acolhimento`,`data_desligamento`,`motivo_acolhimento`,`dados_bancarios`,`tipo_sanguineo`,`aspectos_gerais_obs`,`visitas_familiares_obs`,`caminho_foto`,`anexo_certidao`,`anexo_CPF`,`anexo_cartao_cidadao`,`anexo_carteira_vacinacao`,`anexo_guia_recolhimento`,`anexo_determinacao_acolhimento`,`anexo_historico_escolar`) VALUES ('asdasdasd','','2019-10-23','','','','','','','','','','','','','','') ;
-[23/10/2019 17:57:37] DELETE FROM dados_pessoais  WHERE  id = 5;
-[23/10/2019 17:57:37] 1
-[23/10/2019 17:57:44] DELETE FROM dados_pessoais  WHERE  id = 3;
-[23/10/2019 17:57:44] 1
+[23/10/2019 18:13:40]  querySelect= SELECT * FROM dados_pessoais WHERE  id = 7 ;
+[23/10/2019 18:13:40]  queryUpdate= UPDATE dados_pessoais SET nome = 'asdasdasd' , endereco = '' , data_acolhimento = '2019-10-23' , data_desligamento = '' , motivo_acolhimento = '' , dados_bancarios = '' , tipo_sanguineo = '' , aspectos_gerais_obs = '' , visitas_familiares_obs = '' , caminho_foto = '' , anexo_certidao = '' , anexo_CPF = '' , anexo_cartao_cidadao = '' , anexo_carteira_vacinacao = '' , anexo_guia_recolhimento = '' , anexo_determinacao_acolhimento = '' , anexo_historico_escolar = ''  WHERE  id = 7;
+[23/10/2019 18:13:50]  result= 1
+[23/10/2019 18:13:50]  result= foto_2019.10.23-18.13.50.jpg
+[23/10/2019 18:13:50]  querySelect= SELECT * FROM dados_pessoais WHERE  id = 7 ;
+[23/10/2019 18:13:50]  queryUpdate= UPDATE dados_pessoais SET nome = 'asdasdasd' , endereco = '' , data_acolhimento = '2019-10-23' , data_desligamento = '' , motivo_acolhimento = '' , dados_bancarios = '' , tipo_sanguineo = '' , aspectos_gerais_obs = '' , visitas_familiares_obs = '' , caminho_foto = 'foto_2019.10.23-18.13.50.jpg' , anexo_certidao = '' , anexo_CPF = '' , anexo_cartao_cidadao = '' , anexo_carteira_vacinacao = '' , anexo_guia_recolhimento = '' , anexo_determinacao_acolhimento = '' , anexo_historico_escolar = ''  WHERE  id = 7;
+[23/10/2019 18:15:19]  new_name= foto_2019.10.23-18.15.19.jpg
+[23/10/2019 18:15:19]  querySelect= SELECT * FROM dados_pessoais WHERE  id = 4 ;
+[23/10/2019 18:15:19]  queryUpdate= UPDATE dados_pessoais SET nome = 'asdasdasd' , endereco = '' , data_acolhimento = '2019-10-23' , data_desligamento = '' , motivo_acolhimento = '' , dados_bancarios = '' , tipo_sanguineo = '' , aspectos_gerais_obs = '' , visitas_familiares_obs = '' , caminho_foto = 'foto_2019.10.23-18.15.19.jpg' , anexo_certidao = '' , anexo_CPF = '' , anexo_cartao_cidadao = '' , anexo_carteira_vacinacao = '' , anexo_guia_recolhimento = '' , anexo_determinacao_acolhimento = '' , anexo_historico_escolar = ''  WHERE  id = 4;
+[23/10/2019 18:18:59]  querySelect= SELECT * FROM dados_pessoais WHERE  id = 7 ;
+[23/10/2019 18:18:59]  queryUpdate= UPDATE dados_pessoais SET nome = 'asdasdasd' , endereco = '' , data_acolhimento = '2019-10-23' , data_desligamento = '' , motivo_acolhimento = '' , dados_bancarios = '' , tipo_sanguineo = '' , aspectos_gerais_obs = '' , visitas_familiares_obs = '' , caminho_foto = 'foto_2019.10.23-18.13.50.jpg' , anexo_certidao = '' , anexo_CPF = '' , anexo_cartao_cidadao = '' , anexo_carteira_vacinacao = '' , anexo_guia_recolhimento = '' , anexo_determinacao_acolhimento = '' , anexo_historico_escolar = ''  WHERE  id = 7;
+[23/10/2019 18:19:39]  new_name= foto_2019.10.23-18.19.39.jpg
+[23/10/2019 18:19:39]  querySelect= SELECT * FROM dados_pessoais WHERE  id = 7 ;
+[23/10/2019 18:19:39]  queryUpdate= UPDATE dados_pessoais SET nome = 'asdasdasd' , endereco = '' , data_acolhimento = '2019-10-23' , data_desligamento = '' , motivo_acolhimento = '' , dados_bancarios = '' , tipo_sanguineo = '' , aspectos_gerais_obs = '' , visitas_familiares_obs = '' , caminho_foto = 'foto_2019.10.23-18.19.39.jpg' , anexo_certidao = '' , anexo_CPF = '' , anexo_cartao_cidadao = '' , anexo_carteira_vacinacao = '' , anexo_guia_recolhimento = '' , anexo_determinacao_acolhimento = '' , anexo_historico_escolar = ''  WHERE  id = 7;
+[23/10/2019 18:20:21]  querySelect= SELECT * FROM dados_pessoais WHERE  id = 7 ;
+[23/10/2019 18:20:21]  queryUpdate= UPDATE dados_pessoais SET nome = 'asdasdasdasd' , endereco = '' , data_acolhimento = '2019-10-23' , data_desligamento = '' , motivo_acolhimento = '' , dados_bancarios = '' , tipo_sanguineo = '' , aspectos_gerais_obs = '' , visitas_familiares_obs = '' , caminho_foto = 'foto_2019.10.23-18.19.39.jpg' , anexo_certidao = '' , anexo_CPF = '' , anexo_cartao_cidadao = '' , anexo_carteira_vacinacao = '' , anexo_guia_recolhimento = '' , anexo_determinacao_acolhimento = '' , anexo_historico_escolar = ''  WHERE  id = 7;
+[23/10/2019 18:20:31]  querySelect= SELECT * FROM dados_pessoais WHERE  id = 7 ;
+[23/10/2019 18:20:31]  queryUpdate= UPDATE dados_pessoais SET nome = 'asdasdasdasdasd' , endereco = '' , data_acolhimento = '2019-10-23' , data_desligamento = '' , motivo_acolhimento = '' , dados_bancarios = '' , tipo_sanguineo = '' , aspectos_gerais_obs = '' , visitas_familiares_obs = '' , caminho_foto = 'foto_2019.10.23-18.19.39.jpg' , anexo_certidao = '' , anexo_CPF = '' , anexo_cartao_cidadao = '' , anexo_carteira_vacinacao = '' , anexo_guia_recolhimento = '' , anexo_determinacao_acolhimento = '' , anexo_historico_escolar = ''  WHERE  id = 7;
+[23/10/2019 18:20:58]  queryUpdate= UPDATE dados_pessoais SET nome = 'asdasdasdasdasdasd' , endereco = '' , data_acolhimento = '2019-10-23' , data_desligamento = '' , motivo_acolhimento = '' , dados_bancarios = '' , tipo_sanguineo = '' , aspectos_gerais_obs = '' , visitas_familiares_obs = '' , caminho_foto = 'foto_2019.10.23-18.19.39.jpg' , anexo_certidao = '' , anexo_CPF = '' , anexo_cartao_cidadao = '' , anexo_carteira_vacinacao = '' , anexo_guia_recolhimento = '' , anexo_determinacao_acolhimento = '' , anexo_historico_escolar = ''  WHERE  id = 7;
+[23/10/2019 18:23:30]  queryDel= DELETE FROM   WHERE  id = ;
+[23/10/2019 18:24:22]  queryDel= DELETE FROM dados_pessoais  WHERE  id = 7;
+[23/10/2019 18:24:29]  queryDel= DELETE FROM dados_pessoais  WHERE  id = 6;
+[23/10/2019 18:24:35]  queryInsert= INSERT INTO dados_pessoais (`nome`,`endereco`,`data_acolhimento`,`data_desligamento`,`motivo_acolhimento`,`dados_bancarios`,`tipo_sanguineo`,`aspectos_gerais_obs`,`visitas_familiares_obs`,`caminho_foto`,`anexo_certidao`,`anexo_CPF`,`anexo_cartao_cidadao`,`anexo_carteira_vacinacao`,`anexo_guia_recolhimento`,`anexo_determinacao_acolhimento`,`anexo_historico_escolar`) VALUES ('asdasdas','','2019-10-01','','','','','','','','','','','','','','') ;
+[23/10/2019 18:26:34]  queryDel= DELETE FROM dados_pessoais  WHERE  id = 8;
+[23/10/2019 18:26:53]  queryInsert= INSERT INTO dados_pessoais (`nome`,`endereco`,`data_acolhimento`,`data_desligamento`,`motivo_acolhimento`,`dados_bancarios`,`tipo_sanguineo`,`aspectos_gerais_obs`,`visitas_familiares_obs`,`caminho_foto`,`anexo_certidao`,`anexo_CPF`,`anexo_cartao_cidadao`,`anexo_carteira_vacinacao`,`anexo_guia_recolhimento`,`anexo_determinacao_acolhimento`,`anexo_historico_escolar`) VALUES ('asd','','2019-10-23','','','','','','','','','','','','','','') ;
+[23/10/2019 18:33:11] Array
