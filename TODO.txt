@@ -1,223 +1,116 @@
+Criar sistema de esclusão lógica ao invés de exclusão completa
+Criar tela de admin para reativar exclusoes lógicas*
+
+
+
 Entrega 1 = (1,3,8)
-
 Entrega 2 = (2)
-
 Entrega 3 = (4,5,6,7)
-
 Entrega 4 = (10,11)
-
 Entrega 5 = (9)
-
  
-
 IDENTIDADE VISUAL: https://larfeliz.com.br/
-
  
-
- 
-
 1)Dados pessoais
-
-                Nome
-
-                Foto
-
-                3)Filiação
-
-                               Parentesco (Pai,Mae...)
-
-                               Nome
-
-                               Endereço
-
-                               Telefone
-
-                               Atividade profissional
-
-                               Dinâmica familiar OBS
-
-                Escolaridade
-
-                Escola
-
-                Endereço
-
-                Data acolhimento
-
-                Motivo acolhimento
-
-                               Tipo acolhimento
-
-                Medicamento continuo
-
-                               Nome medicamento
-
-                               Dosagem
-
-                               Horário de uso
-
-                OBS do medicamento
-
-                Anexos (8)
-
-                               (Certidão, CPF, RG, Cartão cidadão, Carteira vacinação, Guia recolhimento, Determinação acolhimento, Historio escolar)
-
-                Dados Bancários (AG/CC)
-
-                Tipo sanguíneo
-
-                Aspectos gerais OBS
-
-                Visitas familiares OBS
-
-                8)Desligamento
-
-                               Data
-
-                               Parente
-
-                               Destino (Endereço desta filiação)
-
+--------Nome
+--------Foto
+--------3)Filiação
+--------------- Parentesco (Pai,Mae...)
+--------------- Nome
+--------------- Endereço
+--------------- Telefone
+--------------- Atividade profissional
+--------------- Dinâmica familiar OBS
+--------Escolaridade
+--------Escola
+--------Endereço
+--------Data acolhimento
+--------Motivo acolhimento
+--------------- Tipo acolhimento
+--------Medicamento continuo
+--------------- Nome medicamento
+--------------- Dosagem
+--------------- Horário de uso
+--------OBS do medicamento
+--------Anexos (8)
+--------------- (Certidão, CPF, RG, Cartão cidadão, Carteira vacinação, Guia recolhimento, Determinação acolhimento, Historio escolar)
+--------Dados Bancários (AG/CC)
+--------Tipo sanguíneo
+--------Aspectos gerais OBS
+--------Visitas familiares OBS
+--------8)Desligamento
+--------------- Data
+--------------- Parente
+--------------- Destino (Endereço desta filiação)
  
-
 2)SAUDE
-
-                Tipo Consulta
-
-                Data da consulta
-
-                               Tipos
-
-                Medicamentos
-
-                Exames
-
-                Data do retorno
-
-                OBS MEDICA
-
-                Anexo (Por Consulta)
-
+--------Tipo Consulta
+--------Data da consulta
+--------------- Tipos
+--------Medicamentos
+--------Exames
+--------Data do retorno
+--------OBS MEDICA
+--------Anexo (Por Consulta)
  
-
 4)EDUCAÇÃO
-
-                ANO
-
-                Escolaridade
-
-                               Tipo Escolaridade
-
-                Escola
-
-                               Pessoa de contato
-
-                               Numero Tel
-
-                               Numero Cel
-
-                Anexo
-
-                               Relatório Semestral
-
-                Atividades complementares OBS
-
-                Ocorrências
-
-                               Data
-
-                               Motivo
-
-                               OBS Ocorrência
-
+--------ANO
+--------Escolaridade
+--------------- Tipo Escolaridade
+--------Escola
+--------------- Pessoa de contato
+--------------- Numero Tel
+--------------- Numero Cel
+--------Anexo
+--------------- Relatório Semestral
+--------Atividades complementares OBS
+--------Ocorrências
+--------------- Data
+--------------- Motivo
+--------------- OBS Ocorrência
  
-
 5)ATIVIDADES
-
-                Frequência
-
-                Dia
-
-                Horário
-
-                Local
-
+--------Frequência
+--------Dia
+--------Horário
+--------Local
  
-
  
-
 6)REGISTRO TECNICO
-
-                Visita domiciliar
-
-                               Data Informação OBS
-
-                Audiência
-
-                               Data
-
-                               Declaração OBS
-
-                Visitas familiares
-
-                               DATA
-
-                               Filiação (Tabela de parentes)
-
+--------Visita domiciliar
+--------------- Data Informação OBS
+--------Audiência
+--------------- Data
+--------------- Declaração OBS
+--------Visitas familiares
+--------------- DATA
+--------------- Filiação (Tabela de parentes)
  
-
 7)OCORRENCIA POLICIAL
-
-                Data
-
-                Dato
-
-                Anexo B.O
-
-                Descrição OBS
-
+--------Data
+--------Dato
+--------Anexo B.O
+--------Descrição OBS
  
-
 9)HISTORICO DE ACOLHIDOS (APENDICE SEM LIGAÇÃO)
-
-                Nome
-
-                Data acolhimento
-
-                Origem
-
-                Data nascimento
-
-      
-
-                               Nome pai
-
-                               Nome Mae
-
-                Data desligamento
-
-                Destino OBS
-
-                Informações diversas OBS
-
+--------Nome
+--------Data acolhimento
+--------Origem
+--------Data nascimento
+---
+--------------- Nome pai
+--------------- Nome Mae
+--------Data desligamento
+--------Destino OBS
+--------Informações diversas OBS
  
-
  
-
 10)ADMINS
-
-                NOME
-
-                EMAIL
-
-                SENHA
-
-                TIPO DE ACESSO
-
+--------NOME
+--------EMAIL
+--------SENHA
+--------TIPO DE ACESSO
  
-
 11)TIPOS DE ACESSO
-
-                Educadores(1,2,4,5) dados_pessoais, saude, educacao, atividade 
-
-                Equipe (Todos)
+--------Educadores(1,2,4,5) dados_pessoais, saude, educacao, atividade 
+--------Equipe (Todos)
