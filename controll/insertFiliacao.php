@@ -15,7 +15,7 @@ if (!empty($_POST)) {
 	$fk_id_pessoal = !empty($_POST['fk_id_pessoal'])? $_POST['fk_id_pessoal'] : NULL;
 	$nivel_parentesco = !empty($_POST['nivel_parentesco'])? $_POST['nivel_parentesco'] : NULL;
 	$nome_parente = !empty($_POST['nome_parente'])? $_POST['nome_parente'] : NULL;
-	$Endereco = !empty($_POST['Endereco'])? $_POST['Endereco'] : NULL;
+	$endereco = !empty($_POST['endereco'])? $_POST['endereco'] : NULL;
 	$telefone = !empty($_POST['telefone'])? $_POST['telefone'] : NULL;
 	$atividade_profissional = !empty($_POST['atividade_profissional'])? $_POST['atividade_profissional'] : NULL;
 	$dinamica_familiar_obs = !empty($_POST['dinamica_familiar_obs'])? $_POST['dinamica_familiar_obs'] : NULL;
@@ -27,7 +27,7 @@ if (!empty($_POST)) {
 		$fk_id_pessoal,
 		$nivel_parentesco,
 		$nome_parente,
-		$Endereco,
+		$endereco,
 		$telefone,
 		$atividade_profissional,
 		$dinamica_familiar_obs
@@ -37,7 +37,7 @@ if (!empty($_POST)) {
 		'fk_id_pessoal',
 		'nivel_parentesco',
 		'nome_parente',
-		'Endereco',
+		'endereco',
 		'telefone',
 		'atividade_profissional',
 		'dinamica_familiar_obs'

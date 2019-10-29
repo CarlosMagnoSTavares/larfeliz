@@ -29,8 +29,8 @@ if (!empty($_POST)) {
 	$anexo_certidao = isset($_FILES['anexo_certidao']) && $_FILES['anexo_certidao']['size'] > 0 ? 
 			$crud->saveFile("anexo_certidao", $_FILES['anexo_certidao']): "";
 
-	$anexo_CPF = isset($_FILES['anexo_CPF']) && $_FILES['anexo_CPF']['size'] > 0 ? 
-			$crud->saveFile("anexo_CPF", $_FILES['anexo_CPF']): "";
+	$anexo_cpf = isset($_FILES['anexo_cpf']) && $_FILES['anexo_cpf']['size'] > 0 ? 
+			$crud->saveFile("anexo_cpf", $_FILES['anexo_cpf']): "";
 
 	$anexo_cartao_cidadao = isset($_FILES['anexo_cartao_cidadao']) && $_FILES['anexo_cartao_cidadao']['size'] > 0 ? 
 			$crud->saveFile("anexo_cartao_cidadao", $_FILES['anexo_cartao_cidadao']): "";
@@ -56,7 +56,7 @@ if (!empty($_POST)) {
 		{
 			$foto = ($foto=="")? $anexo['caminho_foto'] : $foto ;
 			$anexo_certidao = ($anexo_certidao=="")? $anexo['anexo_certidao'] : $anexo_certidao ;
-			$anexo_CPF = ($anexo_CPF=="")? $anexo['anexo_CPF'] : $anexo_CPF ;
+			$anexo_cpf = ($anexo_cpf=="")? $anexo['anexo_cpf'] : $anexo_cpf ;
 			$anexo_cartao_cidadao = ($anexo_cartao_cidadao=="")? $anexo['anexo_cartao_cidadao'] : $anexo_cartao_cidadao ;
 			$anexo_carteira_vacinacao = ($anexo_carteira_vacinacao=="")? $anexo['anexo_carteira_vacinacao'] : $anexo_carteira_vacinacao ;
 			$anexo_guia_recolhimento = ($anexo_guia_recolhimento=="")? $anexo['anexo_guia_recolhimento'] : $anexo_guia_recolhimento ;
@@ -79,7 +79,7 @@ if (!empty($_POST)) {
 		$visitas_familiares_obs,
 		$foto,
 		$anexo_certidao,
-		$anexo_CPF,
+		$anexo_cpf,
 		$anexo_cartao_cidadao,
 		$anexo_carteira_vacinacao,
 		$anexo_guia_recolhimento,
@@ -100,7 +100,7 @@ if (!empty($_POST)) {
 		'visitas_familiares_obs',
 		'caminho_foto',
 		'anexo_certidao',
-		'anexo_CPF',
+		'anexo_cpf',
 		'anexo_cartao_cidadao',
 		'anexo_carteira_vacinacao',
 		'anexo_guia_recolhimento',

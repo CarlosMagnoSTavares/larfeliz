@@ -20,7 +20,7 @@ require_once('controll/Crud.class.php');
 	$fk_id_pessoal = "";
 	$nivel_parentesco = "";
 	$nome_parente = "";
-	$Endereco = "";
+	$endereco = "";
 	$telefone = "";
 	$atividade_profissional = "";
 	$dinamica_familiar_obs = "";
@@ -60,7 +60,7 @@ if ($acao == 'editar' || $acao == 'excluir'|| $acao == 'ver' )
 					$fk_id_pessoal = ($value['fk_id_pessoal']);
 					$nivel_parentesco = ($value['nivel_parentesco']);
 					$nome_parente = ($value['nome_parente']);
-					$Endereco = ($value['Endereco']);
+					$endereco = ($value['endereco']);
 					$telefone = ($value['telefone']);
 					$atividade_profissional = ($value['atividade_profissional']);
 					$dinamica_familiar_obs = ($value['dinamica_familiar_obs']);
@@ -95,8 +95,8 @@ require_once('delete.php');
 				name="nome_parente" required="true" >
 			</div>
 			<div class="col s12 m6" >
-				Endereço:<input type="text" <?php echo ' value="'.$Endereco.'" '.$disable; ?> 
-				name="Endereco">
+				Endereço:<input type="text" <?php echo ' value="'.$endereco.'" '.$disable; ?> 
+				name="endereco">
 			</div>
 			<div class="col s12 m6" >
 				Telefone:<input type="text" <?php echo ' value="'.$telefone.'" '.$disable; ?> 

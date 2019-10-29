@@ -23,7 +23,7 @@ include_once('include/header.php');
 	$visitas_familiares_obs = "";
 	$foto = "";
 	$anexo_certidao = "";
-	$anexo_CPF = "";
+	$anexo_cpf = "";
 	$anexo_cartao_cidadao = "";
 	$anexo_carteira_vacinacao = "";
 	$anexo_guia_recolhimento = "";
@@ -67,7 +67,7 @@ if ($acao == 'editar' || $acao == 'excluir'|| $acao == 'ver' )
 					$visitas_familiares_obs = ($value['visitas_familiares_obs']);
 					$foto = ($value['caminho_foto']);
 					$anexo_certidao = ($value['anexo_certidao']);
-					$anexo_CPF = ($value['anexo_CPF']);
+					$anexo_cpf = ($value['anexo_cpf']);
 					$anexo_cartao_cidadao = ($value['anexo_cartao_cidadao']);
 					$anexo_carteira_vacinacao = ($value['anexo_carteira_vacinacao']);
 					$anexo_guia_recolhimento = ($value['anexo_guia_recolhimento']);
@@ -160,13 +160,13 @@ require_once('delete.php');
 			    <div class="file-field" >
 			      <div class="btn <?php echo $btnColor; ?>" >
 			        <span>Cópia do CPF</span>
-			        <input <?php echo  $disable; echo 'value="'.$anexo_CPF.'"'; ?> name="anexo_CPF" type="file" class="<?php echo $btnColor; ?>" > <!--  VALUE="anexo.pdf" -->
+			        <input <?php echo  $disable; echo 'value="'.$anexo_cpf.'"'; ?> name="anexo_cpf" type="file" class="<?php echo $btnColor; ?>" > <!--  VALUE="anexo.pdf" -->
 			      </div>
 			      <div class="file-path-wrapper" >
-			        <input class="file-path validate" type="text" value="<?php echo $anexo_CPF; ?>" >
+			        <input class="file-path validate" type="text" value="<?php echo $anexo_cpf; ?>" >
 			      </div>
 			    </div>
-			 <a target="_blank" <?php echo 'href="documentos/'.$anexo_CPF.'"';?>>  Download: <?php echo $anexo_CPF; ?> </a>   
+			 <a target="_blank" <?php echo 'href="documentos/'.$anexo_cpf.'"';?>>  Download: <?php echo $anexo_cpf; ?> </a>   
 			</div>
 			<div class="col s12 m6" >
 			    <div class="file-field" >
