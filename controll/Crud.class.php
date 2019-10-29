@@ -10,18 +10,18 @@ class Crud extends Conn
 		date_default_timezone_set("Brazil/East"); //Definindo timezone padrão
 		$ext = strtolower(substr($anexo['name'],-4)); //Pegando extensão do arquivo
 		$new_name = (($tipo."_".date("Y.m.d-H.i.s")).$ext); //Definindo um novo nome para o arquivo
-		Conn::log(" new_name= ".$new_name);
+		// Conn::log(" new_name= ".$new_name);
 		$dir = '../documentos/'; //Diretório para uploads
 
 		if (($ext <> '.php') && ($ext <> '.html') && ($ext <> '.js')&&($ext <> '.css')) 
 		{
 			$result = move_uploaded_file($anexo['tmp_name'], $dir.$new_name); //Fazer upload do arquivo
-			$result = $result ? $new_name:NULL;
+			$result = $result ? $new_name:"ERRO";
 			return $result;
 		} 
 		else 
 		{
-			return NULL;
+			return "ERRO";
 		}
 	}
 
@@ -56,7 +56,7 @@ class Crud extends Conn
 		$values = "'".implode("','", $values)."'";
 		$con = Conn::conectar();
 		$queryInsert = ("INSERT INTO $table ($columns) VALUES ($values) ;");
-			Conn::log(" queryInsert= ".$queryInsert);// LOG
+			// Conn::log(" queryInsert= ".$queryInsert);// LOG
 		$resultInsert = mysqli_query($con,$queryInsert);
 		mysqli_close($con);
 
@@ -75,7 +75,7 @@ class Crud extends Conn
 
 		$con = Conn::conectar();
 		$queryUpdate = ('UPDATE '.$table.' SET '.$setValues.$where.';');
-			Conn::log(" queryUpdate= ".$queryUpdate);// LOG
+			// Conn::log(" queryUpdate= ".$queryUpdate);// LOG
 		$texto =  $queryUpdate;
 		$queryUpdate = mysqli_query($con,$queryUpdate);
 		mysqli_close($con);
@@ -94,7 +94,7 @@ class Crud extends Conn
 
 		$con = Conn::conectar();
 		$queryDel = ("DELETE FROM $table $where;");
-			 Conn::log(" queryDel= ".$queryDel);// LOG
+			 // Conn::log(" queryDel= ".$queryDel);// LOG
 		$queryDelete = mysqli_query($con,$queryDel);
 		mysqli_close($con);
 		

@@ -15,7 +15,7 @@ class Conn
 			// $senha = "";
 			// $dbname = "lar_feliz";
 
-		// PRODUCAO
+		// preProd
 			$servidor = "localhost";
 			$usuario = "larf_feliz";
 			$senha = "sisTEMAlar";
