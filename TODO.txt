@@ -15,6 +15,10 @@ Tela de Filiação
 	1) OK Campo de endereço não esta salvando
 	2) OK Corrigir os nomes dos campos que estavam com _
 
+Tela registro tecnic
+	1) [PeNDENTE] revemoer os _ e arrumar os nomes
+
+
 Geral
 	1) [Pendente] Desenvolver tela "Lista atualizada de acolhimentos"
 	2) [Pendente] Criar regra para mover os desligados para o Historico de acolhimentos
