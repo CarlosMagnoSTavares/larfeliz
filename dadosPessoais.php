@@ -49,7 +49,8 @@ require_once('pagina.php');
 						<tr>
 							<td><img src="'.$caminhoFoto.'"  data-caption="'.$nome.'" class="circle materialboxed" width="35px" height="35px"></td>
 							<td class="">'.$nome.'</td>
-							<td class="center-align">'.$dataAcolhimento.'</td>
+							<td class="center-align">'.date("d/m/Y", strtotime($dataAcolhimento)).'</td>
+
 							<td><a href="'.$formPost.'?acao=ver&id='.$idPessoal.'" class="btn btn-small green">Ver</a></td>
 							<td><a href="'.$formPost.'?acao=editar&id='.$idPessoal.'" class="btn btn-small orange">Editar</a></td>
 							<td><a href="'.$formPost.'?acao=excluir&id='.$idPessoal.'" class="btn btn-small red">Excluir</a></td>

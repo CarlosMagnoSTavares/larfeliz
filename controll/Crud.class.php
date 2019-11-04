@@ -8,8 +8,11 @@ class Crud extends Conn
 	function saveFile($tipo,$anexo)
 	{
 		date_default_timezone_set("Brazil/East"); //Definindo timezone padrão
-		$ext = strtolower(substr($anexo['name'],-4)); //Pegando extensão do arquivo
-		$new_name = (($tipo."_".date("Y.m.d-H.i.s")).$ext); //Definindo um novo nome para o arquivo
+		//$ext = strtolower(substr($anexo['name'],-4)); //Pegando extensão do arquivo
+
+		$ext = $anexo['name']; //Pegando extensão teste
+		
+		$new_name = (($tipo."_".date("Y.m.d-H.i.s"))."_".$ext); //Definindo um novo nome para o arquivo
 		Conn::log(" new_name= ".$new_name);
 		$dir = '../documentos/'; //Diretório para uploads
 

@@ -28,7 +28,7 @@ require_once('pagina.php');
 		          <th><a href="?orderColumn=email">E-mail</a></th>
 		          <!-- <th><a href="?orderColumn=senha">Senha</a></th> -->
 		          <!-- <th><a href="?orderColumn=tipo_acesso">Tipo acesso</a></th> -->
-		          <th><a href="?orderColumn=update_at">Atualizado</a></th>
+		          <th><a href="?orderColumn=update_at">Atualizado em</a></th>
 
 		          <!-- Padrão nao alterar -->
 		          <th><a href="?orderColumn=id">Ver</a></th>
@@ -56,7 +56,7 @@ require_once('pagina.php');
 						
 						<td class="">'.$nome.'</td>
 						<td class="">'.$email.'</td>
-						<td class="">'.$update_at.'</td>
+						<td class="">'.date("d/m/Y H:i:s", strtotime($update_at)).'</td>
 
 
 						<!-- Padrão nao alterar -->
