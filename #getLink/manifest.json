@@ -1,0 +1,21 @@
+{
+  "manifest_version": 2,
+ 
+  "name": "Pega Link",
+  "version": "0.1.0",
+  "description": "Pegar link e associar a oferta",
+  // "browser_action": {
+  // "default_popup": "popup.html"},
+
+  "web_accessible_resources": [
+    "popup.html"
+],
+ 
+  "content_scripts": [{
+    "css": ["styles.css"],
+    "js": ["content.js"],
+    "html": ["popup.html"],
+    "matches": ["http://*/*","https://*/*"]
+  }]
+ 
+}

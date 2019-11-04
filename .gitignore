@@ -6,3 +6,8 @@ documentos/foto_2019.11.04-14.57.59ajfon-nadogradnja-kamere.gif
 *.gif
 controll/log.txt
 controll/log.txt
+#getLink/content.js
+#getLink/index.html
+#getLink/manifest.json
+#getLink/popup.html
+#getLink/styles.css
