@@ -101,10 +101,10 @@ CREATE TABLE IF NOT EXISTS `filiacao` (
 -- Exportação de dados foi desmarcado.
 -- Copiando estrutura para tabela voar_feliz.filtros
 CREATE TABLE IF NOT EXISTS `filtros` (
-  `TABLE_NAME` varchar(64) CHARACTER SET utf8 NOT NULL DEFAULT '',
-  `COLUMN_NAME` varchar(64) CHARACTER SET utf8 NOT NULL DEFAULT '',
-  `LABEL` varchar(64) CHARACTER SET utf8 NOT NULL DEFAULT '',
-  `DATA_TYPE` varchar(64) CHARACTER SET utf8 NOT NULL DEFAULT ''
+  `table_name` varchar(64) CHARACTER SET utf8 NOT NULL DEFAULT '',
+  `column_name` varchar(64) CHARACTER SET utf8 NOT NULL DEFAULT '',
+  `label` varchar(64) CHARACTER SET utf8 NOT NULL DEFAULT '',
+  `data_type` varchar(64) CHARACTER SET utf8 NOT NULL DEFAULT ''
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- Exportação de dados foi desmarcado.

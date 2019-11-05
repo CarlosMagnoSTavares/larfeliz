@@ -1,6 +1,83 @@
+------------------------------------------------------------------------------------------------------------------------
+admin@admin.com
+ambevoar
+
+-- STATUS REPORT --
+Tela dados pessoais
+	1) OK Trocar o nome do "endereço completo" para "Cidade Origem"
+	2) OK Trocar o nome da Guia de Acolhimento (e nao Recolhimento)
+	3) OK Problema ao salvar anexo CPF
+	4) [Pendente] Adicionar campo DATA_NASCIMENTO
+	5) [Pendente] Adicionar campo NUMERO DO PROCESSO
+	6) OK Arrumar a exibição de data para Dia/Mes/Ano
+
+Tela de Filiação
+	1) OK Campo de endereço não esta salvando
+	2) OK Corrigir os nomes dos campos que estavam com _
+
+Tela registro tecnic
+	1) [PeNDENTE] revemoer os _ e arrumar os nomes
+
+
+Geral
+	1) [Pendente] Desenvolver tela "Lista atualizada de acolhimentos"
+	2) [Pendente] Criar regra para mover os desligados para o Historico de acolhimentos
+-------------------
+
+formDadosPessoais  
+	Criar o campo DATA_NASCIMENTO
+	Adicionar Campo (Numero do processo) Var_char 255
+	OK Trocar o campo Endereço completo para CIDADE ORIGEM
+	OK Guia de (ACOLHIMENTO e não RECOLHIMENTO)
+	OK Ao anexar CPF não está salvando o anexo (Verificar problema de permissão na pasta)
+	OK (AO INVES DE EDITAR COLOCAR SALVAR)
+
+formFiliacao
+	OK Salvar endereço está quebrando (não salva endereço) ou não exibe
+
+GerarListaAtualizadaDeAcolhimento (relatório) EXCEL OU PDF
+	(Somente os que não tem data de desligamento)
+	nome completo
+	DataNascimento*
+	Idade (atual calculo data)
+	numero do processo*
+	Data do acolhimento
+	CIDADE ORIGEM
+
+
+*FormRegFiliacao
+	OK Remover os _ dos nomes (dimica_familiar)
+
+
+HistoricoDeAcolhidos
+	[Regra] Todos os usuários com data_desligamento devem ir para o historico de acolhidos (não são mais listados na tela a não ser que passe um GET com um botão de historico).
+	[Regra] Todos os usuários com data_desligamento não devem constar nos menus de filiação, reg_tecnico.....
+	[Regra] Como fazer para usuarios desligados (precisa mostrar a data de desligamento e readmissão)
+			Data de desligamento e acolhimentos mudariam neste caso
+			Precisa ter um Label no formDadosPessoais com datas 01/01/2014 até 30/01/2019
+            
+--Melhoria em todos os LISTAGENS
+	Todas as datas trocar de *Ano *Mes e *Dia para padrão Brasil
+	[Opcional] colocar um label com hora e quem editou cada registro
+
+
+
+
+---Ações----
+control/insert e form
+banco de dados
+
+(filiacao endereco minusc)
+(dados pessoais CPF minusc)
+
+recompilar VW_filiacao depois de atualizar
+
+alterar o NULL do CRUD.CLASS para retornar log
+
+
+------------------------------------------------------------------------------------------------------------------------
 Criar sistema de esclusão lógica ao invés de exclusão completa
 Criar tela de admin para reativar exclusoes lógicas*
-
 
 
 Entrega 1 = (1,3,8)

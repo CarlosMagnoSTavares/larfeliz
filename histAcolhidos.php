@@ -24,10 +24,10 @@ require_once('pagina.php');
 		 <table class="striped responsive-table center-align">
 		    <thead>
 		      <tr>
-					<th><a href="?orderColumn=nome">nome</a></th>
-					<th><a href="?orderColumn=data_acolhimento">data acolhimento</a></th>
-					<th><a href="?orderColumn=data_nascimento">data nascimento</a></th>
-					<th><a href="?orderColumn=data_desligamento">data desligamento</a></th>
+					<th><a href="?orderColumn=nome">Nome</a></th>
+					<th><a href="?orderColumn=data_acolhimento">Data acolhimento</a></th>
+					<th><a href="?orderColumn=data_nascimento">Data nascimento</a></th>
+					<th><a href="?orderColumn=data_desligamento">Data desligamento</a></th>
 
 
 		          <!-- Padrão nao alterar -->
@@ -58,9 +58,9 @@ require_once('pagina.php');
 					echo'
 					<tr>
 						<td class="">'.$nome.'</td>
-						<td class="">'.$data_acolhimento.'</td>
-						<td class="">'.$data_nascimento.'</td>
-						<td class="">'.$data_desligamento.'</td>
+						<td class="center-align">'.date("d/m/Y", strtotime($data_acolhimento)).'</td>
+						<td class="center-align">'.date("d/m/Y", strtotime($data_nascimento)).'</td>
+						<td class="center-align">'.date("d/m/Y", strtotime($data_desligamento)).'</td>
 
 						<!-- Padrão nao alterar -->
 							<td><a href="'.$formPost.'?acao=ver&id='.$id.'" class="btn btn-small green">Ver</a></td>

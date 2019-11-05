@@ -90,7 +90,7 @@ require_once('delete.php');
 				*Nome completo:<input type="text" <?php echo ' value="'.$nome.'" '.$disable; ?> name="nome" required="true" >
 			</div>
 			<div class="col s12 m4" >
-				Endereço completo:<input type="text" <?php echo ' value="'.$endereco.'" '.$disable; ?> name="endereco" >
+				Cidade de origem:<input type="text" <?php echo ' value="'.$endereco.'" '.$disable; ?> name="endereco" >
 			</div>
 			<div class="col s12 m4" >
 				*Data do acolhimento:<input type="date" <?php echo ' value="'.$data_acolhimento.'" '.$disable; ?> name="data_acolhimento" required="true" >
@@ -147,7 +147,7 @@ require_once('delete.php');
 			<div class="col s12 m6" >
 			    <div class="file-field" >
 			      <div class="btn <?php echo $btnColor; ?>" >
-			        <span>certidao</span>
+			        <span>Certidão</span>
 			        <input <?php echo  $disable; echo 'value="'.$anexo_certidao.'"'; ?> name="anexo_certidao" type="file" class="<?php echo $btnColor; ?>" > <!--  VALUE="anexo.pdf" -->
 			      </div>
 			      <div class="file-path-wrapper" >
@@ -171,7 +171,7 @@ require_once('delete.php');
 			<div class="col s12 m6" >
 			    <div class="file-field" >
 			      <div class="btn <?php echo $btnColor; ?>" >
-			        <span>cartao cidadao</span>
+			        <span>Cartão cidadao</span>
 			        <input <?php echo  $disable; echo 'value="'.$anexo_cartao_cidadao.'"'; ?> name="anexo_cartao_cidadao" type="file" class="<?php echo $btnColor; ?>" > <!--  VALUE="anexo.pdf" -->
 			      </div>
 			      <div class="file-path-wrapper" >
@@ -183,7 +183,7 @@ require_once('delete.php');
 			<div class="col s12 m6" >
 			    <div class="file-field" >
 			      <div class="btn <?php echo $btnColor; ?>" >
-			        <span>carteira vacinacao</span>
+			        <span>Carteira vacinação</span>
 			        <input <?php echo  $disable; echo 'value="'.$anexo_carteira_vacinacao.'"'; ?> name="anexo_carteira_vacinacao" type="file" class="<?php echo $btnColor; ?>" > <!--  VALUE="anexo.pdf" -->
 			      </div>
 			      <div class="file-path-wrapper" >
@@ -195,7 +195,7 @@ require_once('delete.php');
 			<div class="col s12 m6" >
 			    <div class="file-field" >
 			      <div class="btn <?php echo $btnColor; ?>" >
-			        <span>guia recolhimento</span>
+			        <span>Guia acolhimento</span>
 			        <input <?php echo  $disable; echo 'value="'.$anexo_guia_recolhimento.'"'; ?> name="anexo_guia_recolhimento" type="file" class="<?php echo $btnColor; ?>" > <!--  VALUE="anexo.pdf" -->
 			      </div>
 			      <div class="file-path-wrapper" >
@@ -207,7 +207,7 @@ require_once('delete.php');
 			<div class="col s12 m6" >
 			    <div class="file-field" >
 			      <div class="btn <?php echo $btnColor; ?>" >
-			        <span>determinacao acolhimento</span>
+			        <span>Determinacao acolhimento</span>
 			        <input <?php echo  $disable; echo 'value="'.$anexo_determinacao_acolhimento.'"'; ?> name="anexo_determinacao_acolhimento" type="file" class="<?php echo $btnColor; ?>" > <!--  VALUE="anexo.pdf" -->
 			      </div>
 			      <div class="file-path-wrapper" >
@@ -219,7 +219,7 @@ require_once('delete.php');
 			<div class="col s12 m6" >
 			    <div class="file-field" >
 			      <div class="btn <?php echo $btnColor; ?>" >
-			        <span>historico escolar</span>
+			        <span>Historico escolar</span>
 			        <input <?php echo  $disable; echo 'value="'.$anexo_historico_escolar.'"'; ?> name="anexo_historico_escolar" type="file" class="<?php echo $btnColor; ?>" > <!--  VALUE="anexo.pdf" -->
 			      </div>
 			      <div class="file-path-wrapper" >

@@ -26,8 +26,8 @@ require_once('pagina.php');
 		          <th><a href="?orderColumn=nome">Foto</a></th>
 		          <th><a href="?orderColumn=nome">Nome</a></th>
 		          <th><a href="?orderColumn=tipo_consulta">Tipo da consulta</a></th>
-		          <th><a href="?orderColumn=data_da_consulta">data consulta</a></th>
-		          <th><a href="?orderColumn=data_do_retorno">data retorno</a></th>
+		          <th><a href="?orderColumn=data_da_consulta">Data consulta</a></th>
+		          <th><a href="?orderColumn=data_do_retorno">Data retorno</a></th>
 
 		          <!-- Padrão nao alterar -->
 		          <th><a href="?orderColumn=id">Ver</a></th>

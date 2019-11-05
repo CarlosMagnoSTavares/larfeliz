@@ -67,6 +67,10 @@ $titulo = isset($titulo)? "<b>".$titulo."</b>": " <br>BEM-VINDO<br><b>".$educado
 
 
 <?php 
+
+
+
+
 $start = isset($_GET['start']) ? isset($_GET['start']) : NULL;
 
 if (!empty($start)) {?>
@@ -82,6 +86,8 @@ if (!empty($start)) {?>
 
 // GESTÃO DO NIVEL DE ACESSO
 $telaAcessada = isset($telaAcessada)? $telaAcessada : "ERROR";
+$labelAcao = isset($_GET['acao'])? $_GET['acao']:"";
+echo '<label class="center-align center" align="center" >'.strtoupper( $labelAcao).'</label><br>';
 
 if ($tipo_acesso == "EDUCADOR" ) {
   if ( $telaAcessada <> 'dados_pessoais' && $telaAcessada  <> "saude" && $telaAcessada  <> "educacao" && $telaAcessada  <> "atividade" && $telaAcessada  <> "index" ) 
