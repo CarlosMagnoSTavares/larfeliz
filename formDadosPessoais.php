@@ -29,6 +29,8 @@ include_once('include/header.php');
 	$anexo_guia_recolhimento = "";
 	$anexo_determinacao_acolhimento = "";
 	$anexo_historico_escolar = "";
+	$data_nascimento = "";//NOVO
+	$numero_processo = "";//NOVO
 	$limpar = "Limpar";
 	$salvar = "inserir";
 
@@ -57,6 +59,10 @@ if ($acao == 'editar' || $acao == 'excluir'|| $acao == 'ver' )
 				{
 					$id = ($value['id']);
 					$nome = ($value['nome']);
+					
+					$data_nascimento = ($value['data_nascimento']);//NOVO
+					$numero_processo = ($value['numero_processo']);//NOVO
+
 					$endereco = ($value['endereco']);
 					$data_acolhimento = ($value['data_acolhimento']);
 					$data_desligamento = ($value['data_desligamento']);
@@ -85,13 +91,23 @@ require_once('delete.php');
 <form action="controll/<?php echo $formPost; ?>" method="POST" enctype="multipart/form-data" >
 	<div class="" >
 		<div class="row" >
-			<div class="col s12 m12" >
+			<div class="col s12 m4" >
 				<input type="hidden" name="id" value="<?php echo $id; ?>">
 				*Nome completo:<input type="text" <?php echo ' value="'.$nome.'" '.$disable; ?> name="nome" required="true" >
 			</div>
 			<div class="col s12 m4" >
 				Cidade de origem:<input type="text" <?php echo ' value="'.$endereco.'" '.$disable; ?> name="endereco" >
 			</div>
+
+			<!-- Campos novos -->
+			<div class="col s12 m4" >
+				*Numero do processo:<input type="text" <?php echo ' value="'.$numero_processo.'" '.$disable; ?> name="numero_processo" required="true" >
+			</div>
+			<div class="col s12 m4" >
+				*Data nascimento:<input type="date" <?php echo ' value="'.$data_nascimento.'" '.$disable; ?> name="data_nascimento" required="true" >
+			</div>
+			<!-- Campos novos -->
+
 			<div class="col s12 m4" >
 				*Data do acolhimento:<input type="date" <?php echo ' value="'.$data_acolhimento.'" '.$disable; ?> name="data_acolhimento" required="true" >
 			</div>

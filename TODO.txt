@@ -7,8 +7,8 @@ Tela dados pessoais
 	1) OK Trocar o nome do "endereço completo" para "Cidade Origem"
 	2) OK Trocar o nome da Guia de Acolhimento (e nao Recolhimento)
 	3) OK Problema ao salvar anexo CPF
-	4) [Pendente] Adicionar campo DATA_NASCIMENTO
-	5) [Pendente] Adicionar campo NUMERO DO PROCESSO
+	4) OK Adicionar campo DATA_NASCIMENTO
+	5) OK Adicionar campo NUMERO DO PROCESSO
 	6) OK Arrumar a exibição de data para Dia/Mes/Ano
 
 Tela de Filiação
@@ -16,8 +16,10 @@ Tela de Filiação
 	2) OK Corrigir os nomes dos campos que estavam com _
 
 Tela registro tecnic
-	1) [PeNDENTE] revemoer os _ e arrumar os nomes
+	1) OK revemoer os _ e arrumar os nomes
 
+Hist de acolhidos
+	[Pendente] Criar um campo de anexo (documentos)
 
 Geral
 	1) [Pendente] Desenvolver tela "Lista atualizada de acolhimentos"

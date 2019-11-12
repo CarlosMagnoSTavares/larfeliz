@@ -14,6 +14,11 @@ if (!empty($_POST)) {
 	$nome = !empty($_POST['nome'])? $_POST['nome'] : NULL;
 	$endereco = !empty($_POST['endereco'])? $_POST['endereco'] : NULL;
 	$data_acolhimento = !empty($_POST['data_acolhimento'])? $_POST['data_acolhimento'] : NULL;
+
+	$data_nascimento = !empty($_POST['data_nascimento'])? $_POST['data_nascimento'] : NULL;//NOVO
+	$numero_processo = !empty($_POST['numero_processo'])? $_POST['numero_processo'] : NULL;//NOVO
+
+
 	$data_desligamento = !empty($_POST['data_desligamento'])? $_POST['data_desligamento'] : NULL;
 	$motivo_acolhimento = !empty($_POST['motivo_acolhimento'])? $_POST['motivo_acolhimento'] : NULL;
 	$dados_bancarios = !empty($_POST['dados_bancarios'])? $_POST['dados_bancarios'] : NULL;
@@ -84,7 +89,9 @@ if (!empty($_POST)) {
 		$anexo_carteira_vacinacao,
 		$anexo_guia_recolhimento,
 		$anexo_determinacao_acolhimento,
-		$anexo_historico_escolar
+		$anexo_historico_escolar,
+		$data_nascimento,
+		$numero_processo
 	);
 
 	$columns = array 
@@ -105,7 +112,9 @@ if (!empty($_POST)) {
 		'anexo_carteira_vacinacao',
 		'anexo_guia_recolhimento',
 		'anexo_determinacao_acolhimento',
-		'anexo_historico_escolar'
+		'anexo_historico_escolar',
+		'data_nascimento',
+		'numero_processo'
 	);
 
 

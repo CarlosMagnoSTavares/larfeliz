@@ -12,6 +12,15 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
 
+
+-- NOVOS CAMPOS
+ALTER TABLE `dados_pessoais`
+  ADD COLUMN `data_nascimento` VARCHAR(10) NULL DEFAULT NULL AFTER `data_desligamento`,
+  ADD COLUMN `numero_processo` VARCHAR(255) NULL DEFAULT NULL AFTER `data_nascimento`;
+-- NOVOS CAMPOS
+
+
+
 -- Copiando estrutura do banco de dados para voar_feliz
 CREATE DATABASE IF NOT EXISTS `voar_feliz` /*!40100 DEFAULT CHARACTER SET utf8 COLLATE utf8_bin */;
 USE `voar_feliz`;

@@ -108,32 +108,32 @@ require_once('delete.php');
 			</div>
 
 			<div class="col s12 m12" >
-				*visita_domiciliar:
+				*Visita domiciliar:
 				<input type="text" <?php echo ' value="'.$visita_domiciliar.'" '.$disable; ?> 
 				name="visita_domiciliar" required="true" >
 			</div>
 
 			<div class="col s12 m12" >
-				*informacoes_sobre_visita:
+				*Informacoes sobre visita:
 				<input type="text" <?php echo ' value="'.$informacoes_sobre_visita.'" '.$disable; ?> 
 				name="informacoes_sobre_visita" required="true" >
 			</div>
 
 
 			<div class="col s6 m6" >
-				*data_audiencia:
+				*Data audiencia:
 				<input type="date" <?php echo ' value="'.$data_audiencia.'" '.$disable; ?> 
 				name="data_audiencia" >
 			</div>
 
 			<div class="col s6 m6" >
-				*data_visita_familiar:
+				*Data visita familiar:
 				<input type="date" <?php echo ' value="'.$data_visita_familiar.'" '.$disable; ?> 
 				name="data_visita_familiar" required="true" >
 			</div>
 
 			<div class="col s12 m12" >
-				*audiencia_declaracao_obs:
+				*Audiencia declaracao obs:
 				<input type="text" <?php echo ' value="'.$audiencia_declaracao_obs.'" '.$disable; ?> 
 				name="audiencia_declaracao_obs">
 			</div>
