@@ -24,7 +24,8 @@ Hist de acolhidos
 Geral
 	1) [Pendente] Desenvolver tela "Lista atualizada de acolhimentos"
 	2) [Pendente] Criar regra para mover os desligados para o Historico de acolhimentos
--------------------
+	
+------------------------------------------------------------------------------------------------------------------------
 
 formDadosPessoais  
 	Criar o campo DATA_NASCIMENTO

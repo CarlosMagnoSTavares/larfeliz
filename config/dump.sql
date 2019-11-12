@@ -14,9 +14,9 @@
 
 
 -- NOVOS CAMPOS
-ALTER TABLE `dados_pessoais`
-  ADD COLUMN `data_nascimento` VARCHAR(10) NULL DEFAULT NULL AFTER `data_desligamento`,
-  ADD COLUMN `numero_processo` VARCHAR(255) NULL DEFAULT NULL AFTER `data_nascimento`;
+  ALTER TABLE `dados_pessoais`
+    ADD COLUMN `data_nascimento` VARCHAR(10) NULL DEFAULT NULL AFTER `data_desligamento`,
+    ADD COLUMN `numero_processo` VARCHAR(255) NULL DEFAULT NULL AFTER `data_nascimento`;
 -- NOVOS CAMPOS
 
 
