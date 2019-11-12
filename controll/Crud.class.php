@@ -59,6 +59,7 @@ class Crud extends Conn
 			return 'Fail'; //$queryInsert;
 		}
 	}
+
 	function update($table=NULL,$setValues=NULL,$where=NULL)
 	{
 		$table = addslashes($table);
@@ -76,6 +77,22 @@ class Crud extends Conn
 			return 'Fail';
 		}
 	}
+
+	function inject($query=NULL)
+	{
+		$con = Conn::conectar();
+			Conn::log(" queryInjected= ".$query);// LOG
+		$texto =  $query;
+		$query = mysqli_query($con,$query);
+		mysqli_close($con);
+		
+		if ($query) {
+			return 'Success';
+		} else {
+			return 'Fail';
+		}
+	}
+
 	function delete($table=NULL, $where="ERROR")
 	{
 		$table = addslashes($table);

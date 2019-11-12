@@ -1,0 +1,4 @@
+[12/11/2019 15:34:28]  queryInjected= 
+[12/11/2019 15:34:28]  queryInjected= 
+[12/11/2019 15:36:54]  queryInjected= ALTER TABLE `admin` 	COMMENT='teste222';
+[12/11/2019 15:37:40]  queryInjected= ALTER TABLE `admin` 	COMMENT='teste222';

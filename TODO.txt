@@ -194,3 +194,7 @@ IDENTIDADE VISUAL: https://larfeliz.com.br/
 11)TIPOS DE ACESSO
 --------Educadores(1,2,4,5) dados_pessoais, saude, educacao, atividade 
 --------Equipe (Todos)
+
+
+user: larf_admin_sistema
+senha: larfesd45w
