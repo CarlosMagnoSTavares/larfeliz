@@ -11,6 +11,139 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
+-- --------------------------------------------------------
+-- Servidor:                     localhost
+-- Versão do servidor:           5.7.24 - MySQL Community Server (GPL)
+-- OS do Servidor:               Win64
+-- HeidiSQL Versão:              10.2.0.5599
+-- --------------------------------------------------------
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET NAMES utf8 */;
+/*!50503 SET NAMES utf8mb4 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+
+
+
+---------------------------------------------------------------------------------
+-- NOVOS CAMPOS 22/11/2019
+    DROP VIEW vw_atividade; -- Deleta antiga View e cria nova abaixo
+    create view vw_atividade as
+    SELECT  d.situacao, d.nome,d.caminho_foto, a.* 
+    FROM atividade a INNER JOIN vw_dados_pessoais d ON d.id = a.fk_id_pessoal 
+    ;
+
+
+    DROP VIEW vw_dados_pessoais; -- Deleta antiga View e cria nova abaixo
+    create view vw_dados_pessoais as
+    SELECT  
+    case 
+      when (data_desligamento > CURDATE() OR data_desligamento IS NULL OR data_desligamento ='')  then "ativo"
+      else "desligado"
+    END AS situacao,
+    d.`*`a
+    FROM dados_pessoais d 
+    ;
+
+
+    DROP VIEW vw_educacao; -- Deleta antiga View e cria nova abaixo
+    create view vw_educacao as
+    SELECT d.situacao, d.nome,d.caminho_foto, e.* FROM educacao e 
+    INNER JOIN vw_dados_pessoais d ON d.id = e.fk_id_pessoal 
+    ;
+
+
+    DROP VIEW vw_filiacao; -- Deleta antiga View e cria nova abaixo
+    create view vw_filiacao as
+    SELECT d.situacao, d.nome, d.caminho_foto, f.* FROM filiacao f 
+    INNER JOIN vw_dados_pessoais d ON d.id = f.fk_id_pessoal 
+    ;
+
+
+    DROP VIEW vw_filtros; -- Deleta antiga View e cria nova abaixo
+    create view vw_filtros as
+    SELECT c.table_name,c.column_name,replace(c.column_name,'_',' ') AS label,c.data_type 
+    FROM information_schema.columns c
+    WHERE table_schema = 'voar_feliz'
+    AND c.column_name NOT LIKE '%anexo%' 
+    ;
+
+
+    DROP VIEW vw_hist_acolhidos; -- Deleta antiga View e cria nova abaixo
+    create view vw_hist_acolhidos as
+    SELECT 
+    "desligado" as situacao,
+    h.id, 
+    h.nome,
+    h.data_acolhimento, 
+    h.data_nascimento, 
+    h.data_desligamento,
+    'FormHistAcolhidos.php' AS formPost
+    FROM hist_acolhidos h
+    UNION all
+    SELECT
+    d.situacao, 
+    d.id, 
+    d.nome,
+    d.data_acolhimento, 
+    d.data_nascimento, 
+    d.data_desligamento,
+    'formDadosPessoais.php' AS formPost
+    FROM vw_dados_pessoais d 
+    ;
+
+
+    DROP VIEW vw_list_filiacao; -- Deleta antiga View e cria nova abaixo
+    create view vw_list_filiacao as
+    SELECT
+    d.situacao,
+    d.nome AS nome_crianca, f.nome_parente, 
+    f.id as id_parente,
+    f.id as id,
+    CONCAT 
+    (f.nome_parente," - ", f.nivel_parentesco, " de ", d.nome)AS nome,
+
+    d.caminho_foto AS caminho_foto
+     FROM filiacao f INNER JOIN vw_dados_pessoais d ON d.id = f.fk_id_pessoal 
+     WHERE
+    (data_desligamento > CURDATE() OR data_desligamento IS NULL OR data_desligamento ='') 
+    ;
+
+
+    DROP VIEW vw_ocorrencia; -- Deleta antiga View e cria nova abaixo
+    create view vw_ocorrencia as
+    SELECT 
+    d.situacao,
+    d.nome,d.caminho_foto, 
+    o.*  FROM 
+    ocorrencia o 
+    INNER JOIN vw_dados_pessoais d ON d.id = o.fk_id_pessoal 
+    ;
+
+
+    DROP VIEW vw_registro_tecnico; -- Deleta antiga View e cria nova abaixo
+    create view vw_registro_tecnico as
+    SELECT d.situacao, d.nome as nome_crianca,d.caminho_foto, f.nivel_parentesco, f.nome_parente, 
+    CONCAT 
+    (f.nome_parente," - ", f.nivel_parentesco, " de ", d.nome)AS nome,
+    r.* 
+    FROM registro_tecnico r
+    INNER JOIN filiacao f ON f.id = r.fk_id_filiacao_visita
+    INNER JOIN vw_dados_pessoais d ON d.id = f.fk_id_pessoal 
+    ;
+
+
+    DROP VIEW vw_saude; -- Deleta antiga View e cria nova abaixo
+    create view vw_saude as
+    SELECT d.situacao, s.* ,d.nome, d.caminho_foto FROM saude s 
+    INNER JOIN vw_dados_pessoais d ON d.id = s.fk_id_pessoal 
+    ;
+
+
+-- NOVOS CAMPOS
+
+---------------------------------------------------------------------------------
 
 
 -- NOVOS CAMPOS

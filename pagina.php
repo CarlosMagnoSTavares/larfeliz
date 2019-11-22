@@ -23,7 +23,7 @@ if (isset($_GET['opcao']) && isset($_GET['VALUE']) && isset($_GET['column_name']
 
 
 // LISTA colunas do filtro ↓
-	$tabelaDeFiltros = 'filtros';
+	$tabelaDeFiltros = 'vw_filtros';
 	$whereFiltro = " table_name = '".$table."'";
 	$orderByFiltro =" label ";
 	$limitFiltro = NULL;
@@ -127,3 +127,26 @@ $limit = "$pag,$max";
 </div>
 
 
+<?php
+
+//Separa visualização de DESLIGADOS e de ATIVOS
+if ($telaAcessada != "histAcolhidos") 
+{
+	if (isset($_GET['situacao'])) 
+	{
+		$situacao = $_GET['situacao'] == 'desligado'? 'desligado':'ativo';
+	}
+	else
+	{
+		$situacao = 'ativo';
+	}
+
+}
+else
+{
+	$situacao = 'desligado';
+}
+
+$where .= " and situacao = '".$situacao."'";
+
+?>

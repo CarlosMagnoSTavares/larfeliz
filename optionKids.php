@@ -5,7 +5,7 @@ $chave = isset($optionList) && !empty($optionList)? $optionList : NULL;
 
 if (empty($chave)) 
 {
-	$tableDP = 'dados_pessoais';
+	$tableDP = 'vw_dados_pessoais';
 	$orderBy ="nome";
 } 
 else 

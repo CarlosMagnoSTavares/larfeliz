@@ -8,7 +8,7 @@ require_once('controll/Crud.class.php');
 $formPost ="formDadosPessoais.php";
 
 //Config de cada pagina
-$table = 'dados_pessoais';
+$table = 'vw_dados_pessoais'; //Criado View para não exibir criancas desligadas na listagem
 
 require_once('pagina.php');
 ?>

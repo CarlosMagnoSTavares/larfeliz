@@ -53,13 +53,13 @@ class Conn
 	public function log($msg=NULL)
 	{
 		//Deleta arquivo se passar de 10k linhas
-		$linhas = count( file( 'log.txt' ) );
+		$linhas = count( file( 'log.log' ) );
 			if ($linhas >= 10000) 
 			{
-				$myFile = "log.txt";
+				$myFile = "log.log";
 				$myFileLink = fopen($myFile, 'w') or die("can't open file");
 				fclose($myFileLink);
-				$myFile = "log.txt";
+				$myFile = "log.log";
 				unlink($myFile) or die("Couldn't delete file");
 			}
 
@@ -72,7 +72,7 @@ class Conn
 		{
 			// Abre ou cria o arquivo bloco1.txt
 			// "a" representa que o arquivo é aberto para ser escrito
-			$fp = fopen("log.txt", "a");
+			$fp = fopen("log.log", "a");
 			// Escreve a mensagem passada através da variável $msg
 			$escreve = fwrite($fp, $msg);
 			// Fecha o arquivo

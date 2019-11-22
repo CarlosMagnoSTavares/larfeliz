@@ -5,7 +5,7 @@ include_once('include/header.php');
 require_once('controll/Crud.class.php');
 
 //Config de cada pagina
-$table = 'hist_acolhidos';
+$table = 'vw_hist_acolhidos';//Criado View para listar crianças delisgadas
 $formPost ="FormHistAcolhidos.php";
 
 require_once('pagina.php');
@@ -40,6 +40,7 @@ require_once('pagina.php');
 			<tbody>
 				<?php
 				$crud = new Crud;
+				$where .= " and situacao='desligado' ";
 				$list = $crud->select($table,$where,$orderBy,$limit);
 
 				foreach ($list as $key => $value)
@@ -47,13 +48,14 @@ require_once('pagina.php');
 					$id = !empty($value['id'])? ($value['id']): "";
 					$nome = !empty($value['nome'])? ($value['nome']): "";
 					$data_acolhimento = !empty($value['data_acolhimento'])? ($value['data_acolhimento']): "";
-					$origem = !empty($value['origem'])? ($value['origem']): "";
+					//$origem = !empty($value['origem'])? ($value['origem']): "";
 					$data_nascimento = !empty($value['data_nascimento'])? ($value['data_nascimento']): "";
-					$nome_pai = !empty($value['nome_pai'])? ($value['nome_pai']): "";
-					$nome_mae = !empty($value['nome_mae'])? ($value['nome_mae']): "";
+					//$nome_pai = !empty($value['nome_pai'])? ($value['nome_pai']): "";
+					//$nome_mae = !empty($value['nome_mae'])? ($value['nome_mae']): "";
 					$data_desligamento = !empty($value['data_desligamento'])? ($value['data_desligamento']): "";
-					$destino = !empty($value['destino'])? ($value['destino']): "";
-					$info_diversas = !empty($value['info_diversas'])? ($value['info_diversas']): "";
+					$formPost = !empty($value['formPost'])? ($value['formPost']): "";
+					//$destino = !empty($value['destino'])? ($value['destino']): "";
+					//$info_diversas = !empty($value['info_diversas'])? ($value['info_diversas']): "";
 
 					echo'
 					<tr>
