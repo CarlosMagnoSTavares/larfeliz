@@ -23,6 +23,7 @@ require_once('controll/Crud.class.php');
 	$data_desligamento= "";
 	$destino= "";
 	$info_diversas= "";
+	$anexo="";
 
 	$limpar = "Limpar";
 	$salvar = "inserir";
@@ -59,6 +60,7 @@ if ($acao == 'editar' || $acao == 'excluir'|| $acao == 'ver' )
 					$data_desligamento= ($value['data_desligamento']);
 					$destino= ($value['destino']);
 					$info_diversas= ($value['info_diversas']);
+					$anexo= ($value['anexo']);
 					
 					$limpar = "Limpar";
 					$salvar = "editar";
@@ -101,6 +103,18 @@ require_once('delete.php');
 			</div>
 			<div class="col s12 m12" >
 				info_diversas:<input type="text" <?php echo ' value="'.$info_diversas.'" '.$disable; ?> name="info_diversas" >
+			</div>
+			<div class="col s12 m6" >
+			    <div class="file-field" >
+			      <div class="btn <?php echo $btnColor; ?>" >
+			        <span>anexo</span>
+			        <input <?php echo  $disable; echo 'value="'.$anexo.'"'; ?> name="anexo" type="file" class="<?php echo $btnColor; ?>"> 
+			      </div>
+			      <div class="file-path-wrapper" >
+			        <input class="file-path validate" type="text" value="<?php echo $anexo; ?>" >
+			      </div>
+			    </div>
+			 <a target="_blank" <?php echo 'href="documentos/'.$anexo.'"';?>>  Download: <?php echo $anexo; ?> </a>   
 			</div>
 			
 			
