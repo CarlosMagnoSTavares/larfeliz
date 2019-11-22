@@ -59,6 +59,7 @@ require_once('pagina.php');// paginação
 					$data_audiencia = !empty($value['data_audiencia'])? ($value['data_audiencia']):"";
 					$audiencia_declaracao_obs = !empty($value['audiencia_declaracao_obs'])? ($value['audiencia_declaracao_obs']):"";
 					$data_visita_familiar = !empty($value['data_visita_familiar'])? ($value['data_visita_familiar']):"";
+					$situacao = $value['situacao'];
 
 					echo'
 					<tr>
@@ -71,12 +72,10 @@ require_once('pagina.php');// paginação
 						<!-- <td class="">'.$audiencia_declaracao_obs.'</td> -->
 						<td class="">'.$data_visita_familiar.'</td>
 
-						<!-- Padrão nao alterar -->
-							<td><a href="'.$formPost.'?acao=ver&id='.$id.'" class="btn btn-small green">Ver</a></td>
-							<td><a href="'.$formPost.'?acao=editar&id='.$id.'" class="btn btn-small orange">Editar</a></td>
-							<td><a href="'.$formPost.'?acao=excluir&id='.$id.'" class="btn btn-small red">Excluir</a></td>
-						<!-- Padrão nao alterar fim-->
-					</tr>
+						';
+					include('botoes.php');
+					echo'
+						</tr>
 					';
 				}
 				?>

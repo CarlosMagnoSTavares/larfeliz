@@ -56,6 +56,7 @@ require_once('pagina.php');
 					$formPost = !empty($value['formPost'])? ($value['formPost']): "";
 					//$destino = !empty($value['destino'])? ($value['destino']): "";
 					//$info_diversas = !empty($value['info_diversas'])? ($value['info_diversas']): "";
+					$situacao = $value['situacao'];
 
 					echo'
 					<tr>
@@ -64,12 +65,10 @@ require_once('pagina.php');
 						<td class="center-align">'.date("d/m/Y", strtotime($data_nascimento)).'</td>
 						<td class="center-align">'.date("d/m/Y", strtotime($data_desligamento)).'</td>
 
-						<!-- Padrão nao alterar -->
-							<td><a href="'.$formPost.'?acao=ver&id='.$id.'" class="btn btn-small green">Ver</a></td>
-							<td><a href="'.$formPost.'?acao=editar&id='.$id.'" class="btn btn-small orange">Editar</a></td>
-							<td><a href="'.$formPost.'?acao=excluir&id='.$id.'" class="btn btn-small red">Excluir</a></td>
-						<!-- Padrão nao alterar fim-->
-					</tr>
+						';
+					include('botoes.php');
+					echo'
+						</tr>
 					';
 				}
 				?>

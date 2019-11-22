@@ -1,3 +1,5 @@
+
+
 <ul class="collapsible">
 	<li>
 		<div class="collapsible-header"><i class="material-icons">search</i>Filtrar</div>
@@ -85,25 +87,7 @@ if (isset($_GET['opcao']) && isset($_GET['VALUE']) && isset($_GET['column_name']
 		</div>	
 
 </form>
-
 <?php
-
-
-/*
-QUERY PARA CRIAR filtros
-	CREATE TABLE filtros AS 
-	SELECT TABLE_NAME,column_name,column_name AS label, DATA_TYPE FROM information_schema.columns c WHERE c.table_schema = 'lar_feliz' AND c.table_name LIKE 'vw_%'
-
-INSERT into filtros 
-SELECT TABLE_NAME,column_name,column_name AS label, DATA_TYPE
-FROM information_schema.columns c
-WHERE c.table_schema = 'lar_feliz' AND c.table_name LIKE 'hist_acolhidos'
-
-
-
-*/
-
-//Não alterar "order e paginação" (TODAS AS TABELAS PRECISAM DE UMA COLUNA ID PRIMARY KEY)
 
 
 $where = (isset($opcao)&&!empty($opcao))? $opcao : " id >= 0 ";
@@ -127,6 +111,7 @@ $limit = "$pag,$max";
 </div>
 
 
+
 <?php
 
 //Separa visualização de DESLIGADOS e de ATIVOS
@@ -140,6 +125,16 @@ if ($telaAcessada != "histAcolhidos")
 	{
 		$situacao = 'ativo';
 	}
+echo'
+<div class="center-align" align="center">
+	<ul id="dropdown2" class="dropdown-content">
+	    <li><a href="?situacao=ativo" class="green-text">ATIVOS</a></li>
+	    <li><a href="?situacao=desligado" class="red-text">DESLIGADOS</a></li>
+	  </ul>
+	  <a class="btn dropdown-trigger" href="#!" data-target="dropdown2">Situacão<i class="material-icons right">assignment_ind arrow_drop_down</i></a>
+</div>
+<br>
+';
 
 }
 else
@@ -148,5 +143,6 @@ else
 }
 
 $where .= " and situacao = '".$situacao."'";
+
 
 ?>

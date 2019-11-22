@@ -53,6 +53,7 @@ require_once('pagina.php');
 					$ano = !empty($value['ano'])? ($value['ano']) : " Desconhecido ";
 					$tipo_escolaridade = !empty($value['tipo_escolaridade'])? ($value['tipo_escolaridade']):"";
 					$escola = !empty($value['escola'])? ($value['escola']):"";
+					$situacao = $value['situacao'];
 
 					echo'
 					<tr>
@@ -62,12 +63,10 @@ require_once('pagina.php');
 						<td class="">'.$tipo_escolaridade.'</td>
 						<td class="">'.$escola.'</td>
 
-						<!-- Padrão nao alterar -->
-							<td><a href="'.$formPost.'?acao=ver&id='.$id.'" class="btn btn-small green">Ver</a></td>
-							<td><a href="'.$formPost.'?acao=editar&id='.$id.'" class="btn btn-small orange">Editar</a></td>
-							<td><a href="'.$formPost.'?acao=excluir&id='.$id.'" class="btn btn-small red">Excluir</a></td>
-						<!-- Padrão nao alterar fim-->
-					</tr>
+						';
+					include('botoes.php');
+					echo'
+						</tr>
 					';
 				}
 				?>

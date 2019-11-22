@@ -54,6 +54,7 @@ require_once('pagina.php');
 					$dia = !empty($value['dia'])? ($value['dia']):"";
 					$horario = !empty($value['horario'])? ($value['horario']):"";
 					$local = !empty($value['local'])? ($value['local']):"";
+					$situacao = $value['situacao'];
 
 					echo'
 					<tr>
@@ -65,12 +66,10 @@ require_once('pagina.php');
 						<td class="">'.$horario.'</td>
 						<td class="">'.$local.'</td>
 
-						<!-- Padrão nao alterar -->
-							<td><a href="'.$formPost.'?acao=ver&id='.$id.'" class="btn btn-small green">Ver</a></td>
-							<td><a href="'.$formPost.'?acao=editar&id='.$id.'" class="btn btn-small orange">Editar</a></td>
-							<td><a href="'.$formPost.'?acao=excluir&id='.$id.'" class="btn btn-small red">Excluir</a></td>
-						<!-- Padrão nao alterar fim-->
-					</tr>
+						';
+					include('botoes.php');
+					echo'
+						</tr>
 					';
 				}
 				?>

@@ -43,17 +43,17 @@ require_once('pagina.php');
 					$nome = ($value['nome']);
 					$caminhoFoto = !empty(trim($value['caminho_foto']))? "documentos/".$value['caminho_foto']:"include/sem-foto.gif";
 					$dataAcolhimento = !empty($value['data_acolhimento'])? $value['data_acolhimento'] : " --/--/--- ";
-					$idPessoal = $value['id'];
+					$id = $value['id'];
+					$situacao = $value['situacao'];
 
 					echo'
 						<tr>
 							<td><img src="'.$caminhoFoto.'"  data-caption="'.$nome.'" class="circle materialboxed" width="35px" height="35px"></td>
 							<td class="">'.$nome.'</td>
 							<td class="center-align">'.date("d/m/Y", strtotime($dataAcolhimento)).'</td>
-
-							<td><a href="'.$formPost.'?acao=ver&id='.$idPessoal.'" class="btn btn-small green">Ver</a></td>
-							<td><a href="'.$formPost.'?acao=editar&id='.$idPessoal.'" class="btn btn-small orange">Editar</a></td>
-							<td><a href="'.$formPost.'?acao=excluir&id='.$idPessoal.'" class="btn btn-small red">Excluir</a></td>
+							';
+					include('botoes.php');
+					echo'
 						</tr>
 					';
 				}

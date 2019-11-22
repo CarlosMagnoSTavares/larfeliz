@@ -47,7 +47,8 @@ require_once('pagina.php');
 					$nome_parente = !empty($value['nome_parente'])? ($value['nome_parente']):"";
 					$caminhoFoto = !empty(trim($value['caminho_foto']))? "documentos/".$value['caminho_foto']:"include/sem-foto.gif";
 					$nivel_parentesco = !empty($value['nivel_parentesco'])? ($value['nivel_parentesco']) : " Desconhecido ";
-					$idFiliacao = $value['id'];
+					$id = $value['id'];
+					$situacao = $value['situacao'];
 
 					echo'
 					<tr>
@@ -56,12 +57,10 @@ require_once('pagina.php');
 						<td class="">'.$nivel_parentesco.'</td>
 						<td class="">'.$nome_parente.'</td>
 
-						<!-- Padrão nao alterar -->
-							<td><a href="'.$formPost.'?acao=ver&id='.$idFiliacao.'" class="btn btn-small green">Ver</a></td>
-							<td><a href="'.$formPost.'?acao=editar&id='.$idFiliacao.'" class="btn btn-small orange">Editar</a></td>
-							<td><a href="'.$formPost.'?acao=excluir&id='.$idFiliacao.'" class="btn btn-small red">Excluir</a></td>
-						<!-- Padrão nao alterar fim-->
-					</tr>
+						';
+					include('botoes.php');
+					echo'
+						</tr>
 					';
 				}
 				?>

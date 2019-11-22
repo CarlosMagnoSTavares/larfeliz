@@ -49,6 +49,7 @@ require_once('pagina.php');
 					$data_da_consulta = !empty($value['data_da_consulta'])? ($value['data_da_consulta']):"";
 					$data_do_retorno = !empty($value['data_do_retorno'])? ($value['data_do_retorno']):"";
 					$id = $value['id'];
+					$situacao = $value['situacao'];
 
 					echo'
 					<tr>
@@ -58,12 +59,10 @@ require_once('pagina.php');
 						<td class="">'.$data_da_consulta.'</td>
 						<td class="">'.$data_do_retorno.'</td>
 
-						<!-- Padrão nao alterar -->
-							<td><a href="'.$formPost.'?acao=ver&id='.$id.'" class="btn btn-small green">Ver</a></td>
-							<td><a href="'.$formPost.'?acao=editar&id='.$id.'" class="btn btn-small orange">Editar</a></td>
-							<td><a href="'.$formPost.'?acao=excluir&id='.$id.'" class="btn btn-small red">Excluir</a></td>
-						<!-- Padrão nao alterar fim-->
-					</tr>
+						';
+					include('botoes.php');
+					echo'
+						</tr>
 					';
 				}
 				?>

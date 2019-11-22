@@ -1,5 +1,27 @@
 <?php 
 
+//Separa visualização de DESLIGADOS e de ATIVOS
+if ($telaAcessada != "histAcolhidos") 
+{
+	if (isset($_GET['situacao'])) 
+	{
+		$situacao = $_GET['situacao'] == 'desligado'? 'desligado':'ativo';
+	}
+	else
+	{
+		$situacao = 'ativo';
+	}
+
+}
+else
+{
+	$situacao = 'desligado';
+}
+
+$whereDP = " situacao = '".$situacao."'";
+
+
+
 
 $chave = isset($optionList) && !empty($optionList)? $optionList : NULL; 
 
@@ -17,7 +39,7 @@ else
 
 
  	$crud = new Crud;
-	$list = $crud->select($tableDP,NULL,$orderBy,NULL);
+	$list = $crud->select($tableDP,$whereDP,$orderBy,NULL);
 
 	foreach ($list as $key => $value) 
 	{
