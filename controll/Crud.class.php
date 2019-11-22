@@ -29,7 +29,7 @@ class Crud extends Conn
 		$limit = !empty($limit)? " limit ". $limit : NULL;
 		$con = Conn::conectar();
 		$querySelect = ('SELECT * FROM '.addslashes($table).$where.$orderBy.$limit.' ;');
-			Conn::log(" querySelect= ".$querySelect);// LOG
+			//Conn::log(" querySelect= ".$querySelect);// LOG
 		$querySelect = mysqli_query($con,$querySelect);
 		mysqli_close($con);
  		return $querySelect;
