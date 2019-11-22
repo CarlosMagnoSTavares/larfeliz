@@ -19,7 +19,7 @@ Tela registro tecnic
 	1) OK revemoer os _ e arrumar os nomes
 
 Hist de acolhidos
-	[Pendente] Criar um campo de anexo (documentos)
+	OK Criar um campo de anexo (documentos)
 
 Geral
 	1) [Pendente] Desenvolver tela "Lista atualizada de acolhimentos"
