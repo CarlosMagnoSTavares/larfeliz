@@ -115,7 +115,7 @@ $limit = "$pag,$max";
 <?php
 
 //Separa visualização de DESLIGADOS e de ATIVOS
-if ($telaAcessada != "histAcolhidos") 
+if ($telaAcessada != "histAcolhidos" && $telaAcessada != "admin") 
 {
 	if (isset($_GET['situacao'])) 
 	{
@@ -127,11 +127,8 @@ if ($telaAcessada != "histAcolhidos")
 	}
 echo'
 <div class="center-align" align="center">
-	<ul id="dropdown2" class="dropdown-content">
-	    <li><a href="?situacao=ativo" class="green-text">ATIVOS</a></li>
-	    <li><a href="?situacao=desligado" class="red-text">DESLIGADOS</a></li>
-	  </ul>
-	  <a class="btn dropdown-trigger" href="#!" data-target="dropdown2">Situacão<i class="material-icons right">assignment_ind arrow_drop_down</i></a>
+	  <a class="btn dropdown-trigger" href="?situacao=ativo" >ATIVOS<i class="material-icons right">group</i></a>
+	  <a class="btn dropdown-trigger" href="?situacao=desligado" >DESLIGADOS<i class="material-icons right">visibility_off</i></a>
 </div>
 <br>
 ';
@@ -141,6 +138,8 @@ else
 {
 	$situacao = 'desligado';
 }
+
+$situacao = $telaAcessada == 'admin'? "ativo": $situacao;
 
 $where .= " and situacao = '".$situacao."'";
 

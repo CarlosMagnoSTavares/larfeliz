@@ -5,7 +5,7 @@ include_once('include/header.php');
 require_once('controll/Crud.class.php');
 
 //Config de cada pagina
-$table = 'admin';
+$table = 'vw_admin';
 $formPost ="formAdmin.php";
 
 require_once('pagina.php');

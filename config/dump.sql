@@ -28,40 +28,39 @@
 
 ---------------------------------------------------------------------------------
 -- NOVOS CAMPOS 22/11/2019
-    DROP VIEW vw_atividade; -- Deleta antiga View e cria nova abaixo
+
+DROP VIEW IF EXISTS vw_dados_pessoais; 
+    create view vw_dados_pessoais as
+      SELECT  
+    case 
+      when (data_desligamento > CURDATE() OR data_desligamento IS NULL OR data_desligamento ='')  then "ativo"
+      else "desligado"
+    END AS situacao,
+    d.*
+    FROM dados_pessoais d 
+    ;
+
+    DROP VIEW IF EXISTS vw_atividade; 
     create view vw_atividade as
     SELECT  d.situacao, d.nome,d.caminho_foto, a.* 
     FROM atividade a INNER JOIN vw_dados_pessoais d ON d.id = a.fk_id_pessoal 
     ;
 
-
-    DROP VIEW vw_dados_pessoais; -- Deleta antiga View e cria nova abaixo
-    create view vw_dados_pessoais as
-    SELECT  
-    case 
-      when (data_desligamento > CURDATE() OR data_desligamento IS NULL OR data_desligamento ='')  then "ativo"
-      else "desligado"
-    END AS situacao,
-    d.`*`a
-    FROM dados_pessoais d 
-    ;
-
-
-    DROP VIEW vw_educacao; -- Deleta antiga View e cria nova abaixo
+    DROP VIEW IF EXISTS vw_educacao; 
     create view vw_educacao as
     SELECT d.situacao, d.nome,d.caminho_foto, e.* FROM educacao e 
     INNER JOIN vw_dados_pessoais d ON d.id = e.fk_id_pessoal 
     ;
 
 
-    DROP VIEW vw_filiacao; -- Deleta antiga View e cria nova abaixo
+    DROP VIEW IF EXISTS vw_filiacao; 
     create view vw_filiacao as
     SELECT d.situacao, d.nome, d.caminho_foto, f.* FROM filiacao f 
     INNER JOIN vw_dados_pessoais d ON d.id = f.fk_id_pessoal 
     ;
 
 
-    DROP VIEW vw_filtros; -- Deleta antiga View e cria nova abaixo
+    DROP VIEW IF EXISTS vw_filtros; 
     create view vw_filtros as
     SELECT c.table_name,c.column_name,replace(c.column_name,'_',' ') AS label,c.data_type 
     FROM information_schema.columns c
@@ -70,7 +69,7 @@
     ;
 
 
-    DROP VIEW vw_hist_acolhidos; -- Deleta antiga View e cria nova abaixo
+    DROP VIEW IF EXISTS vw_hist_acolhidos; 
     create view vw_hist_acolhidos as
     SELECT 
     "desligado" as situacao,
@@ -94,7 +93,7 @@
     ;
 
 
-    DROP VIEW vw_list_filiacao; -- Deleta antiga View e cria nova abaixo
+    DROP VIEW IF EXISTS vw_list_filiacao; 
     create view vw_list_filiacao as
     SELECT
     d.situacao,
@@ -111,7 +110,7 @@
     ;
 
 
-    DROP VIEW vw_ocorrencia; -- Deleta antiga View e cria nova abaixo
+    DROP VIEW IF EXISTS vw_ocorrencia; 
     create view vw_ocorrencia as
     SELECT 
     d.situacao,
@@ -122,7 +121,7 @@
     ;
 
 
-    DROP VIEW vw_registro_tecnico; -- Deleta antiga View e cria nova abaixo
+    DROP VIEW IF EXISTS vw_registro_tecnico; 
     create view vw_registro_tecnico as
     SELECT d.situacao, d.nome as nome_crianca,d.caminho_foto, f.nivel_parentesco, f.nome_parente, 
     CONCAT 
@@ -134,7 +133,7 @@
     ;
 
 
-    DROP VIEW vw_saude; -- Deleta antiga View e cria nova abaixo
+    DROP VIEW IF EXISTS vw_saude; 
     create view vw_saude as
     SELECT d.situacao, s.* ,d.nome, d.caminho_foto FROM saude s 
     INNER JOIN vw_dados_pessoais d ON d.id = s.fk_id_pessoal 
