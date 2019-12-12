@@ -78,20 +78,20 @@ class Crud extends Conn
 		}
 	}
 
-	function inject($query=NULL)
-	{
-		$con = Conn::conectar();
-			Conn::log(" queryInjected= ".$query);// LOG
-		$texto =  $query;
-		$query = mysqli_query($con,$query);
-		mysqli_close($con);
+	// function inject($query=NULL)
+	// {
+	// 	$con = Conn::conectar();
+	// 		Conn::log(" queryInjected= ".$query);// LOG
+	// 	$texto =  $query;
+	// 	$query = mysqli_query($con,$query);
+	// 	mysqli_close($con);
 		
-		if ($query) {
-			return 'Success';
-		} else {
-			return 'Fail';
-		}
-	}
+	// 	if ($query) {
+	// 		return 'Success';
+	// 	} else {
+	// 		return 'Fail';
+	// 	}
+	// }
 
 	function delete($table=NULL, $where="ERROR")
 	{
