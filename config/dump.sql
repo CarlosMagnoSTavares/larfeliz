@@ -27,6 +27,23 @@
 
 
 ---------------------------------------------------------------------------------
+-- NOVOS CAMPOS 17/12/2019
+CREATE VIEW vw_relatorio AS 
+SELECT "NOME","DATA_NASCIMENTO","IDADE","NUMERO_PROCESSO","DATA_ACOLHIMENTO","CIDADE_ORIGEM","RELATORIO_GERADO"
+UNION ALL
+SELECT 
+d.nome,
+d.data_nascimento, 
+SUBSTRING(FROM_DAYS(TO_DAYS(curdate())-TO_DAYS(d.data_nascimento)), 3, 2) AS idade,
+d.numero_processo, 
+d.data_acolhimento,
+d.endereco AS cidade_origem,
+NOW() as relatorio_gerado_em
+FROM vw_dados_pessoais d
+WHERE d.situacao = 'ativo'
+-- NOVOS CAMPOS 17/12/2019
+
+
 -- NOVOS CAMPOS 22/11/2019
 
 DROP VIEW IF EXISTS vw_dados_pessoais; 

@@ -110,5 +110,17 @@ class Crud extends Conn
 			return 'Fail';
 		}
 	}
+
+
+	function csv($msg="VAZIO;")
+	{
+			@unlink('relatorio.csv');
+			$fp = fopen("relatorio.csv", "a");
+			$escreve = fwrite($fp, $msg);
+			fclose($fp);
+			return $escreve;
+	}
+
+
 }	
 ?>

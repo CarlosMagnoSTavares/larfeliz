@@ -37,6 +37,8 @@ require_once('pagina.php');
 				<?php
 				$crud = new Crud;
 				$list = $crud->select($table,$where,$orderBy,$limit);
+				
+				
 
 				foreach ($list as $key => $value)
 				{ 
