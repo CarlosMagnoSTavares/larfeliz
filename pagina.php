@@ -59,6 +59,7 @@ if (isset($_GET['opcao']) && isset($_GET['VALUE']) && isset($_GET['column_name']
 			<div class="col s12 m2" >
 				<lbl>Opção</lbl>
 				<select  name="opcao" >
+					asd
 					<option value="1">Maior que</option>
 					<option value="2">Menor que</option>
 					<option value="3">Maior igual</option>
@@ -87,6 +88,7 @@ if (isset($_GET['opcao']) && isset($_GET['VALUE']) && isset($_GET['column_name']
 		</div>	
 
 </form>
+
 <?php
 
 
@@ -110,10 +112,7 @@ $limit = "$pag,$max";
 <label align="" class="center text-center"><?php echo "<h6><b>".$labelResult."</b></h6>"; ?></label>
 </div>
 
-
-
 <?php
-
 //Separa visualização de DESLIGADOS e de ATIVOS
 if ($telaAcessada != "histAcolhidos" && $telaAcessada != "admin") 
 {
@@ -127,8 +126,8 @@ if ($telaAcessada != "histAcolhidos" && $telaAcessada != "admin")
 	}
 echo'
 <div class="center-align" align="center">
-	  <a class="btn dropdown-trigger" href="?situacao=ativo" >ATIVOS<i class="material-icons right">group</i></a>
-	  <a class="btn dropdown-trigger" href="?situacao=desligado" >DESLIGADOS<i class="material-icons right">visibility_off</i></a>
+	  <a class="btn" href="?situacao=ativo" >ATIVOS<i class="material-icons right">group</i></a>
+	  <a class="btn" href="?situacao=desligado" >DESLIGADOS<i class="material-icons right">visibility_off</i></a>
 </div>
 <br>
 ';
@@ -139,9 +138,7 @@ else
 	$situacao = 'desligado';
 }
 
-$situacao = $telaAcessada == 'admin'? "ativo": $situacao;
+// $situacao = $telaAcessada == 'admin'? "ativo": $situacao;
 
-$where .= " and situacao = '".$situacao."'";
-
-
+//$where .= " and situacao = '".$situacao."' ";
 ?>

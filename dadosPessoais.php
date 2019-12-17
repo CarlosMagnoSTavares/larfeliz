@@ -38,7 +38,20 @@ require_once('pagina.php');
 				$crud = new Crud;
 				$list = $crud->select($table,$where,$orderBy,$limit);
 				
-				
+			// RELATORIO
+			$row = "";
+			$relatorio = $crud->select('vw_relatorio',NULL,NULL,NULL);
+			foreach ($relatorio as $key => $value) 
+			{
+				$row .= ($value['NOME']).";".($value['DATA_NASCIMENTO']).";".($value['IDADE']).";".($value['NUMERO_PROCESSO']).";".($value['DATA_ACOLHIMENTO']).";".($value['CIDADE_ORIGEM']).";".($value['RELATORIO_GERADO']).";\n";
+			}
+			if ( $crud->csv(utf8_encode($row)) ) 
+			{
+				echo '<a class="btn" href="relatorio.csv" target="_blank">EXCEL
+					  <i class="material-icons right">save</i></a>';
+			}
+			// FIM RELATORIO
+
 
 				foreach ($list as $key => $value)
 				{ 
