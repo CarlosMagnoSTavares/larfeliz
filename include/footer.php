@@ -43,7 +43,7 @@
     </div>
     <div class="footer-copyright footer-copyright orange darken-3">
       <div class="container right-align">
-      Devolvido por <a class="orange-text text-lighten-3" href="https://github.com/CarlosMagnoSTavares/larfeliz" >Ambev Voar</a>
+      Desenvolvido por <a class="orange-text text-lighten-3" href="https://github.com/CarlosMagnoSTavares/larfeliz" >Ambev Voar</a>
       <a target="_blank" href="https://github.com/CarlosMagnoSTavares/larfeliz">
         
       </a>
