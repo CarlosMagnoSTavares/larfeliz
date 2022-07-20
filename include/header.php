@@ -87,7 +87,7 @@ if (!empty($start)) {?>
 // GESTÃO DO NIVEL DE ACESSO
 $telaAcessada = isset($telaAcessada)? $telaAcessada : "ERROR";
 $labelAcao = isset($_GET['acao'])? $_GET['acao']:"";
-echo '<label class="center-align center" align="center" >'.strtoupper( $labelAcao)).'</label><br>';
+echo '<label class="center-align center" align="center" >'.strtoupper(htmlspecialchars($labelAcao)).'</label><br>';
 
 if ($tipo_acesso == "EDUCADOR" ) {
   if ( $telaAcessada <> 'dados_pessoais' && $telaAcessada  <> "saude" && $telaAcessada  <> "educacao" && $telaAcessada  <> "atividade" && $telaAcessada  <> "index" ) 
