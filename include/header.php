@@ -8,7 +8,7 @@ if (empty($educador)) {
   die();
 }//Se nao tiver logado nem carrega nada
 
-$titulo = isset($titulo)? "<b>".$titulo."</b>": " <br>BEM-VINDO<br><b>".$educador."</b><br> Você está acessando como: ".$tipo_acesso;
+$titulo = isset($titulo)? "<b>".htmlspecialchars($titulo)."</b>": " <br>BEM-VINDO<br><b>".htmlspecialchars($educador)."</b><br> Você está acessando como: ".htmlspecialchars($tipo_acesso);
 ?>
 
 <!DOCTYPE html>
@@ -87,7 +87,7 @@ if (!empty($start)) {?>
 // GESTÃO DO NIVEL DE ACESSO
 $telaAcessada = isset($telaAcessada)? $telaAcessada : "ERROR";
 $labelAcao = isset($_GET['acao'])? $_GET['acao']:"";
-echo '<label class="center-align center" align="center" >'.strtoupper( $labelAcao).'</label><br>';
+echo '<label class="center-align center" align="center" >'.strtoupper( $labelAcao)).'</label><br>';
 
 if ($tipo_acesso == "EDUCADOR" ) {
   if ( $telaAcessada <> 'dados_pessoais' && $telaAcessada  <> "saude" && $telaAcessada  <> "educacao" && $telaAcessada  <> "atividade" && $telaAcessada  <> "index" ) 

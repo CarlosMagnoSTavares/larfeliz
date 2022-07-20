@@ -3,7 +3,7 @@
 $educador = @$_SESSION["usuario"];
 $tipo_acesso = @$_SESSION['tipo_acesso'];
 
-$titulo = isset($titulo)? "<b>".$titulo."</b>": " <br>BEM-VINDO<br><b>".$educador."</b><br> Você está acessando como: ".$tipo_acesso;
+$titulo = isset($titulo)? "<b>".htmlspecialchars($titulo)."</b>": " <br>BEM-VINDO<br><b>".htmlspecialchars($educador)."</b><br> Você está acessando como: ".htmlspecialchars($tipo_acesso);
 ?>
 
 <!DOCTYPE html>

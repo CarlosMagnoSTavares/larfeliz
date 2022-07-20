@@ -43,7 +43,7 @@ require_once('pagina.php');
 
 				foreach ($list as $key => $value)
 				{ 
-					$caminhoFoto = !empty(trim($value['caminho_foto']))? "documentos/".$value['caminho_foto']:"include/sem-foto.gif";
+					$caminhoFoto = !empty(trim($value['caminho_foto']))? "documentos/".htmlspecialchars($value['caminho_foto']):"include/sem-foto.gif";
 					$nome = !empty($value['nome'])? ($value['nome']):"";
 					$tipo_consulta = !empty($value['tipo_consulta'])? ($value['tipo_consulta']) : " Desconhecido ";
 					$data_da_consulta = !empty($value['data_da_consulta'])? ($value['data_da_consulta']):"";
@@ -53,11 +53,11 @@ require_once('pagina.php');
 
 					echo'
 					<tr>
-						<td><img src="'.$caminhoFoto.'"  data-caption="'.$nome.'" class="circle materialboxed" width="35px" height="35px"></td>
-						<td class="">'.$nome.'</td>
-						<td class="">'.$tipo_consulta.'</td>
-						<td class="">'.$data_da_consulta.'</td>
-						<td class="">'.$data_do_retorno.'</td>
+						<td><img src="'.htmlspecialchars($caminhoFoto).'"  data-caption="'.htmlspecialchars($nome).'" class="circle materialboxed" width="35px" height="35px"></td>
+						<td class="">'.htmlspecialchars($nome).'</td>
+						<td class="">'.htmlspecialchars($tipo_consulta).'</td>
+						<td class="">'.htmlspecialchars($data_da_consulta).'</td>
+						<td class="">'.htmlspecialchars($data_do_retorno).'</td>
 
 						';
 					include('botoes.php');

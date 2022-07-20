@@ -47,7 +47,7 @@ require_once('pagina.php');
 				foreach ($list as $key => $value)
 				{ 
 					$id = $value['id'];
-					$caminhoFoto = !empty(trim($value['caminho_foto']))? "documentos/".$value['caminho_foto']:"include/sem-foto.gif";
+					$caminhoFoto = !empty(trim($value['caminho_foto']))? "documentos/".htmlspecialchars($value['caminho_foto']):"include/sem-foto.gif";
 					$nome = !empty($value['nome'])? ($value['nome']):"";
 
 					$frequencia = !empty($value['frequencia'])? ($value['frequencia']) : " Desconhecido ";
@@ -58,13 +58,13 @@ require_once('pagina.php');
 
 					echo'
 					<tr>
-						<td><img src="'.$caminhoFoto.'"  data-caption="'.$nome.'" class="circle materialboxed" width="35px" height="35px"></td>
-						<td class="">'.$nome.'</td>
+						<td><img src="'.htmlspecialchars($caminhoFoto).'"  data-caption="'.htmlspecialchars($nome).'" class="circle materialboxed" width="35px" height="35px"></td>
+						<td class="">'.htmlspecialchars($nome).'</td>
 
-						<td class="">'.$frequencia.'</td>
-						<td class="">'.$dia.'</td>
-						<td class="">'.$horario.'</td>
-						<td class="">'.$local.'</td>
+						<td class="">'.htmlspecialchars($frequencia).'</td>
+						<td class="">'.htmlspecialchars($dia).'</td>
+						<td class="">'.htmlspecialchars($horario).'</td>
+						<td class="">'.htmlspecialchars($local).'</td>
 
 						';
 					include('botoes.php');

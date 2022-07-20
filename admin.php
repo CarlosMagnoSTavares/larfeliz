@@ -54,15 +54,15 @@ require_once('pagina.php');
 					echo'
 					<tr>
 						
-						<td class="">'.$nome.'</td>
-						<td class="">'.$email.'</td>
-						<td class="">'.date("d/m/Y H:i:s", strtotime($update_at)).'</td>
+						<td class="">'.htmlspecialchars($nome).'</td>
+						<td class="">'.htmlspecialchars($email).'</td>
+						<td class="">'.date("d/m/Y H:i:s", strtotime($update_at))).'</td>
 
 
 						<!-- Padrão nao alterar -->
-							<td><a href="'.$formPost.'?acao=ver&id='.$id.'" class="btn btn-small green">Ver</a></td>
-							<td><a href="'.$formPost.'?acao=editar&id='.$id.'" class="btn btn-small orange">Editar</a></td>
-							<td><a href="'.$formPost.'?acao=excluir&id='.$id.'" class="btn btn-small red">Excluir</a></td>
+							<td><a href="'.htmlspecialchars($formPost).'?acao=ver&id='.htmlspecialchars($id).'" class="btn btn-small green">Ver</a></td>
+							<td><a href="'.htmlspecialchars($formPost).'?acao=editar&id='.htmlspecialchars($id).'" class="btn btn-small orange">Editar</a></td>
+							<td><a href="'.htmlspecialchars($formPost).'?acao=excluir&id='.htmlspecialchars($id).'" class="btn btn-small red">Excluir</a></td>
 						<!-- Padrão nao alterar fim-->
 					</tr>
 					';
@@ -78,3 +78,4 @@ include_once('include/pagination.php');
 include_once('include/footer.php'); 
 
 ?>
+

@@ -44,7 +44,7 @@ if ($acao == 'editar' || $acao == 'excluir'|| $acao == 'ver' )
 	{
 		// LISTA USUARIO DO ID INFORMADO ↓
 			$view = 'vw_filiacao';
-			$where = " id = ".$_GET['id'];
+			$where = " id = ".htmlspecialchars($_GET['id']);
 			$orderBy ="";
 			$limit = "1";
 
@@ -54,7 +54,7 @@ if ($acao == 'editar' || $acao == 'excluir'|| $acao == 'ver' )
 			foreach ($list as $key => $value) 
 				{
 					$caminhoFoto = !empty(trim($value['caminho_foto']))? 
-					"documentos/".$value['caminho_foto']:"include/sem-foto.gif";
+					"documentos/".htmlspecialchars($value['caminho_foto']):"include/sem-foto.gif";
 					$nome = ($value['nome']);
 					$id = ($value['id']);
 					$fk_id_pessoal = ($value['fk_id_pessoal']);
@@ -66,7 +66,7 @@ if ($acao == 'editar' || $acao == 'excluir'|| $acao == 'ver' )
 					$dinamica_familiar_obs = ($value['dinamica_familiar_obs']);
 					$limpar = "Limpar";
 					$salvar = "editar";
-					$option .= '<option data-icon="'.$caminhoFoto.'" value="'.$fk_id_pessoal.'" selected>'.$nome.'</option>';
+					$option .= '<option data-icon="'.htmlspecialchars($caminhoFoto).'" value="'.htmlspecialchars($fk_id_pessoal).'" selected>'.htmlspecialchars($nome).'</option>';
 				}
 	} 	
 } 
@@ -87,27 +87,27 @@ require_once('delete.php');
 				<label>Nome da criança</label>
 			</div>
 			<div class="col s12 m12" >
-				*Parentesco:<input placeholder="Ex: Pai,Mãe,Primo..." type="text" <?php echo ' value="'.$nivel_parentesco.'" '.$disable; ?> 
+				*Parentesco:<input placeholder="Ex: Pai,Mãe,Primo..." type="text" <?php echo ' value="'.htmlspecialchars($nivel_parentesco).'" '.htmlspecialchars($disable); ?> 
 				name="nivel_parentesco" required="true" >
 			</div>
 			<div class="col s12 m12" >
-				*Nome do parente:<input type="text" <?php echo ' value="'.$nome_parente.'" '.$disable; ?> 
+				*Nome do parente:<input type="text" <?php echo ' value="'.htmlspecialchars($nome_parente).'" '.htmlspecialchars($disable); ?> 
 				name="nome_parente" required="true" >
 			</div>
 			<div class="col s12 m6" >
-				Endereço:<input type="text" <?php echo ' value="'.$endereco.'" '.$disable; ?> 
+				Endereço:<input type="text" <?php echo ' value="'.htmlspecialchars($endereco).'" '.htmlspecialchars($disable); ?> 
 				name="endereco">
 			</div>
 			<div class="col s12 m6" >
-				Telefone:<input type="text" <?php echo ' value="'.$telefone.'" '.$disable; ?> 
+				Telefone:<input type="text" <?php echo ' value="'.htmlspecialchars($telefone).'" '.htmlspecialchars($disable); ?> 
 				name="telefone">
 			</div>
 			<div class="col s12 m6" >
-				Atividade profissional:<input type="text" <?php echo ' value="'.$atividade_profissional.'" '.$disable; ?> 
+				Atividade profissional:<input type="text" <?php echo ' value="'.htmlspecialchars($atividade_profissional).'" '.htmlspecialchars($disable); ?> 
 				name="atividade_profissional">
 			</div>
 			<div class="col s12 m6" >
-				Dinamica familiar obs:<textarea class="materialize-textarea" type="text" <?php echo ' value="'.$dinamica_familiar_obs.'" '.$disable; ?> 
+				Dinamica familiar obs:<textarea class="materialize-textarea" type="text" <?php echo ' value="'.htmlspecialchars($dinamica_familiar_obs).'" '.htmlspecialchars($disable); ?> 
 				name="dinamica_familiar_obs"> <?php echo $dinamica_familiar_obs ?> </textarea>
 			</div>
 		</div>
@@ -116,8 +116,8 @@ require_once('delete.php');
 
 	<div class="row" >
 		<div class="col s12 m12 right-align" >
-			<input type="reset" class="btn btn-large red" <?php echo ' value="'.$limpar.'" '.$disable; ?> name="limpar"  >
-			<input type="submit" class="btn btn-large orange" <?php echo ' value="'.$salvar.'" '.$disable; ?> name="salvar"  >
+			<input type="reset" class="btn btn-large red" <?php echo ' value="'.htmlspecialchars($limpar).'" '.htmlspecialchars($disable); ?> name="limpar"  >
+			<input type="submit" class="btn btn-large orange" <?php echo ' value="'.htmlspecialchars($salvar).'" '.htmlspecialchars($disable); ?> name="salvar"  >
 		</div>
 	</div>
 </form>

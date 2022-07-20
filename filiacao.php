@@ -45,17 +45,17 @@ require_once('pagina.php');
 				{ 
 					$nome = !empty($value['nome'])? ($value['nome']):"";
 					$nome_parente = !empty($value['nome_parente'])? ($value['nome_parente']):"";
-					$caminhoFoto = !empty(trim($value['caminho_foto']))? "documentos/".$value['caminho_foto']:"include/sem-foto.gif";
+					$caminhoFoto = !empty(trim($value['caminho_foto']))? "documentos/".htmlspecialchars($value['caminho_foto']):"include/sem-foto.gif";
 					$nivel_parentesco = !empty($value['nivel_parentesco'])? ($value['nivel_parentesco']) : " Desconhecido ";
 					$id = $value['id'];
 					$situacao = $value['situacao'];
 
 					echo'
 					<tr>
-						<td><img src="'.$caminhoFoto.'"  data-caption="'.$nome.'" class="circle materialboxed" width="35px" height="35px"></td>
-						<td class="">'.$nome.'</td>
-						<td class="">'.$nivel_parentesco.'</td>
-						<td class="">'.$nome_parente.'</td>
+						<td><img src="'.htmlspecialchars($caminhoFoto).'"  data-caption="'.htmlspecialchars($nome).'" class="circle materialboxed" width="35px" height="35px"></td>
+						<td class="">'.htmlspecialchars($nome).'</td>
+						<td class="">'.htmlspecialchars($nivel_parentesco).'</td>
+						<td class="">'.htmlspecialchars($nome_parente).'</td>
 
 						';
 					include('botoes.php');

@@ -11,14 +11,14 @@ $ocorrenciasColor = 'orange';
 $registroTecnicoColor = 'orange';
 $adminColor = 'orange';
 
-$colorCard1 = $dadosPessoaisColor.' darken-4';
-$colorCard2 = $filiacaoColor.' darken-3';
-$colorCard3 = $educacaoColor.' darken-2';
-$colorCard4 = $saudeColor.' darken-1';
-$colorCard5 = $atividadesColor.' darken-1';
-$colorCard6 = $ocorrenciasColor.' darken-2';
-$colorCard7 = $registroTecnicoColor.' darken-3';
-$colorCard8 = $adminColor.' darken-4';
+$colorCard1 = $dadosPessoaisColor).' darken-4';
+$colorCard2 = $filiacaoColor).' darken-3';
+$colorCard3 = $educacaoColor).' darken-2';
+$colorCard4 = $saudeColor).' darken-1';
+$colorCard5 = $atividadesColor).' darken-1';
+$colorCard6 = $ocorrenciasColor).' darken-2';
+$colorCard7 = $registroTecnicoColor).' darken-3';
+$colorCard8 = $adminColor).' darken-4';
 
 ?>
     <!-- Primeira linha de blocos -->

@@ -40,7 +40,7 @@ if (!empty($_GET)) {
 	$separador = "";
 	$setValues = "";
 	for ($i=0; $i < $count ; $i++) { 
-		$setValues .= $separador.$columns[$i]." = '".$values[$i]."' ";
+		$setValues .= $separador.htmlspecialchars($columns[$i])." = '".htmlspecialchars($values[$i])."' ";
 		$separador = ", ";
 	}
 

@@ -45,7 +45,7 @@ require_once('pagina.php');// paginação
 
 				foreach ($list as $key => $value)
 				{ 
-					$caminhoFoto = !empty(trim($value['caminho_foto']))? "documentos/".$value['caminho_foto']:"include/sem-foto.gif";
+					$caminhoFoto = !empty(trim($value['caminho_foto']))? "documentos/".htmlspecialchars($value['caminho_foto']):"include/sem-foto.gif";
 					$nome = !empty($value['nome'])? ($value['nome']):"";
 					$id = $value['id'];
 
@@ -56,11 +56,11 @@ require_once('pagina.php');// paginação
 
 					echo'
 					<tr>
-						<td><img src="'.$caminhoFoto.'"  data-caption="'.$nome.'" class="circle materialboxed" width="35px" height="35px"></td>
-						<td class="">'.$nome.'</td>
-						<td class="">'.$tipo.'</td>
-						<td class="">'.$data.'</td>
-						<td class="">'.$fato.'</td>
+						<td><img src="'.htmlspecialchars($caminhoFoto).'"  data-caption="'.htmlspecialchars($nome).'" class="circle materialboxed" width="35px" height="35px"></td>
+						<td class="">'.htmlspecialchars($nome).'</td>
+						<td class="">'.htmlspecialchars($tipo).'</td>
+						<td class="">'.htmlspecialchars($data).'</td>
+						<td class="">'.htmlspecialchars($fato).'</td>
 
 						';
 					include('botoes.php');

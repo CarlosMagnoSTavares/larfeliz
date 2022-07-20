@@ -31,7 +31,7 @@ if (!empty($_POST)) {
 
 	//Garante a persistencia dos anexos na edição (Caso não informe o anexo ele mantem o antigo)
 	if ($acao == 'editar') {
-		$where = " id = ".$_POST['id'];
+		$where = " id = ".htmlspecialchars($_POST['id']);
 		$query = $crud->select($table,$where,NULL,NULL);
 		foreach ($files as $key => $file) 
 		{
@@ -70,18 +70,18 @@ if (!empty($_POST)) {
 	$separador = "";
 	$setValues = "";
 	for ($i=0; $i < $count ; $i++) { 
-		$setValues .= $separador.$columns[$i]." = '".$values[$i]."' ";
+		$setValues .= $separador.htmlspecialchars($columns[$i])." = '".htmlspecialchars($values[$i])."' ";
 		$separador = ", ";
 	}
 
 	if ($acao =='inserir') {
 		$insert = $crud->insert($table,$columns,$values);
-		header('Location:../'.$telaRedirect.'?start=insert_'.$insert);
+		header('Location:../'.htmlspecialchars($telaRedirect).'?start=insert_'.htmlspecialchars($insert);
 	}
 	else if ($acao == 'editar') {
-		$where = " id = ".$_POST['id'];
+		$where = " id = ".htmlspecialchars($_POST['id']);
 		$update= $crud->update($table,$setValues,$where);
-		header('Location:../'.$telaRedirect.'?start=update_'.$update);
+		header('Location:../'.htmlspecialchars($telaRedirect).'?start=update_'.htmlspecialchars($update);
 	}
 	
 }

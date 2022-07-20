@@ -46,7 +46,7 @@ if ($acao == 'editar' || $acao == 'excluir'|| $acao == 'ver' )
 	if (isset($_GET['id']) && is_numeric($_GET['id']) ) 
 	{
 		// LISTA USUARIO DO ID INFORMADO ↓
-			$where = " id = ".$_GET['id'];
+			$where = " id = ".htmlspecialchars($_GET['id']);
 			$orderBy ="";
 			$limit = "1";
 
@@ -56,7 +56,7 @@ if ($acao == 'editar' || $acao == 'excluir'|| $acao == 'ver' )
 			foreach ($list as $key => $value) 
 				{
 					$caminhoFoto = !empty(trim($value['caminho_foto']))? 
-					"documentos/".$value['caminho_foto']:"include/sem-foto.gif";
+					"documentos/".htmlspecialchars($value['caminho_foto']):"include/sem-foto.gif";
 					$nome = ($value['nome']);
 					$id = ($value['id']);
 					$fk_id_pessoal = ($value['fk_id_pessoal']);
@@ -71,7 +71,7 @@ if ($acao == 'editar' || $acao == 'excluir'|| $acao == 'ver' )
 
 					$limpar = "Limpar";
 					$salvar = "editar";
-					$option .= '<option data-icon="'.$caminhoFoto.'" value="'.$fk_id_pessoal.'" selected>'.$nome.'</option>';
+					$option .= '<option data-icon="'.htmlspecialchars($caminhoFoto).'" value="'.htmlspecialchars($fk_id_pessoal).'" selected>'.htmlspecialchars($nome).'</option>';
 				}
 	} 	
 } 
@@ -94,58 +94,58 @@ require_once('delete.php');
 
 			<div class="col s12 m12" >
 				*Ano do curso:
-				<input type="text" <?php echo ' value="'.$ano.'" '.$disable; ?> 
+				<input type="text" <?php echo ' value="'.htmlspecialchars($ano).'" '.htmlspecialchars($disable); ?> 
 				name="ano" required="true" >
 			</div>
 			<div class="col s12 m12" >
 				*Tipo escolaridade
-				<input type="text" <?php echo ' value="'.$tipo_escolaridade.'" '.$disable; ?> 
+				<input type="text" <?php echo ' value="'.htmlspecialchars($tipo_escolaridade).'" '.htmlspecialchars($disable); ?> 
 				name="tipo_escolaridade" required="true" >
 			</div>
 			<div class="col s12 m6" >
 				Escola:
-				<input type="text" <?php echo ' value="'.$escola.'" '.$disable; ?> 
+				<input type="text" <?php echo ' value="'.htmlspecialchars($escola).'" '.htmlspecialchars($disable); ?> 
 				name="escola">
 			</div>
 			<div class="col s12 m6" >
 				Nome do contato:
-				<input type="text" <?php echo ' value="'.$nome_pessoa_contato.'" '.$disable; ?> 
+				<input type="text" <?php echo ' value="'.htmlspecialchars($nome_pessoa_contato).'" '.htmlspecialchars($disable); ?> 
 				name="nome_pessoa_contato">
 			</div>
 			<div class="col s12 m6" >
 				Tel:
-				<input type="text" <?php echo ' value="'.$numero_tel.'" '.$disable; ?> 
+				<input type="text" <?php echo ' value="'.htmlspecialchars($numero_tel).'" '.htmlspecialchars($disable); ?> 
 				name="numero_tel">
 			</div>
 			<div class="col s12 m6" >
 				Cel:
-				<textarea class="materialize-textarea" type="text" <?php echo ' value="'.$numero_cel.'" '.$disable; ?> 
+				<textarea class="materialize-textarea" type="text" <?php echo ' value="'.htmlspecialchars($numero_cel).'" '.htmlspecialchars($disable); ?> 
 				name="numero_cel"> <?php echo $numero_cel ?> </textarea>
 			</div>
 			<div class="col s12 m6" >
 			    <div class="file-field" >
 			      <div class="btn <?php echo $btnColor; ?>" >
 			        <span>Anexo relatório prim. semestre</span>
-			        <input <?php echo  $disable; echo 'value="'.$anexo_rel_prim_semestre.'"'; ?> name="anexo_rel_prim_semestre" type="file" class="<?php echo $btnColor; ?>" accept="image/*"> <!--  VALUE="anexo_rel_prim_semestre.pdf" -->
+			        <input <?php echo  $disable; echo 'value="'.htmlspecialchars($anexo_rel_prim_semestre).'"'; ?> name="anexo_rel_prim_semestre" type="file" class="<?php echo $btnColor; ?>" accept="image/*"> <!--  VALUE="anexo_rel_prim_semestre.pdf" -->
 			      </div>
 			      <div class="file-path-wrapper" >
 			        <input class="file-path validate" type="text" value="<?php echo $anexo_rel_prim_semestre; ?>" >
 			      </div>
 			    </div>
-			 <a target="_blank" <?php echo 'href="documentos/'.$anexo_rel_prim_semestre.'"';?>>  Download: <?php echo $anexo_rel_prim_semestre; ?> </a>   
+			 <a target="_blank" <?php echo 'href="documentos/'.htmlspecialchars($anexo_rel_prim_semestre).'"';?>>  Download: <?php echo $anexo_rel_prim_semestre; ?> </a>   
 			</div>
 
 			<div class="col s12 m6" >
 			    <div class="file-field" >
 			      <div class="btn <?php echo $btnColor; ?>" >
 			        <span>Anexo relatório segun. semestre</span>
-			        <input <?php echo  $disable; echo 'value="'.$anexo_rel_segun_semestre.'"'; ?> name="anexo_rel_segun_semestre" type="file" class="<?php echo $btnColor; ?>" accept="image/*"> <!--  VALUE="anexo_rel_segun_semestre.pdf" -->
+			        <input <?php echo  $disable; echo 'value="'.htmlspecialchars($anexo_rel_segun_semestre).'"'; ?> name="anexo_rel_segun_semestre" type="file" class="<?php echo $btnColor; ?>" accept="image/*"> <!--  VALUE="anexo_rel_segun_semestre.pdf" -->
 			      </div>
 			      <div class="file-path-wrapper" >
 			        <input class="file-path validate" type="text" value="<?php echo $anexo_rel_segun_semestre; ?>" >
 			      </div>
 			    </div>
-			 <a target="_blank" <?php echo 'href="documentos/'.$anexo_rel_segun_semestre.'"';?>>  Download: <?php echo $anexo_rel_segun_semestre; ?> </a>   
+			 <a target="_blank" <?php echo 'href="documentos/'.htmlspecialchars($anexo_rel_segun_semestre).'"';?>>  Download: <?php echo $anexo_rel_segun_semestre; ?> </a>   
 			</div>
 			
 		</div>
@@ -154,8 +154,8 @@ require_once('delete.php');
 
 	<div class="row" >
 		<div class="col s12 m12 right-align" >
-			<input type="reset" class="btn btn-large red" <?php echo ' value="'.$limpar.'" '.$disable; ?> name="limpar"  >
-			<input type="submit" class="btn btn-large orange" <?php echo ' value="'.$salvar.'" '.$disable; ?> name="salvar"  >
+			<input type="reset" class="btn btn-large red" <?php echo ' value="'.htmlspecialchars($limpar).'" '.htmlspecialchars($disable); ?> name="limpar"  >
+			<input type="submit" class="btn btn-large orange" <?php echo ' value="'.htmlspecialchars($salvar).'" '.htmlspecialchars($disable); ?> name="salvar"  >
 		</div>
 	</div>
 </form>

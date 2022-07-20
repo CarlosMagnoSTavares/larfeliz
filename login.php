@@ -42,7 +42,7 @@ else
                 $senha = addslashes(($_POST['senha']));
 
                 $view = 'admin';
-                $where = " email = '".$email."' and senha = '".$senha."'";
+                $where = " email = '".htmlspecialchars($email)."' and senha = '".htmlspecialchars($senha)."'";
                 $orderBy =null;
                 $limit = "1";
 

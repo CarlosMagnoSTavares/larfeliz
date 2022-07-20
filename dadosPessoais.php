@@ -56,16 +56,16 @@ require_once('pagina.php');
 				foreach ($list as $key => $value)
 				{ 
 					$nome = ($value['nome']);
-					$caminhoFoto = !empty(trim($value['caminho_foto']))? "documentos/".$value['caminho_foto']:"include/sem-foto.gif";
+					$caminhoFoto = !empty(trim($value['caminho_foto']))? "documentos/".htmlspecialchars($value['caminho_foto']):"include/sem-foto.gif";
 					$dataAcolhimento = !empty($value['data_acolhimento'])? $value['data_acolhimento'] : " --/--/--- ";
 					$id = $value['id'];
 					$situacao = $value['situacao'];
 
 					echo'
 						<tr>
-							<td><img src="'.$caminhoFoto.'"  data-caption="'.$nome.'" class="circle materialboxed" width="35px" height="35px"></td>
-							<td class="">'.$nome.'</td>
-							<td class="center-align">'.date("d/m/Y", strtotime($dataAcolhimento)).'</td>
+							<td><img src="'.htmlspecialchars($caminhoFoto).'"  data-caption="'.htmlspecialchars($nome).'" class="circle materialboxed" width="35px" height="35px"></td>
+							<td class="">'.htmlspecialchars($nome).'</td>
+							<td class="center-align">'.date("d/m/Y", strtotime($dataAcolhimento))).'</td>
 							';
 					include('botoes.php');
 					echo'

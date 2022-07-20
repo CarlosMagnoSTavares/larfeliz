@@ -41,7 +41,7 @@ if ($acao == 'editar' || $acao == 'excluir'|| $acao == 'ver' )
 	{
 		// LISTA USUARIO DO ID INFORMADO ↓
 			$view = 'hist_acolhidos';
-			$where = " id = ".$_GET['id'];
+			$where = " id = ".htmlspecialchars($_GET['id']);
 			$orderBy ="";
 			$limit = "1";
 
@@ -78,43 +78,43 @@ require_once('delete.php');
 		<div class="row" >
 			
 			<div class="col s12 m12" >
-				Nome:<input type="text" <?php echo ' value="'.$nome.'" '.$disable; ?> name="nome" >
+				Nome:<input type="text" <?php echo ' value="'.htmlspecialchars($nome).'" '.htmlspecialchars($disable); ?> name="nome" >
 			</div>
 			<div class="col s12 m4" >
-				data_acolhimento:<input type="date" <?php echo ' value="'.$data_acolhimento.'" '.$disable; ?> name="data_acolhimento" >
+				data_acolhimento:<input type="date" <?php echo ' value="'.htmlspecialchars($data_acolhimento).'" '.htmlspecialchars($disable); ?> name="data_acolhimento" >
 			</div>
 			<div class="col s12 m4" >
-				data_desligamento:<input type="date" <?php echo ' value="'.$data_desligamento.'" '.$disable; ?> name="data_desligamento" >
+				data_desligamento:<input type="date" <?php echo ' value="'.htmlspecialchars($data_desligamento).'" '.htmlspecialchars($disable); ?> name="data_desligamento" >
 			</div>
 			<div class="col s12 m4" >
-				data_nascimento:<input type="date" <?php echo ' value="'.$data_nascimento.'" '.$disable; ?> name="data_nascimento" >
+				data_nascimento:<input type="date" <?php echo ' value="'.htmlspecialchars($data_nascimento).'" '.htmlspecialchars($disable); ?> name="data_nascimento" >
 			</div>
 			<div class="col s12 m12" >
-				origem:<input type="text" <?php echo ' value="'.$origem.'" '.$disable; ?> name="origem" >
+				origem:<input type="text" <?php echo ' value="'.htmlspecialchars($origem).'" '.htmlspecialchars($disable); ?> name="origem" >
 			</div>
 			<div class="col s12 m12" >
-				nome_pai:<input type="text" <?php echo ' value="'.$nome_pai.'" '.$disable; ?> name="nome_pai" >
+				nome_pai:<input type="text" <?php echo ' value="'.htmlspecialchars($nome_pai).'" '.htmlspecialchars($disable); ?> name="nome_pai" >
 			</div>
 			<div class="col s12 m12" >
-				nome_mae:<input type="text" <?php echo ' value="'.$nome_mae.'" '.$disable; ?> name="nome_mae" >
+				nome_mae:<input type="text" <?php echo ' value="'.htmlspecialchars($nome_mae).'" '.htmlspecialchars($disable); ?> name="nome_mae" >
 			</div>
 			<div class="col s12 m12" >
-				destino:<input type="text" <?php echo ' value="'.$destino.'" '.$disable; ?> name="destino" >
+				destino:<input type="text" <?php echo ' value="'.htmlspecialchars($destino).'" '.htmlspecialchars($disable); ?> name="destino" >
 			</div>
 			<div class="col s12 m12" >
-				info_diversas:<input type="text" <?php echo ' value="'.$info_diversas.'" '.$disable; ?> name="info_diversas" >
+				info_diversas:<input type="text" <?php echo ' value="'.htmlspecialchars($info_diversas).'" '.htmlspecialchars($disable); ?> name="info_diversas" >
 			</div>
 			<div class="col s12 m6" >
 			    <div class="file-field" >
 			      <div class="btn <?php echo $btnColor; ?>" >
 			        <span>anexo</span>
-			        <input <?php echo  $disable; echo 'value="'.$anexo.'"'; ?> name="anexo" type="file" class="<?php echo $btnColor; ?>"> 
+			        <input <?php echo  $disable; echo 'value="'.htmlspecialchars($anexo).'"'; ?> name="anexo" type="file" class="<?php echo $btnColor; ?>"> 
 			      </div>
 			      <div class="file-path-wrapper" >
 			        <input class="file-path validate" type="text" value="<?php echo $anexo; ?>" >
 			      </div>
 			    </div>
-			 <a target="_blank" <?php echo 'href="documentos/'.$anexo.'"';?>>  Download: <?php echo $anexo; ?> </a>   
+			 <a target="_blank" <?php echo 'href="documentos/'.htmlspecialchars($anexo).'"';?>>  Download: <?php echo $anexo; ?> </a>   
 			</div>
 			
 			
@@ -125,8 +125,8 @@ require_once('delete.php');
 
 	<div class="row" >
 		<div class="col s12 m12 right-align" >
-			<input type="reset" class="btn btn-large red" <?php echo ' value="'.$limpar.'" '.$disable; ?> name="limpar"  >
-			<input type="submit" class="btn btn-large orange" <?php echo ' value="'.$salvar.'" '.$disable; ?> name="salvar"  >
+			<input type="reset" class="btn btn-large red" <?php echo ' value="'.htmlspecialchars($limpar).'" '.htmlspecialchars($disable); ?> name="limpar"  >
+			<input type="submit" class="btn btn-large orange" <?php echo ' value="'.htmlspecialchars($salvar).'" '.htmlspecialchars($disable); ?> name="salvar"  >
 		</div>
 	</div>
 

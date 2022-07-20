@@ -9,24 +9,24 @@
 $labelResult = "";
 if (isset($_GET['opcao']) && isset($_GET['VALUE']) && isset($_GET['column_name'])&& !empty($_GET['VALUE'])) {
 	$valueFiltro = addslashes($_GET['VALUE']);
-	if ($_GET['opcao'] == 1){ $descLabel = " maior que "; $opcao = $_GET['column_name']." > '".$valueFiltro."'"; }
-	if ($_GET['opcao'] == 2){ $descLabel = " menor que "; $opcao = $_GET['column_name']." < '".$valueFiltro."'"; }
-	if ($_GET['opcao'] == 3){ $descLabel = " maior ou igual a "; $opcao = $_GET['column_name']." >= '".$valueFiltro."'"; }
-	if ($_GET['opcao'] == 4){ $descLabel = " menor ou igual a "; $opcao = $_GET['column_name']." <= '".$valueFiltro."'"; }
-	if ($_GET['opcao'] == 5){ $descLabel = " diferente de "; $opcao = $_GET['column_name']." <> '".$valueFiltro."'"; }
-	if ($_GET['opcao'] == 6){ $descLabel = " contendo no inicio "; $opcao = $_GET['column_name']." like '"."%".$valueFiltro."'"; }
-	if ($_GET['opcao'] == 7){ $descLabel = " contendo no final "; $opcao = $_GET['column_name']." like '".$valueFiltro."%"."'"; }
-	if ($_GET['opcao'] == 8){ $descLabel = " contendo "; $opcao = $_GET['column_name']." like '"."%".$valueFiltro."%"."'"; }
-	if ($_GET['opcao'] == 9){ $descLabel = " não contendo "; $opcao = $_GET['column_name']." not like '"."%".$valueFiltro."%"."'"; }
+	if ($_GET['opcao'] == 1){ $descLabel = " maior que "; $opcao = $_GET['column_name']." > '".htmlspecialchars($valueFiltro)."'"; }
+	if ($_GET['opcao'] == 2){ $descLabel = " menor que "; $opcao = $_GET['column_name']." < '".htmlspecialchars($valueFiltro)."'"; }
+	if ($_GET['opcao'] == 3){ $descLabel = " maior ou igual a "; $opcao = $_GET['column_name']." >= '".htmlspecialchars($valueFiltro)."'"; }
+	if ($_GET['opcao'] == 4){ $descLabel = " menor ou igual a "; $opcao = $_GET['column_name']." <= '".htmlspecialchars($valueFiltro)."'"; }
+	if ($_GET['opcao'] == 5){ $descLabel = " diferente de "; $opcao = $_GET['column_name']." <> '".htmlspecialchars($valueFiltro)."'"; }
+	if ($_GET['opcao'] == 6){ $descLabel = " contendo no inicio "; $opcao = $_GET['column_name']." like '"."%".htmlspecialchars($valueFiltro)."'"; }
+	if ($_GET['opcao'] == 7){ $descLabel = " contendo no final "; $opcao = $_GET['column_name']." like '".htmlspecialchars($valueFiltro)."%"."'"; }
+	if ($_GET['opcao'] == 8){ $descLabel = " contendo "; $opcao = $_GET['column_name']." like '"."%".htmlspecialchars($valueFiltro)."%"."'"; }
+	if ($_GET['opcao'] == 9){ $descLabel = " não contendo "; $opcao = $_GET['column_name']." not like '"."%".htmlspecialchars($valueFiltro)."%"."'"; }
 
 	$labelColumn = (str_replace("_", " ", $_GET['column_name']));
-	$labelResult= "Resultados para ".$titulo." contendo ".$labelColumn." ".$descLabel." ".$_GET['VALUE'];
+	$labelResult= "Resultados para ".htmlspecialchars($titulo)." contendo ".htmlspecialchars($labelColumn)." ".htmlspecialchars($descLabel)." ".htmlspecialchars($_GET['VALUE']);
 }
 
 
 // LISTA colunas do filtro ↓
 	$tabelaDeFiltros = 'vw_filtros';
-	$whereFiltro = " table_name = '".$table."'";
+	$whereFiltro = " table_name = '".htmlspecialchars($table)."'";
 	$orderByFiltro =" label ";
 	$limitFiltro = NULL;
 
@@ -39,7 +39,7 @@ if (isset($_GET['opcao']) && isset($_GET['VALUE']) && isset($_GET['column_name']
 			$column_name = ($valueFiltros['column_name']);
 			$label = (($valueFiltros['label']));
 			$label = str_replace("_", " ", $label);
-			$option .= '<option  value="'.$column_name.'">'.$label.'</option>';
+			$option .= '<option  value="'.htmlspecialchars($column_name).'">'.htmlspecialchars($label).'</option>';
 		}
 
 
@@ -109,7 +109,7 @@ $limit = "$pag,$max";
 </ul>
 
 <div class="row" align="">
-<label align="" class="center text-center"><?php echo "<h6><b>".$labelResult."</b></h6>"; ?></label>
+<label align="" class="center text-center"><?php echo "<h6><b>".htmlspecialchars($labelResult."</b></h6>"; ?></label>
 </div>
 
 <?php
@@ -140,5 +140,5 @@ else
 
 // $situacao = $telaAcessada == 'admin'? "ativo": $situacao;
 
-//$where .= " and situacao = '".$situacao."' ";
+//$where .= " and situacao = '".htmlspecialchars($situacao."' ";
 ?>

@@ -43,7 +43,7 @@ if ($acao == 'editar' || $acao == 'excluir'|| $acao == 'ver' )
 	{
 		// LISTA USUARIO DO ID INFORMADO ↓
 			$view = 'vw_atividade';
-			$where = " id = ".$_GET['id'];
+			$where = " id = ".htmlspecialchars($_GET['id']);
 			$orderBy ="";
 			$limit = "1";
 
@@ -53,7 +53,7 @@ if ($acao == 'editar' || $acao == 'excluir'|| $acao == 'ver' )
 			foreach ($list as $key => $value) 
 				{
 					$caminhoFoto = !empty(trim($value['caminho_foto']))? 
-					"documentos/".$value['caminho_foto']:"include/sem-foto.gif";
+					"documentos/".htmlspecialchars($value['caminho_foto']):"include/sem-foto.gif");
 					$nome = ($value['nome']);
 					$id = ($value['id']);
 					$fk_id_pessoal = ($value['fk_id_pessoal']);
@@ -65,7 +65,7 @@ if ($acao == 'editar' || $acao == 'excluir'|| $acao == 'ver' )
 					
 					$limpar = "Limpar";
 					$salvar = "editar";
-					$option .= '<option data-icon="'.$caminhoFoto.'" value="'.$fk_id_pessoal.'" selected>'.$nome.'</option>';
+					$option .= '<option data-icon="'.htmlspecialchars($caminhoFoto).'" value="'.htmlspecialchars($fk_id_pessoal).'" selected>'.htmlspecialchars($nome).'</option>';
 				}
 	} 	
 } 
@@ -86,19 +86,19 @@ require_once('delete.php');
 				<label>Nome da criança</label>
 			</div>
 			<div class="col s12 m12" >
-				*Tipo e frequencia:<input type="text" <?php echo ' value="'.$frequencia.'" '.$disable; ?> 
+				*Tipo e frequencia:<input type="text" <?php echo ' value="'.htmlspecialchars($frequencia).'" '.htmlspecialchars($disable); ?> 
 				name="frequencia" required="true" >
 			</div>
 			<div class="col s12 m12" >
-				*Dia(s):<input type="text" <?php echo ' value="'.$dia.'" '.$disable; ?> 
+				*Dia(s):<input type="text" <?php echo ' value="'.htmlspecialchars($dia).'" '.htmlspecialchars($disable); ?> 
 				name="dia" required="true" >
 			</div>
 			<div class="col s12 m6" >
-				Horario:<input type="text" <?php echo ' value="'.$horario.'" '.$disable; ?> 
+				Horario:<input type="text" <?php echo ' value="'.htmlspecialchars($horario).'" '.htmlspecialchars($disable); ?> 
 				name="horario">
 			</div>
 			<div class="col s12 m6" >
-				Local:<input type="text" <?php echo ' value="'.$local.'" '.$disable; ?> 
+				Local:<input type="text" <?php echo ' value="'.htmlspecialchars($local).'" '.htmlspecialchars($disable); ?> 
 				name="local">
 			</div>
 			
@@ -108,8 +108,8 @@ require_once('delete.php');
 
 	<div class="row" >
 		<div class="col s12 m12 right-align" >
-			<input type="reset" class="btn btn-large red" <?php echo ' value="'.$limpar.'" '.$disable; ?> name="limpar"  >
-			<input type="submit" class="btn btn-large orange" <?php echo ' value="'.$salvar.'" '.$disable; ?> name="salvar"  >
+			<input type="reset" class="btn btn-large red" <?php echo ' value="'.htmlspecialchars($limpar).'" '.htmlspecialchars($disable); ?> name="limpar"  >
+			<input type="submit" class="btn btn-large orange" <?php echo ' value="'.htmlspecialchars($salvar).'" '.htmlspecialchars($disable); ?> name="salvar"  >
 		</div>
 	</div>
 </form>

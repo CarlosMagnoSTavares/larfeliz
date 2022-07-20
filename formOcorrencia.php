@@ -45,7 +45,7 @@ if ($acao == 'editar' || $acao == 'excluir'|| $acao == 'ver' )
 	if (isset($_GET['id']) && is_numeric($_GET['id']) ) 
 	{
 		// LISTA USUARIO DO ID INFORMADO ↓
-			$where = " id = ".$_GET['id'];
+			$where = " id = ".htmlspecialchars($_GET['id']);
 			$orderBy ="";
 			$limit = "1";
 
@@ -55,7 +55,7 @@ if ($acao == 'editar' || $acao == 'excluir'|| $acao == 'ver' )
 			foreach ($list as $key => $value) 
 				{
 					$caminhoFoto = !empty(trim($value['caminho_foto']))? 
-					"documentos/".$value['caminho_foto']:"include/sem-foto.gif";
+					"documentos/".htmlspecialchars($value['caminho_foto']):"include/sem-foto.gif";
 					$nome = ($value['nome']);
 					$id = ($value['id']);
 					$fk_id_pessoal = ($value['fk_id_pessoal']);
@@ -67,7 +67,7 @@ if ($acao == 'editar' || $acao == 'excluir'|| $acao == 'ver' )
 
 					$limpar = "Limpar";
 					$salvar = "editar";
-					$option .= '<option data-icon="'.$caminhoFoto.'" value="'.$fk_id_pessoal.'" selected>'.$nome.'</option>';
+					$option .= '<option data-icon="'.htmlspecialchars($caminhoFoto).'" value="'.htmlspecialchars($fk_id_pessoal).'" selected>'.htmlspecialchars($nome).'</option>';
 				}
 	} 	
 } 
@@ -89,35 +89,35 @@ require_once('delete.php');
 
 			<div class="col s12 m12" >
 				*Tipo:
-				<input type="text" <?php echo ' value="'.$tipo.'" '.$disable; ?> 
+				<input type="text" <?php echo ' value="'.htmlspecialchars($tipo).'" '.htmlspecialchars($disable); ?> 
 				name="tipo" required="true" >
 			</div>
 			<div class="col s12 m12" >
 				*Data da ocorrencia
-				<input type="date" <?php echo ' value="'.$data.'" '.$disable; ?> 
+				<input type="date" <?php echo ' value="'.htmlspecialchars($data).'" '.htmlspecialchars($disable); ?> 
 				name="data" required="true" >
 			</div>
 			<div class="col s12 m6" >
 				Fato:
-				<input type="text" <?php echo ' value="'.$fato.'" '.$disable; ?> 
+				<input type="text" <?php echo ' value="'.htmlspecialchars($fato).'" '.htmlspecialchars($disable); ?> 
 				name="fato">
 			</div>
 			<div class="col s12 m6" >
 				Observações:
-				<input type="text" <?php echo ' value="'.$descricao_obs.'" '.$disable; ?> 
+				<input type="text" <?php echo ' value="'.htmlspecialchars($descricao_obs).'" '.htmlspecialchars($disable); ?> 
 				name="descricao_obs">
 			</div>
 			<div class="col s12 m6" >
 			    <div class="file-field" >
 			      <div class="btn <?php echo $btnColor; ?>" >
 			        <span>Boletim de ocorrencia</span>
-			        <input <?php echo  $disable; echo 'value="'.$anexo_bo.'"'; ?> name="anexo_bo" type="file" class="<?php echo $btnColor; ?>" accept="image/*"> <!--  VALUE="anexo_bo.pdf" -->
+			        <input <?php echo  $disable; echo 'value="'.htmlspecialchars($anexo_bo).'"'; ?> name="anexo_bo" type="file" class="<?php echo $btnColor; ?>" accept="image/*"> <!--  VALUE="anexo_bo.pdf" -->
 			      </div>
 			      <div class="file-path-wrapper" >
 			        <input class="file-path validate" type="text" value="<?php echo $anexo_bo; ?>" >
 			      </div>
 			    </div>
-			 <a target="_blank" <?php echo 'href="documentos/'.$anexo_bo.'"';?>>  Download: <?php echo $anexo_bo; ?> </a>   
+			 <a target="_blank" <?php echo 'href="documentos/'.htmlspecialchars($anexo_bo).'"';?>>  Download: <?php echo $anexo_bo; ?> </a>   
 			</div>
 			
 		</div>
@@ -126,8 +126,8 @@ require_once('delete.php');
 
 	<div class="row" >
 		<div class="col s12 m12 right-align" >
-			<input type="reset" class="btn btn-large red" <?php echo ' value="'.$limpar.'" '.$disable; ?> name="limpar"  >
-			<input type="submit" class="btn btn-large orange" <?php echo ' value="'.$salvar.'" '.$disable; ?> name="salvar"  >
+			<input type="reset" class="btn btn-large red" <?php echo ' value="'.htmlspecialchars($limpar).'" '.htmlspecialchars($disable); ?> name="limpar"  >
+			<input type="submit" class="btn btn-large orange" <?php echo ' value="'.htmlspecialchars($salvar).'" '.htmlspecialchars($disable); ?> name="salvar"  >
 		</div>
 	</div>
 </form>

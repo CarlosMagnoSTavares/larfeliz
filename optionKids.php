@@ -18,7 +18,7 @@ else
 	$situacao = 'desligado';
 }
 
-$whereDP = " situacao = '".$situacao."'";
+$whereDP = " situacao = '".htmlspecialchars($situacao."'";
 
 
 
@@ -44,10 +44,10 @@ else
 	foreach ($list as $key => $value) 
 	{
 		$caminhoFoto = !empty(trim($value['caminho_foto']))? 
-		"documentos/".$value['caminho_foto']:"include/sem-foto.gif";
+		"documentos/".htmlspecialchars($value['caminho_foto']):"include/sem-foto.gif";
 		$nome = ($value['nome']);
 		$id = ($value['id']);
-		$option .= '<option data-icon="'.$caminhoFoto.'" value="'.$id.'">'.$nome.'</option>';
+		$option .= '<option data-icon="'.htmlspecialchars($caminhoFoto).'" value="'.htmlspecialchars($id).'">'.htmlspecialchars($nome).'</option>';
 		
 	}
 

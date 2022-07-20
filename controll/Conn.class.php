@@ -54,7 +54,7 @@ class Conn
 		//Grava o log
 		date_default_timezone_set('America/Sao_Paulo');
 		$dataLocal = date('d/m/Y H:i:s', time());
-		$msg = isset($msg) && !empty($msg)? "[".$dataLocal."] ".$msg."\n" : "";
+		$msg = isset($msg) && !empty($msg)? "[".htmlspecialchars($dataLocal)."] ".htmlspecialchars($msg)."\n" : "";
 
 		if (!empty($msg))
 		{

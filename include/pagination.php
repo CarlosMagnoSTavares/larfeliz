@@ -21,7 +21,7 @@ foreach ($paginas as $key => $value)
 			{
 			  $mark = $_GET['startPag']==$i? "active orange":"waves-effect";	
 			}
-			echo '<li class="'.$mark.'"><a href="?startPag='.$i.'">'.$i.'</a></li>';
+			echo '<li class="'.htmlspecialchars($mark).'"><a href="?startPag='.htmlspecialchars($i).'">'.htmlspecialchars($i).'</a></li>';
 		}
 		?>
 

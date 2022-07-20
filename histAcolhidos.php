@@ -60,10 +60,10 @@ require_once('pagina.php');
 
 					echo'
 					<tr>
-						<td class="">'.$nome.'</td>
-						<td class="center-align">'.date("d/m/Y", strtotime($data_acolhimento)).'</td>
-						<td class="center-align">'.date("d/m/Y", strtotime($data_nascimento)).'</td>
-						<td class="center-align">'.date("d/m/Y", strtotime($data_desligamento)).'</td>
+						<td class="">'.htmlspecialchars($nome).'</td>
+						<td class="center-align">'.date("d/m/Y", strtotime($data_acolhimento))).'</td>
+						<td class="center-align">'.date("d/m/Y", strtotime($data_nascimento))).'</td>
+						<td class="center-align">'.date("d/m/Y", strtotime($data_desligamento))).'</td>
 
 						';
 					include('botoes.php');

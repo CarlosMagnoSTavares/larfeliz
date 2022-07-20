@@ -9,9 +9,9 @@ if (isset($acao))
 		<form method="POST" action="controll/delete.php">
 			<div class="row" >
 				<div class="col s12 m12 center-align" >
-					<input type="hidden" name="id" value="'.$id.'">
-					<input type="hidden" name="telaRedirect" value="'.$telaRedirect.'">
-					<input type="hidden" name="table" value="'.$table.'">
+					<input type="hidden" name="id" value="'.htmlspecialchars($id).'">
+					<input type="hidden" name="telaRedirect" value="'.htmlspecialchars($telaRedirect).'">
+					<input type="hidden" name="table" value="'.htmlspecialchars($table).'">
 					<p>Você deseja excluir os dados abaixo?</p>
 					<input type="button" class="btn btn-small green" value="VOLTAR"  onClick="history.go(-1)">
 					<input type="submit" class="btn btn-small red" value="DELETAR REGISTRO"  >
